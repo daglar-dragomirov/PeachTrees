@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap");
+
+:root,
+[data-md-color-scheme="default"] {
+  --pt-cream: #FBF3EA;
+  --pt-sand: #E9D3BF;
+  --pt-blush: #E8A48A;
+  --pt-terra: #C9785E;
+  --pt-cocoa: #6E4B3A;
+  --pt-gold: #F2B84B;
+  --md-primary-fg-color: #6E4B3A;
+  --md-primary-fg-color--light: #8A6450;
+  --md-primary-fg-color--dark: #553829;
+  --md-accent-fg-color: #C9785E;
+  --md-default-bg-color: #FFFBF6;
+  --md-typeset-a-color: #B5624A;
+}
+
+[data-md-color-scheme="slate"] {
+  --pt-cream: #1A1511;
+  --pt-sand: #3A2E26;
+  --md-primary-fg-color: #2A1F19;
+  --md-primary-fg-color--light: #3A2E26;
+  --md-primary-fg-color--dark: #1A1511;
+  --md-accent-fg-color: #E8A48A;
+  --md-typeset-a-color: #E8A48A;
+  --md-default-bg-color: #14110F;
+  --md-code-bg-color: #1F1915;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-header__title {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 { font-weight: 700; }
+
+.md-typeset img { border-radius: 18px; }
+
+/* hero */
+.pt-hero { text-align: center; padding: 1.2rem 0 0.4rem; }
+.pt-hero img.pt-lockup { width: 440px; max-width: 90%; border-radius: 0; margin: 1.2rem 0 0.6rem; }
+.pt-hero h1.pt-title { font-size: 2.8rem; font-weight: 700; margin: 0.3rem 0 0.2rem; color: var(--md-typeset-color); }
+.pt-hero p.pt-tagline { font-family: Georgia, serif; font-style: italic; font-size: 1.15rem; max-width: 40rem; margin: 0 auto 1.4rem; opacity: 0.75; }
+.pt-hero .md-button { margin: 0.25rem; border-radius: 999px; }
+.md-typeset .md-button--primary { background: var(--pt-terra); border-color: var(--pt-terra); color: #fff; }
+.md-typeset .md-button--primary:hover { background: #B5624A; border-color: #B5624A; }
+
+/* stat cards */
+.pt-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; margin: 1.4rem 0; }
+.pt-stat { background: var(--pt-cream); border: 1px solid var(--pt-sand); border-radius: 16px; padding: 0.9rem 1rem; text-align: center; }
+.pt-stat b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; color: var(--md-accent-fg-color); }
+.pt-stat span { font-size: 0.78rem; opacity: 0.85; }
+
+.md-typeset .grid.cards > ul > li { border-radius: 16px; }
+
+/* page title is the lockup on the home page */
+.md-typeset h1.pt-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: 0; }
+
+/* secondary buttons readable in both schemes */
+.md-typeset .md-button { color: var(--pt-cocoa); border-color: var(--pt-sand); }
+.md-typeset .md-button:hover { color: #fff; background: var(--pt-cocoa); border-color: var(--pt-cocoa); }
+[data-md-color-scheme="slate"] .md-typeset .md-button { color: #E9D3BF; border-color: #5A4436; }
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover { color: #14110F; background: #E9D3BF; border-color: #E9D3BF; }
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary { color: #fff; border-color: var(--pt-terra); }
+
+.md-typeset .pt-hero p.pt-tagline { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+
+/* header logo: large enough to read, like other project marks */
+.md-header__button.md-logo { padding: 0.2rem 0.4rem; margin: 0 0.2rem; }
+.md-header__button.md-logo img, .md-header__button.md-logo svg { height: 2.1rem; width: auto; }
+
+/* header = the README lockup: mark + serif wordmark, same colours and proportions */
+.md-header { height: 3.4rem; }
+.md-header__inner { height: 3.4rem; }
+.md-header__button.md-logo img, .md-header__button.md-logo svg { height: 2.6rem; width: auto; }
+.md-header__title { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1.35rem;
+  letter-spacing: -0.005em; color: #E9D3BF; margin-left: 0.2rem; }
+.md-header__title .md-header__topic:first-child { font-weight: 700; }
+[data-md-color-scheme="default"] .md-header { background-color: #2A1F19; }
+[data-md-color-scheme="default"] .md-tabs { background-color: #2A1F19; }
+
+/* same mark-to-wordmark gap as the lockup (about 1/6 of the mark height) */
+.md-header__button.md-logo { padding-right: 0; margin-right: 0; }
+[dir=ltr] .md-header__title { margin-left: 0.45rem; }
+[dir=rtl] .md-header__title { margin-right: 0.45rem; }
