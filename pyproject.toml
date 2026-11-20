@@ -3,7 +3,7 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "peachtrees"
+name = "tribes"
 version = "1.1.0"
 description = "Inference-time answer selection for optimized DSPy programs (GEPA, MIPROv2, SIMBA, ...)."
 readme = "README.md"
@@ -26,22 +26,22 @@ classifiers = [
 dependencies = ["dspy>=3.0", "litellm>=1.60"]
 
 [project.urls]
-Homepage = "https://github.com/daglar-dragomirov/PeachTrees"
-Repository = "https://github.com/daglar-dragomirov/PeachTrees"
-Issues = "https://github.com/daglar-dragomirov/PeachTrees/issues"
+Homepage = "https://github.com/daglar-dragomirov/tribes"
+Repository = "https://github.com/daglar-dragomirov/tribes"
+Issues = "https://github.com/daglar-dragomirov/tribes/issues"
 
 [project.scripts]
-peachtrees = "peachtrees.cli:main"
+tribes = "tribes.cli:main"
 
 [project.optional-dependencies]
 test = ["pytest>=8", "pytest-cov>=5"]
 dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/peachtrees"]
+packages = ["src/tribes"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/peachtrees", "tests", "examples", "README.md", "LICENSE", "pyproject.toml"]
+include = ["src/tribes", "tests", "examples", "README.md", "LICENSE", "pyproject.toml"]
 exclude = ["assets"]
 
 [tool.pytest.ini_options]

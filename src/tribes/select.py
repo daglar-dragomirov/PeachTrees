@@ -1,10 +1,10 @@
-"""PeachTrees 1.0 selection rules (label-free at inference).
+"""TRIBES 1.0 selection rules (label-free at inference).
 
 Item rule (``pick``): 1. drop forms without a usable output; 2. if a task checker is given, drop forms whose output fails
 it (keep all if all fail); 3. if at least two surviving forms give the same answer key, return that answer; 4. otherwise
 the reviewer ("assembled"), then the program ("rigid"), then the agent ("liquid").
 
-Task rule: the PeachTrees policy is used for a task only if, on labeled selection data, it passes one of two switches:
+Task rule: the TRIBES policy is used for a task only if, on labeled selection data, it passes one of two switches:
 
 * ``do_no_harm`` (the 1.0 rule, default): mean gain + z * SE >= 0, i.e. the layer is kept unless it is shown worse at a
   one-sided level of about 16 % (z = 1). It is a do-no-harm screen, not a non-inferiority test: it bounds no harm, and
@@ -103,7 +103,7 @@ def paired_stats(deltas: Iterable[tuple[Hashable, float]]) -> tuple[float, float
 
 
 def do_no_harm(deltas: Iterable[tuple[Hashable, float]], z: float = 1.0) -> tuple[bool, float, float]:
-    """The 1.0 task switch: (use PeachTrees?, mean difference, standard error); accepts iff m + z * se >= 0."""
+    """The 1.0 task switch: (use TRIBES?, mean difference, standard error); accepts iff m + z * se >= 0."""
     m, se = paired_stats(deltas)
     return m + z * se >= 0, m, se
 

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from peachtrees.replay import load_rows, replay_protocol
+from tribes.replay import load_rows, replay_protocol
 
 R = Path(__file__).resolve().parents[1] / "research" / "results"
 ROWS = R / "rows-dev-cells.jsonl.gz"

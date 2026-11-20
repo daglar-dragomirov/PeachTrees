@@ -3,8 +3,8 @@ import sqlite3
 import dspy
 import pytest
 
-from peachtrees import item_context, tasks
-from peachtrees.tasks import canonical_number, extract_code, extract_sql, math_answer, same_output
+from tribes import item_context, tasks
+from tribes.tasks import canonical_number, extract_code, extract_sql, math_answer, same_output
 
 
 def P(answer):

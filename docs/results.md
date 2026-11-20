@@ -1,11 +1,11 @@
 # Results
 
-GLM 5.3 Flash as the task model; each optimizer with its official settings; every number is PeachTrees minus that
+GLM 5.3 Flash as the task model; each optimizer with its official settings; every number is TRIBES minus that
 optimizer's own program on the same items, in percentage points.
 
 ## Sealed test
 
-Opened once, after the rule and every per-task decision were frozen (PeachTrees 1.0-lite).
+Opened once, after the rule and every per-task decision were frozen (TRIBES 1.0-lite).
 
 | benchmark (test items) | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
@@ -23,7 +23,7 @@ Bold: 95 % confidence interval above zero. No cell has its interval below zero. 
 13 benchmarks (AIME, GPQA, LiveBench, LiveCodeBench, HotpotQA, HoVer, IFBench, PUPA, BFCL, τ²-bench, NATURAL PLAN, BIRD,
 ToolHop) × 3 optimizers = 36 cells.
 
-Per benchmark (PeachTrees 1.0 full; bold: 95 % interval above zero; — : not run):
+Per benchmark (TRIBES 1.0 full; bold: 95 % interval above zero; — : not run):
 
 | benchmark | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
@@ -55,9 +55,9 @@ sealed-test numbers are the ones to quote.
 
 ## FNXL (financial token labeling)
 
-GEPA vs GEPA + PeachTrees 1.0 on the FLARE FNXL test (318 sentences):
+GEPA vs GEPA + TRIBES 1.0 on the FLARE FNXL test (318 sentences):
 
 | | item score | macro-F1 | micro-F1 |
 |---|---|---|---|
 | GEPA | 0.600 | 0.376 | 0.393 |
-| GEPA + PeachTrees (full) | 0.605 | **0.437** | **0.459** |
+| GEPA + TRIBES (full) | 0.605 | **0.437** | **0.459** |

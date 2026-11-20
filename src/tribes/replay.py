@@ -1,4 +1,4 @@
-"""Offline replay: apply the PeachTrees rules to saved per-item outputs, with no model call.
+"""Offline replay: apply the TRIBES rules to saved per-item outputs, with no model call.
 
 This is how the 1.0 rule was found and checked in the research: every run saves, per item, the answer key and the
 score of each form; a rule is then a pure function of those rows. Input rows (JSON lines or a list of dicts)::
@@ -9,7 +9,7 @@ score of each form; a rule is then a pure function of those rows. Input rows (JS
      "checks": {"rigid": true, "assembled": null, "liquid": false},  # optional, label-free checker results
      "verifier": "liquid"}                              # optional: the form a verifier chose on this item
 
-``PeachTrees.save_fit(path, items=True)`` writes rows in this format.
+``Tribes.save_fit(path, items=True)`` writes rows in this format.
 """
 from __future__ import annotations
 
@@ -76,7 +76,7 @@ def bootstrap_ci(deltas: Sequence[tuple[Any, float]], reps: int = 2000, seed: in
 def replay(rows: Iterable[Mapping[str, Any]], mode: str = "full", z: float | None = None, use_checks: bool = True,
            use_verifier: bool = True, ci: bool = True, switch: str = "do_no_harm",
            margin: float = 0.02) -> dict[str, Any]:
-    """Scores of the program, each form, PeachTrees and the per-item oracle; the non-inferiority decision."""
+    """Scores of the program, each form, TRIBES and the per-item oracle; the non-inferiority decision."""
     rows = list(rows)
     n = len(rows)
     if n == 0:
@@ -90,7 +90,7 @@ def replay(rows: Iterable[Mapping[str, Any]], mode: str = "full", z: float | Non
         "n": n, "mode": mode, "z": z, "switch": switch,
         "program": sum(float(s.get("rigid", 0.0)) for s in sc) / n,
         "forms": {f: sum(float(s.get(f, 0.0)) for s in sc) / n for f in FORMS},
-        "peachtrees": sum(float(s.get(f, 0.0)) for s, f in zip(sc, chosen)) / n,
+        "tribes": sum(float(s.get(f, 0.0)) for s, f in zip(sc, chosen)) / n,
         "oracle": sum(max([float(v) for v in s.values()] or [0.0]) for s in sc) / n,
         "gain": m, "se": se, "use_layer": use,
         "deployed": (sum(float(s.get(f, 0.0)) for s, f in zip(sc, chosen)) / n) if use
@@ -110,7 +110,7 @@ def format_report(r: Mapping[str, Any]) -> str:
     lines = [f"items            {r['n']}  (mode {r['mode']}, switch {r.get('switch', 'do_no_harm')}, z {r['z']})",
              f"program          {r['program']:.4f}",
              *(f"  {f:<14} {v:.4f}" for f, v in r["forms"].items()),
-             f"peachtrees       {r['peachtrees']:.4f}   gain {r['gain']:+.4f} +- {r['se']:.4f}"
+             f"tribes       {r['tribes']:.4f}   gain {r['gain']:+.4f} +- {r['se']:.4f}"
              + (f"   95% CI [{r['ci95'][0]:+.4f}, {r['ci95'][1]:+.4f}]" if "ci95" in r else ""),
              f"oracle           {r['oracle']:.4f}",
              f"use layer        {r['use_layer']}   -> deployed {r['deployed']:.4f}",
@@ -125,7 +125,7 @@ def replay_protocol(rows: Iterable[Mapping[str, Any]], select_roles: Sequence[st
                     group_by: str = "cell") -> dict[str, dict[str, Any]]:
     """The research protocol over saved rows, per cell: the task switch decided on ``select_roles`` only, the gain reported
     once on ``report_role`` (the program's score where the switch says no). Rows carry ``role`` and ``cell`` fields
-    (``peachtrees replay --protocol`` reads such files)."""
+    (``tribes replay --protocol`` reads such files)."""
     by: dict[str, list[Mapping[str, Any]]] = {}
     for r in rows:
         by.setdefault(str(r.get(group_by, "all")), []).append(r)

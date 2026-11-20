@@ -1,6 +1,6 @@
-"""Events of a PeachTrees run.
+"""Events of a TRIBES run.
 
-Subclass :class:`Callback` and override what you need; pass instances as ``PeachTrees(..., callbacks=[...])``.
+Subclass :class:`Callback` and override what you need; pass instances as ``Tribes(..., callbacks=[...])``.
 Callbacks are called from worker threads; an exception in a callback is logged and never breaks the run. DSPy's own
 callbacks (``dspy.settings.callbacks``) keep working underneath for the individual LM and module calls.
 """
@@ -11,7 +11,7 @@ import logging
 import threading
 from typing import IO, Any, Mapping
 
-log = logging.getLogger("peachtrees")
+log = logging.getLogger("tribes")
 
 
 class Callback:
@@ -23,7 +23,7 @@ class Callback:
         """A form finished (after its retries). ``prediction`` is None if it failed; ``usage`` has tokens, cost, seconds."""
 
     def on_select(self, inputs: Mapping[str, Any], selection: Any) -> None:
-        """The item rule (and the verifier, if any) chose a form; ``selection`` is a :class:`peachtrees.Selection`."""
+        """The item rule (and the verifier, if any) chose a form; ``selection`` is a :class:`tribes.Selection`."""
 
     def on_fit_end(self, report: Mapping[str, Any]) -> None:
         """``fit`` decided whether the layer (and the verifier) is used for this task."""
@@ -38,7 +38,7 @@ def emit(callbacks, event: str, *args: Any) -> None:
 
 
 class LoggingCallback(Callback):
-    """Logs every form call and selection to the ``peachtrees`` logger."""
+    """Logs every form call and selection to the ``tribes`` logger."""
 
     def __init__(self, level: int = logging.INFO):
         self.level = level
@@ -57,7 +57,7 @@ class LoggingCallback(Callback):
 
 
 class JSONLCallback(Callback):
-    """Appends one JSON line per event to a file: a run log that ``peachtrees`` tools and notebooks can read back."""
+    """Appends one JSON line per event to a file: a run log that ``tribes`` tools and notebooks can read back."""
 
     def __init__(self, stream: IO[str]):
         self.stream = stream

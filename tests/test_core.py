@@ -7,7 +7,7 @@ import dspy
 import pytest
 from conftest import FakeForm, exact, examples
 
-from peachtrees import Callback, JSONLCallback, PeachTrees, Verdict, current_inputs, tasks
+from tribes import Callback, JSONLCallback, Tribes, Verdict, current_inputs, tasks
 
 
 # ---------------------------------------------------------------------- inference: full mode
@@ -119,7 +119,7 @@ def test_lite_runs_the_program_when_the_reviewer_crashes(make_pt):
 
 def test_bad_mode():
     with pytest.raises(ValueError):
-        PeachTrees(dspy.Predict("question -> answer"), mode="turbo")
+        Tribes(dspy.Predict("question -> answer"), mode="turbo")
 
 
 # ---------------------------------------------------------------------- the task decision
@@ -132,7 +132,7 @@ def test_fit_uses_the_layer_when_it_helps(make_pt):
     pt = make_pt("wrong", good, good).fit(_ds(), exact, num_threads=4)
     assert pt.use_layer is True
     r = pt.report
-    assert r["program_score"] == 0.0 and r["peachtrees_score"] == 1.0 and r["mean_gain"] == 1.0
+    assert r["program_score"] == 0.0 and r["tribes_score"] == 1.0 and r["mean_gain"] == 1.0
     assert r["oracle_score"] == 1.0 and r["picks"]["assembled"] == 12
     assert len(r["items"]) == 12
 
@@ -202,7 +202,7 @@ def test_fit_enables_a_verifier_that_wins(make_pt):
     pt = make_pt("r", "s", truth, verifier=v).fit(_ds(), exact)
     rep = pt.report["verifier"]
     assert pt.use_verifier is True and rep["won"] == 12 and rep["lost"] == 0
-    assert pt.use_layer is True and pt.report["peachtrees_score"] == 1.0
+    assert pt.use_layer is True and pt.report["tribes_score"] == 1.0
 
 
 def test_fit_disables_a_verifier_that_loses(make_pt):
@@ -301,21 +301,21 @@ def test_task_tools_reach_the_default_agents(program):
     def my_tool(x: str) -> str:
         """A task tool."""
         return x
-    pt = PeachTrees(program, tools=[my_tool], task=tasks.math())
+    pt = Tribes(program, tools=[my_tool], task=tasks.math())
     for form in ("assembled", "liquid"):
         names = set(pt.forms[form].agent.tools)
         assert {"my_tool", "run_python"} <= names
     assert pt.answer_key is not None
-    pt_v = PeachTrees(program, verifier=True, task=tasks.choice())
+    pt_v = Tribes(program, verifier=True, task=tasks.choice())
     assert "run_python" in pt_v.verifier.agent.tools
 
 
 def test_infers_fields_and_rejects_ambiguous_programs():
-    pt = PeachTrees(dspy.ChainOfThought("context, question -> answer"))
+    pt = Tribes(dspy.ChainOfThought("context, question -> answer"))
     assert pt.input_fields == ["context", "question"] and pt.output_field == "answer"
     with pytest.raises(ValueError):
-        PeachTrees(dspy.Predict("question -> answer, confidence"))
-    pt2 = PeachTrees(dspy.Predict("question -> answer, confidence"), output_field="answer")
+        Tribes(dspy.Predict("question -> answer, confidence"))
+    pt2 = Tribes(dspy.Predict("question -> answer, confidence"), output_field="answer")
     assert pt2.output_field == "answer"
 
 

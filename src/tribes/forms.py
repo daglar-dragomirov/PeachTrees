@@ -1,4 +1,4 @@
-"""The three PeachTrees forms around an optimized DSPy program.
+"""The three TRIBES forms around an optimized DSPy program.
 
 rigid      the optimized program itself (any optimizer: GEPA, MIPROv2, SIMBA, ...)
 assembled  the program's draft, then a ReAct reviewer that checks it and fixes it only if it finds a defect
@@ -41,7 +41,7 @@ FINAL_TOOLS = ("submit", "finish")
 
 def run_python(code: str) -> str:
     """Run Python 3 code (standard library only, 10 s limit) and return what it prints; use print()."""
-    d = tempfile.mkdtemp(prefix="peachtrees_")
+    d = tempfile.mkdtemp(prefix="tribes_")
     try:
         p = os.path.join(d, "main.py")
         with open(p, "w", encoding="utf-8") as f:

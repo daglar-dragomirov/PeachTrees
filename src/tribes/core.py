@@ -1,4 +1,4 @@
-"""PeachTrees: an optimizer-agnostic, never-worse layer on top of an optimized DSPy program."""
+"""TRIBES: an optimizer-agnostic, never-worse layer on top of an optimized DSPy program."""
 from __future__ import annotations
 
 import asyncio
@@ -21,7 +21,7 @@ from .tasks import Task
 from .usage import Ledger, Prices, timed
 from .verify import Verifier, VerifierGate, distinct_candidates
 
-log = logging.getLogger("peachtrees")
+log = logging.getLogger("tribes")
 
 FIT_FORMAT = 2
 
@@ -54,7 +54,7 @@ def _parallel(thunks: Mapping[str, Callable[[], Any]], workers: int) -> dict[str
 
 @dataclass
 class Selection:
-    """What PeachTrees did for one input."""
+    """What TRIBES did for one input."""
     form: str                                   # the form whose prediction is returned
     reason: str                                 # vote / reviewer / fallback / none / verifier / program-only
     predictions: dict[str, Any] = field(default_factory=dict)
@@ -69,12 +69,12 @@ class Selection:
         return self.predictions.get(self.form)
 
 
-class PeachTrees(dspy.Module):
-    """Wrap an optimized DSPy program in the three PeachTrees forms and the 1.0 selection rule.
+class Tribes(dspy.Module):
+    """Wrap an optimized DSPy program in the three TRIBES forms and the 1.0 selection rule.
 
     Typical use::
 
-        pt = PeachTrees(optimized_program, task=peachtrees.tasks.math())
+        pt = Tribes(optimized_program, task=tribes.tasks.math())
         pt.fit(selection_examples, metric)      # labeled data the optimizer saw (train + val) is fine
         prediction = pt(question="...")
 
@@ -163,7 +163,7 @@ class PeachTrees(dspy.Module):
         if not self.independent or lm is None or not hasattr(lm, "copy"):
             return contextlib.nullcontext()
         try:
-            return dspy.context(lm=lm.copy(rollout_id=f"peachtrees:{name}:{attempt}"))
+            return dspy.context(lm=lm.copy(rollout_id=f"tribes:{name}:{attempt}"))
         except Exception as e:  # an LM that cannot be copied keeps its own caching
             log.debug("cannot set rollout_id on %s: %s", type(lm).__name__, e)
             return contextlib.nullcontext()
@@ -245,7 +245,7 @@ class PeachTrees(dspy.Module):
 
     # ------------------------------------------------------------------ inference
     def explain(self, **inputs) -> Selection:
-        """Run PeachTrees on one input and return the full :class:`Selection` (all form outputs, keys, checks)."""
+        """Run TRIBES on one input and return the full :class:`Selection` (all form outputs, keys, checks)."""
         missing = [k for k in self.input_fields if k not in inputs]
         if missing:
             raise TypeError(f"missing input fields: {missing}")
@@ -305,7 +305,7 @@ class PeachTrees(dspy.Module):
 
     # ------------------------------------------------------------------ the task decision
     def fit(self, selection_set: Sequence[dspy.Example], metric: Callable[..., Any], num_threads: int = 8,
-            cluster: Callable[[dspy.Example], Hashable] | None = None) -> PeachTrees:
+            cluster: Callable[[dspy.Example], Hashable] | None = None) -> Tribes:
         """Run the forms on labeled selection data and decide once whether the layer (and the verifier) is used."""
         def score(ex, pred):
             if pred is None:
@@ -361,7 +361,7 @@ class PeachTrees(dspy.Module):
                        "switch": self.switch, "margin": self.margin if self.switch == "non_inferiority" else None,
                        "mode": self.mode,
                        "program_score": sum(r["scores"]["rigid"] for r in rows) / n if n else 0.0,
-                       "peachtrees_score": sum(r["scores"][r["final_form"]] for r in rows) / n if n else 0.0,
+                       "tribes_score": sum(r["scores"][r["final_form"]] for r in rows) / n if n else 0.0,
                        "oracle_score": sum(max(r["scores"].values()) for r in rows) / n if n else 0.0,
                        "form_scores": {f: sum(r["scores"].get(f, 0.0) for r in rows) / n if n else 0.0
                                        for f in (*FORMS, *(("merged",) if self.combine else ()))},
@@ -382,14 +382,14 @@ class PeachTrees(dspy.Module):
             "z": self.z, "output_field": self.output_field, "input_fields": self.input_fields}
 
     def save_fit(self, path: str, items: bool = False) -> None:
-        """Save the task decision (and optionally the per-item rows, which ``peachtrees replay`` reads)."""
+        """Save the task decision (and optionally the per-item rows, which ``tribes replay`` reads)."""
         data = self.decision()
         if items:
             data["items"] = self.report.get("items", [])
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2, default=str)
 
-    def load_fit(self, path: str) -> PeachTrees:
+    def load_fit(self, path: str) -> Tribes:
         """Restore a saved task decision, so a deployed program does not re-run ``fit``."""
         with open(path, encoding="utf-8") as f:
             data = json.load(f)

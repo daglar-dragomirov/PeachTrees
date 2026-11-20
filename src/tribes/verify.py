@@ -14,7 +14,7 @@ verifier settles them by a check, not by an opinion:
 4. Votes: one call; KEEP ends the item. A proposed switch triggers ``votes - 1`` more calls with the candidates in a
    rotated order; the switch needs a strict majority on the same answer.
 
-Whether the verifier is used at all is decided per task in ``PeachTrees.fit`` (see ``VerifierGate``), on labeled
+Whether the verifier is used at all is decided per task in ``Tribes.fit`` (see ``VerifierGate``), on labeled
 selection data, never by the verifier itself.
 """
 from __future__ import annotations
@@ -164,7 +164,7 @@ class Verifier(dspy.Module):
                 run: Callable[[Callable[[], Any]], Any] | None = None) -> Verdict:
         """Decide among ``candidates`` ({form: prediction}, one per distinct answer, including ``current``).
 
-        ``run`` wraps each call (PeachTrees passes its accounting / retry wrapper); a failed call counts as KEEP.
+        ``run`` wraps each call (TRIBES passes its accounting / retry wrapper); a failed call counts as KEEP.
         """
         others = [f for f in candidates if f != current]
         order = [(current, candidates[current])] + [(f, candidates[f]) for f in others]

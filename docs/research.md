@@ -1,7 +1,7 @@
 # Research record
 
 How the 1.0 rule was found, frozen and tested. The files are in
-[`research/`](https://github.com/daglar-dragomirov/PeachTrees/tree/main/research) on GitHub.
+[`research/`](https://github.com/daglar-dragomirov/tribes/tree/main/research) on GitHub.
 
 | step | what happened |
 |---|---|
@@ -10,7 +10,7 @@ How the 1.0 rule was found, frozen and tested. The files are in
 | 1.0 frozen | the rule as code, replayed independently: +9.47 pp on the saved outputs, +9.50 pp after re-running only the outputs that had failed to parse |
 | decisions frozen | the per-task decision fixed on FIT + PARETO + DEV before the test was opened |
 | sealed test | 15 cells opened once: +7.1 pp, 7 significantly above the program, none significantly below |
-| FNXL | GEPA vs GEPA + PeachTrees: macro-F1 0.376 → 0.437 |
+| FNXL | GEPA vs GEPA + TRIBES: macro-F1 0.376 → 0.437 |
 
 ## Reproduce the development table
 
@@ -19,7 +19,7 @@ hashes, the label-free checker results and the scores of the three forms (PARETO
 items). The package alone reproduces the table, with no model call:
 
 ```bash
-peachtrees replay research/results/rows-dev-cells.jsonl.gz --protocol --mode both
+tribes replay research/results/rows-dev-cells.jsonl.gz --protocol --mode both
 ```
 
 The switch is decided on PARETO + FIT and the gain is reported once on DEV, per cell. A test in the suite checks every
@@ -34,7 +34,7 @@ reported; no task decision changed.
 - **Statistics.** Paired per-item differences; 95 % bootstrap intervals clustered by problem where items repeat.
 - **Failures.** An output that could not be parsed was re-run with step-level retries in every arm, the program included,
   before the final numbers.
-- **Cost accounting.** Every model call is priced; PeachTrees costs about 2.6× (lite) to 4.6× (full) the program.
+- **Cost accounting.** Every model call is priced; TRIBES costs about 2.6× (lite) to 4.6× (full) the program.
 
 ## Why test is lower than development
 

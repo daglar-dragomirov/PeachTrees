@@ -1,8 +1,8 @@
 # API reference
 
-## PeachTrees
+## TRIBES
 
-::: peachtrees.PeachTrees
+::: tribes.TRIBES
     options:
       members:
         - fit
@@ -14,11 +14,11 @@
         - save_fit
         - load_fit
 
-::: peachtrees.Selection
+::: tribes.Selection
 
 ## Task adapters
 
-::: peachtrees.tasks
+::: tribes.tasks
     options:
       members:
         - Task
@@ -32,46 +32,46 @@
 
 ## Verifier
 
-::: peachtrees.Verifier
+::: tribes.Verifier
 
-::: peachtrees.VerifierGate
+::: tribes.VerifierGate
 
 ## Selection rules and task switches
 
-::: peachtrees.pick
+::: tribes.pick
 
-::: peachtrees.contested
+::: tribes.contested
 
-::: peachtrees.do_no_harm
+::: tribes.do_no_harm
 
-::: peachtrees.non_inferiority
+::: tribes.non_inferiority
 
-::: peachtrees.switch_power
+::: tribes.switch_power
 
-::: peachtrees.paired_stats
+::: tribes.paired_stats
 
-::: peachtrees.text_key
+::: tribes.text_key
 
 ## Observability and cost
 
-::: peachtrees.Callback
+::: tribes.Callback
 
-::: peachtrees.LoggingCallback
+::: tribes.LoggingCallback
 
-::: peachtrees.JSONLCallback
+::: tribes.JSONLCallback
 
-::: peachtrees.Ledger
+::: tribes.Ledger
 
 ## Offline replay
 
-::: peachtrees.replay
+::: tribes.replay
 
 ## Forms and tools
 
-::: peachtrees.Assembled
+::: tribes.Assembled
 
-::: peachtrees.Liquid
+::: tribes.Liquid
 
-::: peachtrees.run_python
+::: tribes.run_python
 
-::: peachtrees.item_tool
+::: tribes.item_tool

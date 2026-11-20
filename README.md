@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/daglar-dragomirov/PeachTrees/main/assets/lockup-dark.png">
-    <img src="https://raw.githubusercontent.com/daglar-dragomirov/PeachTrees/main/assets/lockup-light.png" alt="PeachTrees" width="460">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/daglar-dragomirov/tribes/main/assets/lockup-dark.png">
+    <img src="https://raw.githubusercontent.com/daglar-dragomirov/tribes/main/assets/lockup-light.png" alt="TRIBES" width="460">
   </picture>
 </p>
 
@@ -10,49 +10,49 @@ Inference-time answer selection for optimized DSPy programs
 </p>
 
 <p align="center">
-  <a href="https://daglar-dragomirov.github.io/PeachTrees/"><b>Website</b></a> &nbsp;|&nbsp;
-  <a href="https://daglar-dragomirov.github.io/PeachTrees/guides/quickstart/"><b>Quick Start</b></a> &nbsp;|&nbsp;
-  <a href="https://daglar-dragomirov.github.io/PeachTrees/results/"><b>Results</b></a> &nbsp;|&nbsp;
+  <a href="https://daglar-dragomirov.github.io/tribes/"><b>Website</b></a> &nbsp;|&nbsp;
+  <a href="https://daglar-dragomirov.github.io/tribes/guides/quickstart/"><b>Quick Start</b></a> &nbsp;|&nbsp;
+  <a href="https://daglar-dragomirov.github.io/tribes/results/"><b>Results</b></a> &nbsp;|&nbsp;
   <a href="research/"><b>Research</b></a> &nbsp;|&nbsp;
-  <a href="https://pypi.org/project/peachtrees/"><b>PyPI</b></a>
+  <a href="https://pypi.org/project/tribes/"><b>PyPI</b></a>
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/peachtrees/"><img src="https://img.shields.io/pypi/v/peachtrees?logo=pypi&logoColor=white&label=pypi" alt="PyPI"></a>
-  <a href="https://pypi.org/project/peachtrees/"><img src="https://img.shields.io/pypi/pyversions/peachtrees?logo=python&logoColor=white" alt="Python"></a>
-  <a href="https://github.com/daglar-dragomirov/PeachTrees/stargazers"><img src="https://img.shields.io/github/stars/daglar-dragomirov/PeachTrees?logo=github&label=stars" alt="Stars"></a>
+  <a href="https://pypi.org/project/tribes/"><img src="https://img.shields.io/pypi/v/tribes?logo=pypi&logoColor=white&label=pypi" alt="PyPI"></a>
+  <a href="https://pypi.org/project/tribes/"><img src="https://img.shields.io/pypi/pyversions/tribes?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://github.com/daglar-dragomirov/tribes/stargazers"><img src="https://img.shields.io/github/stars/daglar-dragomirov/tribes?logo=github&label=stars" alt="Stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License MIT"></a>
 </p>
 
 ---
 
-## What is PeachTrees?
+## What is TRIBES?
 
 A prompt optimizer such as GEPA, MIPROv2 or SIMBA turns your data into one fixed [DSPy](https://github.com/stanfordnlp/dspy)
 program. That program is good, but it is also brittle: it cannot look anything up, cannot run code to check itself, and
-every answer is a single sample. PeachTrees does not touch the optimization. It wraps the finished program with a
+every answer is a single sample. TRIBES does not touch the optimization. It wraps the finished program with a
 reviewer of its draft and an independent agent, picks one answer per input with a label-free rule, and switches itself
 off on any task where it is not at least as good as the program.
 
 ## Install
 
 ```bash
-pip install peachtrees
+pip install tribes
 ```
 
 ## Quickstart
 
 ```python
 import dspy
-import peachtrees
-from peachtrees import PeachTrees
+import tribes
+from tribes import Tribes
 
 dspy.configure(lm=dspy.LM("openrouter/z-ai/glm-5.3-flash"))
 
 program = dspy.GEPA(metric=metric, ...).compile(student, trainset=train, valset=val)   # or MIPROv2, SIMBA, ...
 
-pt = PeachTrees(program, mode="full", examples=train,
-                task=peachtrees.tasks.math(),   # optional: how answers compare, checks, tools
+pt = Tribes(program, mode="full", examples=train,
+                task=tribes.tasks.math(),   # optional: how answers compare, checks, tools
                 verifier=True)                  # optional: settle contested items by a check
 pt.fit(train + val, metric)        # decides once whether the layer (and the verifier) helps this task
 print(pt.report["use_layer"], pt.report["mean_gain"])
@@ -97,7 +97,7 @@ two of three votes. `fit` enables the verifier per task only if it wins clearly 
 
 ### Task adapters
 
-`peachtrees.tasks` ships what the research used per task type, all label-free: `math()` (answers compare by value),
+`tribes.tasks` ships what the research used per task type, all label-free: `math()` (answers compare by value),
 `choice()` (option letters), `sql(db_for)` (result-set agreement, a read-only `run_sql` tool, "the query runs"),
 `code(tests_for)` (behavioural agreement on the public-test inputs, `run_public_tests`), `plan(validate)` (stated
 constraints), `tool_qa()` (an abstention is not an answer) and `free_text()`.
@@ -108,7 +108,7 @@ taking the reviewer's set by about +6 pp on development data for every optimizer
 
 ### Never worse than the program
 
-`fit` runs the forms on labeled selection data and compares PeachTrees with the program item by item. With the default
+`fit` runs the forms on labeled selection data and compares TRIBES with the program item by item. With the default
 `switch="do_no_harm"` (the 1.0 rule) the layer is used unless it is shown worse by more than one clustered standard
 error; `switch="non_inferiority"` accepts it only if it is shown to be at most `margin` worse. `switch_power` gives the
 operating characteristic of either for your sample size. If the layer is not used, the wrapped object is exactly the
@@ -116,10 +116,10 @@ program, at exactly its cost.
 
 ## Results
 
-GLM 5.3 Flash as the task model; each optimizer run with its official settings; every number is PeachTrees minus that
+GLM 5.3 Flash as the task model; each optimizer run with its official settings; every number is TRIBES minus that
 optimizer's own program on the same items.
 
-**Sealed test** — opened once, after the rule and every per-task decision were frozen (PeachTrees 1.0-lite):
+**Sealed test** — opened once, after the rule and every per-task decision were frozen (TRIBES 1.0-lite):
 
 | benchmark (test items) | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
@@ -135,7 +135,7 @@ Bold: 95 % confidence interval above zero. No cell has its interval below zero.
 **Development** — 13 benchmarks (AIME, GPQA, LiveBench, LiveCodeBench, HotpotQA, HoVer, IFBench, PUPA, BFCL, τ²-bench,
 NATURAL PLAN, BIRD, ToolHop) × 3 optimizers = 36 cells:
 
-Per benchmark (PeachTrees 1.0 full; bold: 95 % interval above zero; — : not run):
+Per benchmark (TRIBES 1.0 full; bold: 95 % interval above zero; — : not run):
 
 | benchmark | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
@@ -173,7 +173,7 @@ cost.
 ## API
 
 ```python
-PeachTrees(program, *, mode="full", task=None, tools=(), answer_key=None, checker=None, examples=None,
+Tribes(program, *, mode="full", task=None, tools=(), answer_key=None, checker=None, examples=None,
            verifier=None, switch="do_no_harm", z=None, margin=0.02, parallel=True, independent=True,
            callbacks=(), prices=None, input_fields=None, output_field=None, max_iters=8, retries=3)
 ```
@@ -182,7 +182,7 @@ PeachTrees(program, *, mode="full", task=None, tools=(), answer_key=None, checke
 |---|---|
 | `program` | any `dspy.Module`, usually an optimizer's output |
 | `mode` | `"full"`: program + reviewer, agent on disagreement, vote · `"lite"`: reviewer only |
-| `task` | a `peachtrees.tasks` adapter: answer key, checker, tools and verifier evidence for a task type |
+| `task` | a `tribes.tasks` adapter: answer key, checker, tools and verifier evidence for a task type |
 | `tools` | task tools for both agents and the verifier (`run_python` is always included) |
 | `answer_key` | `callable(prediction) -> hashable`: how two answers are compared |
 | `checker` | `callable(inputs, prediction) -> bool \| None`: a deterministic, label-free check |
@@ -200,8 +200,8 @@ PeachTrees(program, *, mode="full", task=None, tools=(), answer_key=None, checke
 | `cost_report()` | calls, failures, seconds, tokens and dollars per form; cost relative to the program |
 | `save_fit(path)`, `load_fit(path)` | persist the task decision |
 
-Command line: `peachtrees replay rows.jsonl --mode both` applies the rules to saved per-item outputs with no model
-calls; `peachtrees report fit.json` prints a saved decision.
+Command line: `tribes replay rows.jsonl --mode both` applies the rules to saved per-item outputs with no model
+calls; `tribes report fit.json` prints a saved decision.
 
 ## FAQ
 
@@ -218,11 +218,11 @@ isolated environment.
 ## Citation
 
 ```bibtex
-@software{dragomirov2026peachtrees,
+@software{dragomirov2026tribes,
   author = {Dragomirov, Daglar},
-  title  = {PeachTrees: Inference-time answer selection for optimized DSPy programs},
+  title  = {TRIBES: Inference-time answer selection for optimized DSPy programs},
   year   = {2026},
-  url    = {https://github.com/daglar-dragomirov/PeachTrees}
+  url    = {https://github.com/daglar-dragomirov/tribes}
 }
 ```
 

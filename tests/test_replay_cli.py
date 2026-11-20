@@ -2,10 +2,10 @@ import json
 
 import pytest
 
-from peachtrees import Ledger, replay
-from peachtrees.cli import main
-from peachtrees.replay import bootstrap_ci, load_rows
-from peachtrees.usage import price
+from tribes import Ledger, replay
+from tribes.cli import main
+from tribes.replay import bootstrap_ci, load_rows
+from tribes.usage import price
 
 ROWS = [
     # agreement of program and reviewer, both right
@@ -25,18 +25,18 @@ ROWS = [
 def test_replay_full_with_and_without_verifier():
     r = replay(ROWS, "full")
     assert r["n"] == 4 and r["program"] == 0.25 and r["oracle"] == 1.0
-    assert r["peachtrees"] == 0.75 and r["picks"]["liquid"] == 1 and r["contested"] == 1
-    assert replay(ROWS, "full", use_verifier=False)["peachtrees"] == 0.5
+    assert r["tribes"] == 0.75 and r["picks"]["liquid"] == 1 and r["contested"] == 1
+    assert replay(ROWS, "full", use_verifier=False)["tribes"] == 0.5
     lite = replay(ROWS, "lite", use_verifier=False)
-    assert lite["peachtrees"] == 0.75  # the reviewer alone; no vote to lose row 4
+    assert lite["tribes"] == 0.75  # the reviewer alone; no vote to lose row 4
     assert replay([])["n"] == 0
 
 
 def test_replay_decision_and_checks():
     rows = [{"keys": {"rigid": "a", "assembled": "b", "liquid": "c"}, "scores": {"rigid": 1, "assembled": 0, "liquid": 0},
              "checks": {"rigid": True, "assembled": False, "liquid": False}}] * 3
-    assert replay(rows)["peachtrees"] == 1.0
-    assert replay(rows, use_checks=False)["peachtrees"] == 0.0
+    assert replay(rows)["tribes"] == 1.0
+    assert replay(rows, use_checks=False)["tribes"] == 0.0
     assert replay(rows, use_checks=False)["use_layer"] is False
 
 
@@ -65,12 +65,12 @@ def test_cli_replay_report_pick_info(tmp_path, capsys):
     jl = tmp_path / "rows.jsonl"
     jl.write_text("\n".join(json.dumps(r) for r in ROWS))
     assert main(["replay", str(jl)]) == 0
-    assert "peachtrees       0.7500" in capsys.readouterr().out
+    assert "tribes       0.7500" in capsys.readouterr().out
     assert main(["replay", str(jl), "--mode", "both", "--json"]) == 0
     assert set(json.loads(capsys.readouterr().out)) == {"lite", "full"}
     fit = tmp_path / "fit.json"
     fit.write_text(json.dumps({"mode": "full", "z": 1.0, "use_layer": True, "n": 4, "mean_gain": 0.5, "se": 0.2,
-                               "program_score": 0.25, "peachtrees_score": 0.75, "oracle_score": 1.0,
+                               "program_score": 0.25, "tribes_score": 0.75, "oracle_score": 1.0,
                                "verifier": {"enabled": True, "won": 3, "lost": 0, "contested": 5},
                                "cost": {"total": {"cost_usd": 0.12, "calls": 9, "prompt_tokens": 10,
                                                   "completion_tokens": 5}}}))
@@ -82,7 +82,7 @@ def test_cli_replay_report_pick_info(tmp_path, capsys):
     assert main(["pick", "--rigid", "1", "--assembled", "-"]) == 0
     assert capsys.readouterr().out.strip() == "rigid (fallback)"
     assert main(["info"]) == 0
-    assert "peachtrees 1.1.0" in capsys.readouterr().out
+    assert "tribes 1.1.0" in capsys.readouterr().out
 
 
 def test_ledger_prices_and_ratio():

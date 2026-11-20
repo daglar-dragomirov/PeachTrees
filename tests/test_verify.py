@@ -2,9 +2,9 @@ import dspy
 import pytest
 from dspy.adapters.types.tool import ToolCallResults, ToolCalls
 
-from peachtrees import Verifier, VerifierGate, steps
-from peachtrees.forms import react_text, tool_observations
-from peachtrees.verify import cites, distinct_candidates, parse_verdict
+from tribes import Verifier, VerifierGate, steps
+from tribes.forms import react_text, tool_observations
+from tribes.verify import cites, distinct_candidates, parse_verdict
 
 
 def P(answer, reasoning=""):

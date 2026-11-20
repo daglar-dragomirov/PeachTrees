@@ -2,8 +2,8 @@ import dspy
 import pytest
 from conftest import FakeForm, examples
 
-from peachtrees import tasks
-from peachtrees.tasks import is_refusal, vote_merge
+from tribes import tasks
+from tribes.tasks import is_refusal, vote_merge
 
 
 def P(answer):

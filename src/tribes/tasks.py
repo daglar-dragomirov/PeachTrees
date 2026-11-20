@@ -1,7 +1,7 @@
 """Task adapters: answer keys, label-free checkers, per-item tools and verifier evidence for common task types.
 
-A :class:`Task` bundles them; pass it as ``PeachTrees(program, task=tasks.math())``. Explicit ``answer_key`` /
-``checker`` / ``tools`` arguments of ``PeachTrees`` take precedence. Nothing here reads a label: keys and checkers see
+A :class:`Task` bundles them; pass it as ``Tribes(program, task=tasks.math())``. Explicit ``answer_key`` /
+``checker`` / ``tools`` arguments of ``TRIBES`` take precedence. Nothing here reads a label: keys and checkers see
 only the inputs and the candidate output, so they are usable at inference time.
 
 =================  ==================================================================  =============================
@@ -42,7 +42,7 @@ Evidence = Callable[[Mapping[str, Any], Any], str]
 
 @dataclass(frozen=True)
 class Task:
-    """What PeachTrees needs to know about a task type. Every part is optional."""
+    """What TRIBES needs to know about a task type. Every part is optional."""
     answer_key: Key | None = None
     checker: Checker | None = None
     tools: tuple[Callable, ...] = ()
@@ -78,7 +78,7 @@ def exact_key(field_name: str | None = None) -> Key:
 
 
 def normalized_key(field_name: str | None = None) -> Key:
-    """The default PeachTrees key: no punctuation, no articles, case-folded."""
+    """The default TRIBES key: no punctuation, no articles, case-folded."""
     def key(pred):
         v = _out(pred, field_name)
         return None if v in (None, "") else (text_key(v) or None)
@@ -348,7 +348,7 @@ def extract_code(text: Any, language: str = "python") -> str:
 def run_program(code: str, stdin: str = "", timeout: float = 6.0) -> tuple[str, str, int | None]:
     """Run a Python program in a fresh subprocess (isolated mode, temp dir). Returns (stdout, stderr, returncode);
     returncode None means it timed out. This is not a sandbox: run untrusted code in an isolated environment."""
-    d = tempfile.mkdtemp(prefix="peachtrees_code_")
+    d = tempfile.mkdtemp(prefix="tribes_code_")
     try:
         p = os.path.join(d, "main.py")
         with open(p, "w", encoding="utf-8") as f:

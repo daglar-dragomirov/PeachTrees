@@ -53,7 +53,7 @@ layer works without them.
 
 ## Ready-made adapters
 
-`peachtrees.tasks` bundles a key, a checker, tools and verifier evidence per task type; pass one as `task=`:
+`tribes.tasks` bundles a key, a checker, tools and verifier evidence per task type; pass one as `task=`:
 
 | adapter | answers agree when | checker | tools |
 |---|---|---|---|
@@ -65,7 +65,7 @@ layer works without them.
 | `tool_qa()` | normalised text | an abstention is not an answer | - |
 | `doc_set()` | (merged, not voted) | - | - |
 
-`db_for(inputs)` and `tests_for(inputs)` read the current item; tools that need it use `peachtrees.item_tool`.
+`db_for(inputs)` and `tests_for(inputs)` read the current item; tools that need it use `tribes.item_tool`.
 
 ## Set-valued outputs: merge instead of select
 
@@ -77,7 +77,7 @@ SIMBA.
 
 ## Contested inputs: the verifier
 
-`PeachTrees(program, verifier=True)` adds a verifier for inputs where no two forms agree. It must run one check whose
+`Tribes(program, verifier=True)` adds a verifier for inputs where no two forms agree. It must run one check whose
 result differs between the candidates (substituting an answer back, code on edge-case inputs, an auxiliary SQL query),
 and code - not the model - accepts a switch only if the quoted evidence matches a tool observation; a switch needs two of
 three votes. `fit` enables it per task only if, on the selection data, it gains more than 0.5 pp and wins at least two

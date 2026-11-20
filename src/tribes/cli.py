@@ -1,7 +1,7 @@
-"""Command line: ``peachtrees replay | report | pick | info``.
+"""Command line: ``tribes replay | report | pick | info``.
 
 ``replay``  apply the rules to saved per-item outputs (no model calls) and print the scores and the decision
-``report``  print a decision saved with ``PeachTrees.save_fit``
+``report``  print a decision saved with ``Tribes.save_fit``
 ``pick``    the item rule for one input, from answer keys given on the command line
 ``info``    version and environment
 """
@@ -56,7 +56,7 @@ def _report(a: argparse.Namespace) -> int:
           f"+- {d.get('se', 0):.4f})")
     if "program_score" in d:
         print(f"program       {d['program_score']:.4f}")
-        print(f"peachtrees    {d['peachtrees_score']:.4f}")
+        print(f"tribes    {d['tribes_score']:.4f}")
     if d.get("oracle_score") is not None:
         print(f"oracle        {d['oracle_score']:.4f}")
     v = d.get("verifier")
@@ -85,13 +85,13 @@ def _info(a: argparse.Namespace) -> int:
         dv = dspy.__version__
     except Exception:  # pragma: no cover
         dv = "not installed"
-    print(f"peachtrees {__version__}\ndspy {dv}\npython {platform.python_version()}")
+    print(f"tribes {__version__}\ndspy {dv}\npython {platform.python_version()}")
     return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="peachtrees", description="Inference-time answer selection for DSPy programs.")
-    p.add_argument("--version", action="version", version=f"peachtrees {__version__}")
+    p = argparse.ArgumentParser(prog="tribes", description="Inference-time answer selection for DSPy programs.")
+    p.add_argument("--version", action="version", version=f"tribes {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("replay", help="apply the rules to saved per-item outputs")
     r.add_argument("path")

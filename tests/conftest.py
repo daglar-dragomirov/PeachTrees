@@ -7,7 +7,7 @@ from typing import Any, Callable
 import dspy
 import pytest
 
-from peachtrees import PeachTrees
+from tribes import Tribes
 
 
 class FakeForm:
@@ -49,7 +49,7 @@ def make_pt(program):
                  "assembled": assembled if isinstance(assembled, FakeForm) else FakeForm(assembled),
                  "liquid": liquid if isinstance(liquid, FakeForm) else FakeForm(liquid)}
         kw.setdefault("retries", 0)
-        return PeachTrees(program, forms=forms, **kw)
+        return Tribes(program, forms=forms, **kw)
     return make
 
 
