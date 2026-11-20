@@ -7,3 +7,5 @@ build/
 *.egg-info/
 .env
 .env.*
+uv.lock
+site/
