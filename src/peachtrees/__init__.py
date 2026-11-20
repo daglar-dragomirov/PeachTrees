@@ -12,7 +12,7 @@ from .callbacks import Callback, JSONLCallback, LoggingCallback  # noqa: E402
 from .context import current_inputs, item_context, item_tool  # noqa: E402
 from .core import PeachTrees, Selection  # noqa: E402
 from .forms import Assembled, Liquid, run_python, steps  # noqa: E402
-from .replay import replay  # noqa: E402
+from .replay import replay, replay_protocol  # noqa: E402
 from .select import (  # noqa: E402
     FORMS,
     contested,
@@ -33,5 +33,6 @@ from .verify import Verdict, Verifier, VerifierGate  # noqa: E402
 
 __all__ = ["PeachTrees", "Selection", "Task", "tasks", "Verifier", "VerifierGate", "Verdict", "Assembled", "Liquid",
            "run_python", "steps", "Callback", "LoggingCallback", "JSONLCallback", "Ledger", "current_inputs",
-           "item_context", "item_tool", "replay", "FORMS", "pick", "explain_pick", "contested", "survivors",
-           "non_inferior", "do_no_harm", "non_inferiority", "task_switch", "switch_power", "paired_stats", "text_key"]
+           "item_context", "item_tool", "replay", "replay_protocol", "FORMS", "pick", "explain_pick", "contested",
+           "survivors", "non_inferior", "do_no_harm", "non_inferiority", "task_switch", "switch_power", "paired_stats",
+           "text_key"]

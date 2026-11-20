@@ -4,7 +4,7 @@
 |---|---|---|
 | runs per input | reviewer (whose draft is one program run) | program + reviewer; agent only on disagreement |
 | inference cost | about 2.6× the program | about 4.6× the program |
-| development gain (36 cells) | +8.8 pp | +9.4 pp |
+| development gain (36 cells) | +8.9 pp | +9.5 pp |
 | sealed-test gain (15 cells) | +7.1 pp | not measured |
 
 Use **`lite`** when cost matters or outputs are free text (summaries, code, document sets), where two forms almost never

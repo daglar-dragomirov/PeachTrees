@@ -21,8 +21,15 @@ from .select import FORMS, contested, pick, task_switch
 
 
 def load_rows(path: str) -> list[dict[str, Any]]:
-    with open(path, encoding="utf-8") as f:
-        text = f.read()
+    """Rows from a JSON-lines file, a JSON list, or a ``save_fit`` file; ``.gz`` files are decompressed."""
+    if str(path).endswith(".gz"):
+        import gzip
+
+        with gzip.open(path, "rt", encoding="utf-8") as f:
+            text = f.read()
+    else:
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
     try:  # a save_fit file ({"items": [...]}) or a JSON list
         data = json.loads(text)
     except json.JSONDecodeError:  # JSON lines
@@ -110,3 +117,33 @@ def format_report(r: Mapping[str, Any]) -> str:
              "picks            " + ", ".join(f"{f} {c}" for f, c in r["picks"].items()),
              f"contested items  {r['contested']}"]
     return "\n".join(lines)
+
+
+def replay_protocol(rows: Iterable[Mapping[str, Any]], select_roles: Sequence[str] = ("PARETO", "FIT"),
+                    report_role: str = "DEV", mode: str = "full", z: float | None = None, switch: str = "do_no_harm",
+                    margin: float = 0.02, use_checks: bool = True, use_verifier: bool = True,
+                    group_by: str = "cell") -> dict[str, dict[str, Any]]:
+    """The research protocol over saved rows, per cell: the task switch decided on ``select_roles`` only, the gain reported
+    once on ``report_role`` (the program's score where the switch says no). Rows carry ``role`` and ``cell`` fields
+    (``peachtrees replay --protocol`` reads such files)."""
+    by: dict[str, list[Mapping[str, Any]]] = {}
+    for r in rows:
+        by.setdefault(str(r.get(group_by, "all")), []).append(r)
+    out: dict[str, dict[str, Any]] = {}
+    for cell, rs in by.items():
+        sel = [r for r in rs if r.get("role") in select_roles]
+        rep = [r for r in rs if r.get("role") == report_role]
+        if not sel or not rep:
+            continue
+
+        def deltas(items):
+            return [(r.get("cluster", i), float(r["scores"].get(_choose(r, mode, use_checks, use_verifier), 0.0))
+                     - float(r["scores"].get("rigid", 0.0))) for i, r in enumerate(items)]
+        use, m, se = task_switch(deltas(sel), switch, z, margin)
+        d = deltas(rep) if use else [(c, 0.0) for c, _ in deltas(rep)]
+        gain = sum(x for _, x in d) / len(d)
+        meta = {k: rs[0][k] for k in ("opt", "ds") if k in rs[0]}
+        out[cell] = {**meta, "use_layer": use, "select_mean": m, "select_se": se, "report_gain": gain,
+                     "report_n": len(rep), "program": sum(float(r["scores"].get("rigid", 0.0)) for r in rep) / len(rep),
+                     "ci95": bootstrap_ci(d) if use else (0.0, 0.0)}
+    return out

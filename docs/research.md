@@ -7,10 +7,25 @@ How the 1.0 rule was found, frozen and tested. The files are in
 |---|---|
 | v0.2 | forms + an LLM judge with a calibrated threshold and a gate: +6.6 pp over the programs (36 cells, development) |
 | offline analysis | a replay of every saved per-item output, with no model calls, found a simpler rule that beats the judge |
-| 1.0 frozen | the rule as code, replayed independently: +9.47 pp on the saved outputs, +9.41 pp after re-running only the outputs that had failed to parse |
+| 1.0 frozen | the rule as code, replayed independently: +9.47 pp on the saved outputs, +9.50 pp after re-running only the outputs that had failed to parse |
 | decisions frozen | the per-task decision fixed on FIT + PARETO + DEV before the test was opened |
 | sealed test | 15 cells opened once: +7.1 pp, 7 significantly above the program, none significantly below |
 | FNXL | GEPA vs GEPA + PeachTrees: macro-F1 0.376 → 0.437 |
+
+## Reproduce the development table
+
+`research/results/rows-dev-cells.jsonl.gz` holds every development item of the 39 cells: the frozen rule's answer-key
+hashes, the label-free checker results and the scores of the three forms (PARETO, FIT and DEV; no task text, no test
+items). The package alone reproduces the table, with no model call:
+
+```bash
+peachtrees replay research/results/rows-dev-cells.jsonl.gz --protocol --mode both
+```
+
+The switch is decided on PARETO + FIT and the gain is reported once on DEV, per cell. A test in the suite checks every
+cell against `p2_repaired.json`. Three cells (AIME over GEPA and SIMBA, LiveBench over the second GEPA run) moved after
+their last parse-failure repair runs finished, which is why the 36-cell mean is +9.50 rather than the +9.41 first
+reported; no task decision changed.
 
 ## Protocol
 

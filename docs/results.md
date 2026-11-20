@@ -27,7 +27,7 @@ Per benchmark (PeachTrees 1.0 full; bold: 95 % interval above zero; — : not ru
 
 | benchmark | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
-| AIME | **+30.0** | **+23.3** | **+22.0** |
+| AIME | **+29.3** | **+23.3** | **+26.0** |
 | NATURAL PLAN | **+24.0** | **+18.0** | **+21.0** |
 | LiveCodeBench | **+17.0** | **+17.0** | **+18.0** |
 | LiveBench | **+14.8** | **+19.3** | **+13.5** |
@@ -45,10 +45,10 @@ Averages:
 
 | | full | lite |
 |---|---|---|
-| over GEPA | +10.2 | +9.4 |
+| over GEPA | +10.1 | +9.3 |
 | over MIPROv2 | +8.7 | +8.4 |
-| over SIMBA | +9.2 | +8.7 |
-| **all 36 cells** | **+9.4** | **+8.8** |
+| over SIMBA | +9.6 | +8.9 |
+| **all 36 cells** | **+9.5** | **+8.9** |
 
 No cell below the program; 24 of 36 significantly above. The rule was designed after these outputs were seen, so the
 sealed-test numbers are the ones to quote.

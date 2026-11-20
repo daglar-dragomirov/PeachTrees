@@ -13,13 +13,29 @@ import sys
 from typing import Sequence
 
 from . import __version__
-from .replay import format_report, load_rows, replay
+from .replay import format_report, load_rows, replay, replay_protocol
 from .select import FORMS, explain_pick
 
 
 def _replay(a: argparse.Namespace) -> int:
     rows = load_rows(a.path)
     modes = ["lite", "full"] if a.mode == "both" else [a.mode]
+    if a.protocol:
+        sel_roles = tuple(a.select.split(","))
+        res = {m: replay_protocol(rows, sel_roles, a.report, m, a.z, a.switch, a.margin, not a.no_checks,
+                                  not a.no_verifier) for m in modes}
+        if a.json:
+            print(json.dumps(res if len(modes) > 1 else res[modes[0]], indent=2))
+            return 0
+        for m, cells in res.items():
+            print(f"mode {m}: switch on {'+'.join(sel_roles)}, gain on {a.report}")
+            print(f"  {'cell':10s} {'optimizer':9s} {'dataset':10s} use  gain     95% CI")
+            for c, x in cells.items():
+                print(f"  {c:10s} {x.get('opt', ''):9s} {x.get('ds', ''):10s} {'yes' if x['use_layer'] else 'no ':3s} "
+                      f"{100 * x['report_gain']:+6.2f}  [{100 * x['ci95'][0]:+.1f}, {100 * x['ci95'][1]:+.1f}]")
+            g = [x["report_gain"] for x in cells.values()]
+            print(f"  mean over {len(g)} cells: {100 * sum(g) / max(1, len(g)):+.2f} pp")
+        return 0
     results = {m: replay(rows, m, a.z, use_checks=not a.no_checks, use_verifier=not a.no_verifier, switch=a.switch,
                          margin=a.margin) for m in modes}
     if a.json:
@@ -85,6 +101,10 @@ def build_parser() -> argparse.ArgumentParser:
     r.add_argument("--margin", type=float, default=0.02, help="non-inferiority margin (score units)")
     r.add_argument("--no-checks", action="store_true", help="ignore saved checker results")
     r.add_argument("--no-verifier", action="store_true", help="ignore saved verifier choices")
+    r.add_argument("--protocol", action="store_true",
+                   help="per cell: decide on --select roles, report on --report (rows need 'role' and 'cell')")
+    r.add_argument("--select", default="PARETO,FIT")
+    r.add_argument("--report", default="DEV")
     r.add_argument("--json", action="store_true")
     r.set_defaults(fn=_replay)
     rep = sub.add_parser("report", help="print a decision saved with save_fit")
