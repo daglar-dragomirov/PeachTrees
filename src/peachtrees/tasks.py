@@ -48,6 +48,7 @@ class Task:
     tools: tuple[Callable, ...] = ()
     evidence: Evidence | None = None
     verify: bool = False          # whether the verifier is worth trying on this task type (fit still decides)
+    combine: Callable[[Mapping[str, Any], Mapping[str, Any]], Any] | None = None  # set outputs: merge, not select
     notes: str = ""
     extras: dict[str, Any] = field(default_factory=dict)
 
@@ -472,6 +473,94 @@ def code(tests_for: Callable[[Mapping[str, Any]], Tests], field_name: str | None
                 notes="Behavioural agreement on test inputs; the verifier runs candidates on edge cases.")
 
 
+# ====================================================================== set-valued outputs: merge instead of select
+def _items(value: Any, sep: str) -> list[str]:
+    if value in (None, ""):
+        return []
+    xs = value if isinstance(value, (list, tuple)) else re.split(sep, str(value))
+    out: list[str] = []
+    for x in xs:
+        t = str(x).strip()
+        if t and t not in out:
+            out.append(t)
+    return out
+
+
+def vote_merge(lists: Mapping[str, Sequence[Any]], order: Sequence[str] = ("assembled", "rigid", "liquid"),
+               cap: int | None = None, norm: Callable[[Any], Hashable] = text_key) -> list[Any]:
+    """Element-wise vote over set-valued outputs: every element gets the number of forms that returned it; elements are
+    ordered by that count, then by their best (rank, form priority); the first ``cap`` are kept. It is the consensus
+    output under a set metric - the vote on scalar answers, applied to the elements."""
+    score: dict[Hashable, tuple[int, tuple[int, int], Any]] = {}
+    for fi, f in enumerate(order):
+        seen: set[Hashable] = set()
+        for r, x in enumerate(lists.get(f) or ()):
+            k = norm(x)
+            if not k or k in seen:
+                continue
+            seen.add(k)
+            v, best, first = score.get(k, (0, (10**9, 10**9), x))
+            score[k] = (v + 1, min(best, (r, fi)), first)
+    ranked = [t[2] for t in sorted(score.values(), key=lambda t: (-t[0], t[1]))]
+    return ranked[:cap] if cap is not None else ranked
+
+
+def doc_set(field_name: str | None = None, sep: str = r"[\n;]", cap: int | str | None = "program") -> Task:
+    """Outputs that are sets of items scored by recall (retrieved documents, cited sources, tags): the forms' sets are
+    merged by an element-wise vote instead of choosing one set. ``cap="program"`` never returns more items than the
+    program itself returned (its own budget); an int fixes the cap; None keeps every voted item.
+
+    In the research data (HoVer, three optimizers) the merge beat taking the reviewer's set by +5.7 to +6.0 pp on the
+    development items, with 99 items won and 1 lost on the selection data."""
+    def combine(preds: Mapping[str, Any], inputs: Mapping[str, Any]):
+        import dspy
+
+        name = field_name
+        if name is None:
+            store = getattr(next(iter(preds.values())), "_store", {}) or {}
+            name = next((k for k in store if k not in ("reasoning", "draft", "draft_prediction")), None)
+        if name is None:
+            return None
+        lists = {f: _items(getattr(p, name, None), sep) for f, p in preds.items() if p is not None}
+        lists = {f: v for f, v in lists.items() if v}
+        if not lists:
+            return None
+        if cap == "program":
+            k = len(lists.get("rigid") or []) or max(len(v) for v in lists.values())
+        else:
+            k = cap
+        merged = vote_merge(lists, cap=k)
+        proto = getattr(preds.get("rigid") or next(iter(preds.values())), name, None)
+        value = merged if isinstance(proto, (list, tuple)) else "\n".join(map(str, merged))
+        return dspy.Prediction(**{name: value}, reasoning=f"element-wise vote over {sorted(lists)}")
+
+    return Task(answer_key=set_key(field_name), combine=combine,
+                notes="Merge, not select: the forms' item sets are combined by an element-wise vote.")
+
+
+_REFUSAL = re.compile(
+    r"\b(cannot be determined|can ?not determine|unable to (?:determine|find|answer)|not (?:enough|sufficient) "
+    r"information|no (?:information|answer) (?:is )?(?:available|found)|i (?:do not|don't) know|unknown|not available|"
+    r"insufficient (?:data|information))\b", re.I)
+
+
+def is_refusal(text: Any) -> bool:
+    """True for an abstention ('cannot be determined', 'unknown', ...) instead of an answer."""
+    t = str(text or "").strip()
+    return bool(t) and len(t) < 300 and bool(_REFUSAL.search(t))
+
+
+def not_refusal(field_name: str | None = None) -> Checker:
+    """A label-free checker: an abstention is not an answer, so a form that abstains is dropped before the vote unless
+    every form abstains."""
+    def checker(inputs, pred):
+        v = _out(pred, field_name)
+        if v in (None, ""):
+            return None
+        return not is_refusal(v)
+    return checker
+
+
 # ====================================================================== planning / constrained generation
 def plan(validate: Callable[[Mapping[str, Any], Any], bool | None], field_name: str | None = None,
          key: Key | None = None) -> Task:
@@ -488,5 +577,11 @@ def free_text(field_name: str | None = None) -> Task:
     return Task(answer_key=normalized_key(field_name), notes="Use mode='lite'; the vote has nothing to do here.")
 
 
+def tool_qa(field_name: str | None = None) -> Task:
+    """Short answers obtained with tools (multi-hop tool use, retrieval QA): normalised-text agreement, and an
+    abstention is not an answer."""
+    return Task(answer_key=normalized_key(field_name), checker=not_refusal(field_name), verify=True)
+
+
 PRESETS: dict[str, Callable[..., Task]] = {"math": math, "choice": choice, "sql": sql, "code": code, "plan": plan,
-                                           "free_text": free_text}
+                                           "free_text": free_text, "doc_set": doc_set, "tool_qa": tool_qa}

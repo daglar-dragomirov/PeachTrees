@@ -100,7 +100,11 @@ two of three votes. `fit` enables the verifier per task only if it wins clearly 
 `peachtrees.tasks` ships what the research used per task type, all label-free: `math()` (answers compare by value),
 `choice()` (option letters), `sql(db_for)` (result-set agreement, a read-only `run_sql` tool, "the query runs"),
 `code(tests_for)` (behavioural agreement on the public-test inputs, `run_public_tests`), `plan(validate)` (stated
-constraints) and `free_text()`.
+constraints), `tool_qa()` (an abstention is not an answer) and `free_text()`.
+
+For outputs that are sets of items scored by recall (retrieved documents, cited sources), `doc_set()` merges instead of
+selecting: an element-wise vote over the forms' sets, capped at the program's own output size. On HoVer this beat
+taking the reviewer's set by about +6 pp on development data for every optimizer.
 
 ### Never worse than the program
 

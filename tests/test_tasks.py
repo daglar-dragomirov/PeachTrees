@@ -173,6 +173,6 @@ def test_plan_checker_uses_the_stated_constraints():
 
 
 def test_presets_registry():
-    assert set(tasks.PRESETS) == {"math", "choice", "sql", "code", "plan", "free_text"}
+    assert set(tasks.PRESETS) == {"math", "choice", "sql", "code", "plan", "free_text", "doc_set", "tool_qa"}
     t = tasks.math().with_(notes="x")
     assert t.notes == "x" and t.answer_key is not None and t.verify

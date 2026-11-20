@@ -95,7 +95,8 @@ class PeachTrees(dspy.Module):
                  z: float | None = None, switch: str = "do_no_harm", margin: float = 0.02,
                  max_iters: int = 8, retries: int = 3, examples: Sequence[dspy.Example] | None = None,
                  forms: Mapping[str, Callable[..., Any]] | None = None, parallel: bool = True,
-                 callbacks: Iterable[Callback] = (), prices: Prices | None = None, independent: bool = True):
+                 callbacks: Iterable[Callback] = (), prices: Prices | None = None, independent: bool = True,
+                 combine: Callable[[Mapping[str, Any], Mapping[str, Any]], Any] | None = None):
         super().__init__()
         if mode not in ("full", "lite"):
             raise ValueError("mode must be 'full' or 'lite'")
@@ -108,6 +109,7 @@ class PeachTrees(dspy.Module):
         self.answer_key = answer_key or task.answer_key
         self.checker = checker or task.checker
         self.evidence = task.evidence
+        self.combine = combine or task.combine  # set-valued outputs: merge the forms instead of choosing one
         all_tools = list(tools) + [t for t in task.tools if t not in tools]
         head = task_text(program, label_examples(examples, output_field) if examples else None)
         if forms is None:  # ReAct modules hold no state until called
@@ -200,6 +202,7 @@ class PeachTrees(dspy.Module):
             preds["rigid"] = draft if draft is not None else (
                 self._run("rigid", inputs) if self._key(a) is None or not lazy or self._verifier_active() else None)
             return preds
+        lazy = lazy and self.combine is None  # a merge needs every form
         names = ["rigid", "assembled"] + ([] if lazy else ["liquid"])
         preds = _parallel({f: (lambda f=f: self._run(f, inputs)) for f in names}, workers)
         if lazy:
@@ -216,6 +219,19 @@ class PeachTrees(dspy.Module):
         checks = {f: self._check(inputs, preds.get(f)) for f in FORMS} if self.checker else None
         form, reason = explain_pick(keys, checks, use_vote=self.mode == "full")
         sel = Selection(form, reason, preds, keys, checks, rule_form=form, contested=contested(keys, checks))
+        if self.combine is not None and self.mode == "full":
+            alive = {f: preds[f] for f in survivors(keys, checks)}
+            merged = None
+            if alive:
+                try:
+                    merged = self.combine(alive, inputs)
+                except Exception as e:
+                    log.warning("combine failed: %s", e)
+            if merged is not None:
+                preds["merged"] = merged
+                sel.form = sel.rule_form = "merged"
+                sel.reason = "merge"
+            return sel
         if verify and self.verifier is not None and sel.contested:
             alive = survivors(keys, checks)
             cands = distinct_candidates(preds, keys, alive, form, FALLBACK)
@@ -307,7 +323,7 @@ class PeachTrees(dspy.Module):
                 if preds.get("rigid") is None:
                     preds["rigid"] = self._run("rigid", inputs)
                 sel = self._select(inputs, preds, verify=self.verifier is not None)
-            s = {f: score(ex, preds.get(f)) for f in FORMS if f in preds}
+            s = {f: score(ex, preds.get(f)) for f in (*FORMS, "merged") if f in preds}
             return {"i": i, "cluster": cluster(ex) if cluster else i, "rule_form": sel.rule_form, "form": sel.form,
                     "contested": sel.contested, "verifier": sel.verifier, "scores": s,
                     "keys": {f: None if k is None else str(k) for f, k in sel.keys.items()},
@@ -347,8 +363,10 @@ class PeachTrees(dspy.Module):
                        "program_score": sum(r["scores"]["rigid"] for r in rows) / n if n else 0.0,
                        "peachtrees_score": sum(r["scores"][r["final_form"]] for r in rows) / n if n else 0.0,
                        "oracle_score": sum(max(r["scores"].values()) for r in rows) / n if n else 0.0,
-                       "form_scores": {f: sum(r["scores"].get(f, 0.0) for r in rows) / n if n else 0.0 for f in FORMS},
-                       "picks": {f: sum(1 for r in rows if r["final_form"] == f) for f in FORMS},
+                       "form_scores": {f: sum(r["scores"].get(f, 0.0) for r in rows) / n if n else 0.0
+                                       for f in (*FORMS, *(("merged",) if self.combine else ()))},
+                       "picks": {f: sum(1 for r in rows if r["final_form"] == f)
+                                 for f in (*FORMS, *(("merged",) if self.combine else ()))},
                        "verifier": vrep, "cost": self.ledger.summary(), "items": rows}
         log.info("fit: use_layer=%s gain=%+.4f se=%.4f n=%d%s", use, m, se, n,
                  "" if vrep is None else f" verifier={'on' if vrep['enabled'] else 'off'} "
