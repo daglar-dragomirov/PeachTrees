@@ -505,10 +505,11 @@ def vote_merge(lists: Mapping[str, Sequence[Any]], order: Sequence[str] = ("asse
     return ranked[:cap] if cap is not None else ranked
 
 
-def doc_set(field_name: str | None = None, sep: str = r"[\n;]", cap: int | str | None = "program") -> Task:
+def doc_set(field_name: str | None = None, sep: str = r"[\n;]", cap: int | str | None = "max") -> Task:
     """Outputs that are sets of items scored by recall (retrieved documents, cited sources, tags): the forms' sets are
-    merged by an element-wise vote instead of choosing one set. ``cap="program"`` never returns more items than the
-    program itself returned (its own budget); an int fixes the cap; None keeps every voted item.
+    merged by an element-wise vote instead of choosing one set. ``cap="max"`` (default) returns at most as many items as
+    the longest form's set; ``cap="program"`` at most as many as the program returned on this input; an int fixes the
+    cap (the research used 24, the HoVer program's passage budget); None keeps every voted item.
 
     In the research data (HoVer, three optimizers) the merge beat taking the reviewer's set by +5.7 to +6.0 pp on the
     development items, with 99 items won and 1 lost on the selection data."""
@@ -527,6 +528,8 @@ def doc_set(field_name: str | None = None, sep: str = r"[\n;]", cap: int | str |
             return None
         if cap == "program":
             k = len(lists.get("rigid") or []) or max(len(v) for v in lists.values())
+        elif cap == "max":
+            k = max(len(v) for v in lists.values())
         else:
             k = cap
         merged = vote_merge(lists, cap=k)
