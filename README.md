@@ -44,14 +44,17 @@ pip install peachtrees
 
 ```python
 import dspy
+import peachtrees
 from peachtrees import PeachTrees
 
 dspy.configure(lm=dspy.LM("openrouter/z-ai/glm-5.3-flash"))
 
 program = dspy.GEPA(metric=metric, ...).compile(student, trainset=train, valset=val)   # or MIPROv2, SIMBA, ...
 
-pt = PeachTrees(program, mode="full", examples=train)
-pt.fit(train + val, metric)        # decides once whether the layer helps this task
+pt = PeachTrees(program, mode="full", examples=train,
+                task=peachtrees.tasks.math(),   # optional: how answers compare, checks, tools
+                verifier=True)                  # optional: settle contested items by a check
+pt.fit(train + val, metric)        # decides once whether the layer (and the verifier) helps this task
 print(pt.report["use_layer"], pt.report["mean_gain"])
 
 prediction = pt(question="...")    # same call signature as your program
@@ -81,13 +84,31 @@ and any task tools you pass. There is no task-specific prompt text anywhere.
 3. If two forms give the same answer, return it. Answers are compared with `answer_key` (default: normalized text).
 4. Otherwise return the reviewer's answer, then the program's, then the agent's.
 
-In `full` mode the agent only runs when the program and the reviewer disagree. `lite` mode runs the reviewer only.
+In `full` mode the program and the reviewer run concurrently, and the agent only when they disagree. `lite` mode runs
+the reviewer only. Every form and every retry is an independent request (its own cache entry), so the vote never
+compares a form with a cached copy of itself.
+
+### Contested inputs: the verifier
+
+When no two forms agree, an optional verifier settles the input by evidence, not opinion: it must design and run one
+check whose outcome differs between the candidates (substituting an answer back, code on edge cases, an auxiliary SQL
+query), and code, not the model, accepts a switch only if the quoted evidence matches a tool observation. A switch needs
+two of three votes. `fit` enables the verifier per task only if it wins clearly more items than it loses.
+
+### Task adapters
+
+`peachtrees.tasks` ships what the research used per task type, all label-free: `math()` (answers compare by value),
+`choice()` (option letters), `sql(db_for)` (result-set agreement, a read-only `run_sql` tool, "the query runs"),
+`code(tests_for)` (behavioural agreement on the public-test inputs, `run_public_tests`), `plan(validate)` (stated
+constraints) and `free_text()`.
 
 ### Never worse than the program
 
-`fit` runs the forms on labeled selection data and compares PeachTrees with the program item by item. The layer is used
-only if its mean gain is not below zero by more than one (clustered) standard error. Otherwise the wrapped object is
-exactly the program, at exactly its cost.
+`fit` runs the forms on labeled selection data and compares PeachTrees with the program item by item. With the default
+`switch="do_no_harm"` (the 1.0 rule) the layer is used unless it is shown worse by more than one clustered standard
+error; `switch="non_inferiority"` accepts it only if it is shown to be at most `margin` worse. `switch_power` gives the
+operating characteristic of either for your sample size. If the layer is not used, the wrapped object is exactly the
+program, at exactly its cost.
 
 ## Results
 
@@ -148,24 +169,35 @@ cost.
 ## API
 
 ```python
-PeachTrees(program, *, mode="full", tools=(), answer_key=None, checker=None, examples=None,
-           input_fields=None, output_field=None, z=1.0, max_iters=8, retries=3)
+PeachTrees(program, *, mode="full", task=None, tools=(), answer_key=None, checker=None, examples=None,
+           verifier=None, switch="do_no_harm", z=None, margin=0.02, parallel=True, independent=True,
+           callbacks=(), prices=None, input_fields=None, output_field=None, max_iters=8, retries=3)
 ```
 
 | argument | meaning |
 |---|---|
 | `program` | any `dspy.Module`, usually an optimizer's output |
 | `mode` | `"full"`: program + reviewer, agent on disagreement, vote · `"lite"`: reviewer only |
-| `tools` | task tools for both agents (`run_python` is always included) |
-| `answer_key` | `callable(prediction) -> hashable`: how two answers are compared (a math normalizer, the result set of a SQL query, ...) |
+| `task` | a `peachtrees.tasks` adapter: answer key, checker, tools and verifier evidence for a task type |
+| `tools` | task tools for both agents and the verifier (`run_python` is always included) |
+| `answer_key` | `callable(prediction) -> hashable`: how two answers are compared |
 | `checker` | `callable(inputs, prediction) -> bool \| None`: a deterministic, label-free check |
-| `examples` | a few labeled examples whose correct outputs are shown to the agents |
-| `input_fields`, `output_field` | inferred from the program's first and last predictors |
-| `z` | non-inferiority margin in standard errors |
-| `max_iters`, `retries` | agent steps; re-runs of a form whose output cannot be parsed |
+| `verifier` | `True` (or a `Verifier`) to settle contested inputs by an evidence-gated check |
+| `switch`, `z`, `margin` | the task switch: `"do_no_harm"` (1.0) or `"non_inferiority"` |
+| `parallel`, `independent` | run forms concurrently; give each form and retry its own cache entry |
+| `callbacks`, `prices` | events (`LoggingCallback`, `JSONLCallback`, your own); `{model: (usd/M in, usd/M out)}` |
 
-`fit(selection_set, metric, num_threads=8, cluster=None)` makes the task decision; `report` holds the evidence
-(`use_layer`, `mean_gain`, `se`, `program_score`, `peachtrees_score`, `picks`, per-item rows).
+| method | what it does |
+|---|---|
+| `fit(selection_set, metric, num_threads=8, cluster=None)` | the task decision; `report` holds the evidence |
+| `pt(**inputs)`, `await pt.acall(**inputs)` | one prediction |
+| `explain(**inputs)` | a `Selection`: every form's output, keys, checks, the verifier's votes |
+| `run_batch(items)`, `await abatch(items)` | many inputs, in order |
+| `cost_report()` | calls, failures, seconds, tokens and dollars per form; cost relative to the program |
+| `save_fit(path)`, `load_fit(path)` | persist the task decision |
+
+Command line: `peachtrees replay rows.jsonl --mode both` applies the rules to saved per-item outputs with no model
+calls; `peachtrees report fit.json` prints a saved decision.
 
 ## FAQ
 
