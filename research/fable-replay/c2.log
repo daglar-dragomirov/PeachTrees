@@ -1,0 +1,56 @@
+cell | recorded judge USD (P+F+DEV) | judged share | contested share (new rule) P+F / DEV | est. replay USD P+F, DEV (same J6* unit cost)
+gepa:hotpotqa      0.28 | judged 0.21 unit 0.0018 | contested 0.05 / 0.06 |  0.04  0.03 | TEST-like pass: 3 forms  0.40 lazy  0.30 asm-only  0.19
+gepa:hover         3.63 | judged 1.00 unit 0.0043 | contested 1.00 / 1.00 |  1.93  1.28 | TEST-like pass: 3 forms  0.67 lazy  0.67 asm-only  0.33
+gepa:ifbench       2.27 | judged 0.97 unit 0.0030 | contested 0.96 / 0.95 |  1.73  0.85 | TEST-like pass: 3 forms  0.47 lazy  0.46 asm-only  0.25
+gepa:pupa          1.50 | judged 1.00 unit 0.0032 | contested 0.99 / 0.98 |  0.69  0.69 | TEST-like pass: 3 forms  0.85 lazy  0.85 asm-only  0.31
+gepa:aime          0.48 | judged 0.49 unit 0.0043 | contested 0.11 / 0.17 |  0.04  0.11 | TEST-like pass: 3 forms  0.53 lazy  0.44 asm-only  0.25
+gepa:gpqa          0.21 | judged 0.26 unit 0.0037 | contested 0.02 / 0.03 |  0.01  0.01 | TEST-like pass: 3 forms  0.15 lazy  0.10 asm-only  0.07
+gepa:livebench     0.36 | judged 0.52 unit 0.0017 | contested 0.15 / 0.21 |  0.06  0.04 | TEST-like pass: 3 forms  0.33 lazy  0.27 asm-only  0.17
+gepa:lcb           1.11 | judged 0.96 unit 0.0045 | contested 0.79 / 0.81 |  0.57  0.37 | TEST-like pass: 3 forms  0.76 lazy  0.72 asm-only  0.38
+gepa:bfcl          0.24 | judged 0.94 unit 0.0019 | contested 0.59 / 0.71 |  0.11  0.07 | TEST-like pass: 3 forms  0.46 lazy  0.43 asm-only  0.19
+gepa:tau2          0.86 | judged 1.00 unit 0.0024 | contested 1.00 / 1.00 |  0.49  0.37 | TEST-like pass: 3 forms  4.59 lazy  4.59 asm-only  2.17
+gepa:natplan       0.36 | judged 0.48 unit 0.0026 | contested 0.14 / 0.20 |  0.04  0.10 | TEST-like pass: 3 forms  1.90 lazy  1.53 asm-only  0.86
+gepa:bird          0.75 | judged 0.98 unit 0.0026 | contested 0.13 / 0.12 |  0.03  0.06 | TEST-like pass: 3 forms  0.31 lazy  0.24 asm-only  0.15
+gepa:toolhop       0.60 | judged 0.52 unit 0.0041 | contested 0.29 / 0.33 |  0.12  0.27 | TEST-like pass: 3 forms  1.37 lazy  1.14 asm-only  0.54
+mipro:aime         0.42 | judged 0.58 unit 0.0034 | contested 0.12 / 0.20 |  0.04  0.10 | TEST-like pass: 3 forms  1.41 lazy  1.12 asm-only  0.70
+mipro:gpqa         0.20 | judged 0.31 unit 0.0034 | contested 0.03 / 0.06 |  0.01  0.02 | TEST-like pass: 3 forms  0.27 lazy  0.18 asm-only  0.12
+mipro:livebench    0.37 | judged 0.52 unit 0.0022 | contested 0.17 / 0.25 |  0.09  0.07 | TEST-like pass: 3 forms  0.53 lazy  0.41 asm-only  0.23
+mipro:hotpotqa     0.46 | judged 0.21 unit 0.0032 | contested 0.04 / 0.05 |  0.07  0.05 | TEST-like pass: 3 forms  0.52 lazy  0.41 asm-only  0.26
+mipro:lcb          0.60 | judged 0.65 unit 0.0033 | contested 0.65 / 0.69 |  0.34  0.23 | TEST-like pass: 3 forms  2.60 lazy  2.51 asm-only  1.08
+mipro:natplan      0.46 | judged 0.49 unit 0.0032 | contested 0.18 / 0.23 |  0.06  0.15 | TEST-like pass: 3 forms  1.66 lazy  1.31 asm-only  0.70
+mipro:bird         0.65 | judged 0.96 unit 0.0023 | contested 0.09 / 0.12 |  0.02  0.05 | TEST-like pass: 3 forms  0.53 lazy  0.45 asm-only  0.27
+mipro:toolhop      0.44 | judged 0.49 unit 0.0032 | contested 0.15 / 0.17 |  0.05  0.11 | TEST-like pass: 3 forms  1.67 lazy  1.35 asm-only  0.75
+mipro:ifbench      6.71 | judged 0.99 unit 0.0083 | contested 0.97 / 0.95 |  4.83  2.36 | TEST-like pass: 3 forms  3.14 lazy  3.11 asm-only  1.47
+mipro:hover        6.01 | judged 1.00 unit 0.0081 | contested 1.00 / 1.00 |  3.67  2.44 | TEST-like pass: 3 forms  2.69 lazy  2.69 asm-only  1.29
+mipro:pupa         2.35 | judged 1.00 unit 0.0055 | contested 0.99 / 0.97 |  1.20  1.17 | TEST-like pass: 3 forms  1.96 lazy  1.96 asm-only  0.76
+simba:aime         0.38 | judged 0.41 unit 0.0039 | contested 0.16 / 0.18 |  0.05  0.11 | TEST-like pass: 3 forms  1.45 lazy  1.17 asm-only  0.67
+simba:gpqa         0.19 | judged 0.26 unit 0.0037 | contested 0.06 / 0.03 |  0.02  0.01 | TEST-like pass: 3 forms  0.26 lazy  0.18 asm-only  0.13
+simba:livebench    0.29 | judged 0.43 unit 0.0020 | contested 0.16 / 0.29 |  0.08  0.07 | TEST-like pass: 3 forms  0.63 lazy  0.49 asm-only  0.32
+simba:hotpotqa     0.29 | judged 0.21 unit 0.0018 | contested 0.04 / 0.05 |  0.04  0.03 | TEST-like pass: 3 forms  0.44 lazy  0.33 asm-only  0.22
+simba:lcb          0.51 | judged 0.71 unit 0.0031 | contested 0.72 / 0.70 |  0.36  0.22 | TEST-like pass: 3 forms  2.51 lazy  2.43 asm-only  1.01
+simba:natplan      0.55 | judged 0.69 unit 0.0027 | contested 0.17 / 0.25 |  0.05  0.14 | TEST-like pass: 3 forms  2.07 lazy  1.65 asm-only  1.00
+simba:bird         0.57 | judged 0.97 unit 0.0020 | contested 0.10 / 0.09 |  0.02  0.04 | TEST-like pass: 3 forms  0.39 lazy  0.30 asm-only  0.18
+simba:toolhop      0.50 | judged 0.48 unit 0.0038 | contested 0.12 / 0.15 |  0.05  0.12 | TEST-like pass: 3 forms  1.48 lazy  1.16 asm-only  0.66
+simba:ifbench      3.19 | judged 0.98 unit 0.0045 | contested 0.98 / 0.94 |  2.64  1.27 | TEST-like pass: 3 forms  2.13 lazy  2.11 asm-only  1.04
+simba:hover        4.91 | judged 1.00 unit 0.0065 | contested 1.00 / 1.00 |  2.93  1.95 | TEST-like pass: 3 forms  1.45 lazy  1.45 asm-only  0.70
+simba:pupa         3.99 | judged 1.00 unit 0.0089 | contested 0.99 / 0.96 |  1.95  1.90 | TEST-like pass: 3 forms  2.30 lazy  2.27 asm-only  0.94
+simba:bfcl         0.26 | judged 0.86 unit 0.0023 | contested 0.48 / 0.65 |  0.11  0.07 | TEST-like pass: 3 forms  0.49 lazy  0.43 asm-only  0.20
+
+TOTAL recorded J6* judge spend over the 36 cells: 46.9 USD
+TOTAL est. judge replay on contested items, same unit cost: P+F 24.5 USD, P+F+DEV 41.4 USD
+by dataset (3 optimizers): recorded | est. P+F | est. DEV
+  hover       14.55 |  8.52 |  5.68
+  ifbench     12.17 |  9.20 |  4.48
+  pupa         7.84 |  3.85 |  3.75
+  lcb          2.22 |  1.27 |  0.81
+  bird         1.96 |  0.07 |  0.15
+  toolhop      1.54 |  0.21 |  0.49
+  natplan      1.38 |  0.14 |  0.39
+  aime         1.28 |  0.14 |  0.32
+  hotpotqa     1.03 |  0.15 |  0.10
+  livebench    1.02 |  0.23 |  0.18
+  tau2         0.86 |  0.49 |  0.37
+  gpqa         0.60 |  0.04 |  0.05
+  bfcl         0.50 |  0.22 |  0.14
+
+one TEST-sized pass (n = n_DEV) of the forms over the 36 cells: rigid+assembled+liquid 45.4 USD; with lazy liquid 41.2 USD; assembled only 20.5 USD

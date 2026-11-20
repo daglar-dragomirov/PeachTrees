@@ -1,0 +1,62 @@
+pattern (A=reviewer, D=its draft, R=program, L=agent) | n(P+F) | acc A R L | choice     [pooled over 36 cells, PARETO+FIT only]
+  A=D=R=L                       2188 | 0.890 0.890 0.890 | A
+  A|R|L/noD                     2115 | 0.814 0.772 0.650 | A
+  A=D|R|L                       1702 | 0.887 0.869 0.831 | A
+  A|D|R|L                        639 | 0.819 0.700 0.785 | A
+  A=D=R|L                        295 | 0.616 0.620 0.326 | A
+  A=D=L|R                        239 | 0.789 0.208 0.787 | A
+  NOFEAT                         200 | 1.000 1.000 1.000 | A
+  A=R=L|D                        140 | 0.943 0.936 0.943 | A
+  A=D|R=L                        121 | 0.408 0.637 0.637 | R
+  A=L|D|R                         76 | 0.776 0.238 0.776 | A
+  A=R|L/noD                       73 | 0.897 0.897 0.856 | A
+  R|L/noD/dead:A                  53 | 0.000 0.316 0.654 | L
+  A|D|R/dead:L                    46 | 0.713 0.340 0.000 | A
+  A=L|D=R                         42 | 0.738 0.143 0.738 | A
+  A=R|D|L                         40 | 0.943 0.943 0.808 | A
+  /noD/dead:ARL                   32 | 0.031 0.000 0.031 | L
+  R/noD/dead:AL                   31 | 0.032 0.290 0.032 | R
+  A|D=R|L                         23 | 0.652 0.217 0.217 | A
+  A=R=L/noD                       18 | 1.000 1.000 1.000 | A
+  A=D=R/dead:L                    18 | 0.778 0.778 0.000 | A
+  A|D|R=L                         15 | 0.554 0.852 0.852 | A
+  A=D|R/dead:L                    15 | 0.517 0.393 0.067 | A
+  L/noD/dead:AR                   15 | 0.067 0.067 0.400 | L
+
+DEV check of the same patterns (not used for the table):
+  A=D=R=L                       2089 | 0.869 0.868 0.869 | table: A
+  A|R|L/noD                     1615 | 0.841 0.801 0.662 | table: A
+  A=D|R|L                        961 | 0.746 0.686 0.723 | table: A
+  A|D|R|L                        519 | 0.798 0.656 0.739 | table: A
+  A=D=R|L                        348 | 0.658 0.657 0.237 | table: A
+  A=D=L|R                        273 | 0.796 0.203 0.796 | table: A
+  NOFEAT                         150 | 0.993 0.993 1.000 | table: A
+  A=D|R=L                        149 | 0.323 0.602 0.602 | table: R
+  A=R=L|D                        137 | 0.918 0.918 0.918 | table: A
+  A=L|D|R                         88 | 0.971 0.143 0.971 | table: A
+  R|L/noD/dead:A                  68 | 0.029 0.434 0.650 | table: L
+  A=L|D=R                         59 | 0.864 0.051 0.864 | table: A
+  A=R|D|L                         52 | 0.878 0.878 0.519 | table: A
+  A=D=R/dead:L                    44 | 0.886 0.886 0.000 | table: A
+  A|D|R/dead:L                    35 | 0.692 0.419 0.000 | table: A
+  A=R|L/noD                       31 | 0.774 0.787 0.710 | table: A
+  A=D|R/dead:L                    30 | 0.618 0.341 0.000 | table: A
+  R/noD/dead:AL                   30 | 0.000 0.338 0.000 | table: R
+  A=D=L/dead:R                    26 | 0.769 0.038 0.769 | table: A
+  A|D=R|L                         25 | 0.709 0.069 0.314 | table: A
+  R=L/noD/dead:A                  24 | 0.042 0.917 0.917 | table: R
+  /noD/dead:ARL                   23 | 0.000 0.000 0.000 | table: L
+  A|D=R=L                         17 | 0.765 0.235 0.235 | table: A
+  A|D|R=L                         15 | 0.448 0.867 0.867 | table: A
+always TAB (lodo table)            | +9.32  -8.16 1 | +8.40  -0.88 1 | +7.88  -4.08 1 | +8.56  -8.16 3
+NI prior=TAB(lodo) z1=0.5          | +9.94  +0.00 0 | +8.38  +0.00 0 | +8.22  +0.00 0 | +8.89  +0.00 0
+NI prior=TAB(lodo) z1=1.0          | +9.94  +0.00 0 | +8.38  +0.00 0 | +8.22  +0.00 0 | +8.89  +0.00 0
+     per cell: g:hotpo=+4.0 g:hover=+0.0 g:ifben=+2.2 g:pupa=+1.7 g:aime=+30.7 g:gpqa=+5.9 g:liveb=+13.7 g:lcb=+17.0 g:bfcl=+0.0 g:tau2=+0.0 g:natpl=+21.5 g:bird=+20.5 g:toolh=+12.0 m:aime=+22.0 m:gpqa=+10.2 m:liveb=+20.5 m:hotpo=+3.0 m:lcb=+17.0 m:natpl=+14.5 m:bird=+4.0 m:toolh=+1.0 m:ifben=+0.0 m:hover=+0.0 m:pupa=+0.0 s:aime=+24.7 s:gpqa=+4.2 s:liveb=+13.6 s:hotpo=+5.3 s:lcb=+18.0 s:natpl=+17.5 s:bird=+6.5 s:toolh=+4.5 s:ifben=+2.6 s:hover=+0.0 s:pupa=+1.8 s:bfcl=+0.0
+NI prior=TAB(lodo) z1=1.28         | +9.94  +0.00 0 | +8.38  +0.00 0 | +8.22  +0.00 0 | +8.89  +0.00 0
+always TAB (pooled table)          | +9.83  -8.16 1 | +8.74  -0.88 1 | +8.79  -4.08 1 | +9.15  -8.16 3
+NI prior=TAB(pooled) z1=0.5        | +10.46  +0.00 0 | +8.72  +0.00 0 | +9.13  +0.00 0 | +9.48  +0.00 0
+NI prior=TAB(pooled) z1=1.0        | +10.46  +0.00 0 | +8.72  +0.00 0 | +9.13  +0.00 0 | +9.48  +0.00 0
+     per cell: g:hotpo=+4.0 g:hover=+6.7 g:ifben=+2.2 g:pupa=+1.7 g:aime=+30.7 g:gpqa=+5.9 g:liveb=+13.7 g:lcb=+17.0 g:bfcl=+0.0 g:tau2=+0.0 g:natpl=+21.5 g:bird=+20.5 g:toolh=+12.0 m:aime=+22.0 m:gpqa=+10.2 m:liveb=+20.5 m:hotpo=+3.0 m:lcb=+17.0 m:natpl=+14.5 m:bird=+4.0 m:toolh=+1.0 m:ifben=+0.0 m:hover=+3.7 m:pupa=+0.0 s:aime=+24.7 s:gpqa=+4.2 s:liveb=+13.6 s:hotpo=+5.3 s:lcb=+19.0 s:natpl=+17.5 s:bird=+6.5 s:toolh=+4.5 s:ifben=+2.6 s:hover=+10.0 s:pupa=+1.8 s:bfcl=+0.0
+NI prior=TAB(pooled) z1=1.28       | +10.46  +0.00 0 | +8.72  +0.00 0 | +9.13  +0.00 0 | +9.48  +0.00 0
+NI prior=SV:assembled z1=1.0 (reference) | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.91  +0.00 0 | +9.16  +0.00 0
+NI prior=assembled+ z1=1.0 (reference) | +9.32  +0.00 0 | +7.76  +0.00 0 | +8.27  +0.00 0 | +8.49  +0.00 0

@@ -1,0 +1,65 @@
+policy (NI rule z1=1.0 on P+F unless noted)    | gepa mean worst | mipro | simba | ALL36 mean worst | cost multiple of the program
+always rigid                           | +0.00  +0.00 | +0.00  +0.00 | +0.00  +0.00 | +0.00  +0.00 neg 0 | cost x1.00 (median x1.00) | pp per extra x: 0.00
+v0.2 lite (recorded default)           | +5.76  +0.00 | +5.43  +0.00 | +3.76  +0.00 | +4.99  +0.00 neg 0 | cost x2.21 (median x1.64) | pp per extra x: 4.13
+NI prior=assembled+                    | +9.32  +0.00 | +7.76  +0.00 | +8.27  +0.00 | +8.49  +0.00 neg 0 | cost x2.60 (median x2.47) | pp per extra x: 5.31
+NI prior=SVD                           | +9.03  -0.85 | +7.40  +0.00 | +7.93  -1.69 | +8.17  -1.69 neg 2 | cost x3.06 (median x2.85) | pp per extra x: 3.96
+NI prior=SV:assembled                  | +10.30  +0.00 | +8.08  +0.00 | +8.91  +0.00 | +9.16  +0.00 neg 0 | cost x4.58 (median x4.41) | pp per extra x: 2.56
+NI prior=Vassembled+                   | +9.78  +0.00 | +8.17  +0.00 | +8.65  +0.00 | +8.91  +0.00 neg 0 | cost x2.60 (median x2.47) | pp per extra x: 5.57
+NI prior=VSVD                          | +9.50  -0.85 | +7.81  +0.00 | +8.31  -1.69 | +8.58  -1.69 neg 2 | cost x3.05 (median x2.82) | pp per extra x: 4.20
+NI prior=VSV:assembled                 | +10.57  +0.00 | +8.40  +0.00 | +9.24  +0.00 | +9.47  +0.00 neg 0 | cost x4.58 (median x4.41) | pp per extra x: 2.65
+always assembled+ (no rule)            | +8.69  -8.16 | +7.78  -0.88 | +7.93  -4.08 | +8.16  -8.16 neg 3 | cost x2.68 (median x2.49) | pp per extra x: 4.86
+always SVD (no rule)                   | +8.41  -8.16 | +7.42  -0.88 | +7.59  -4.08 | +7.83  -8.16 neg 5 | cost x3.16 (median x2.89) | pp per extra x: 3.63
+always SV:assembled (no rule)          | +9.83  -6.12 | +8.08  -0.88 | +8.57  -4.08 | +8.88  -6.12 neg 3 | cost x4.89 (median x4.44) | pp per extra x: 2.28
+always VSVD (no rule)                  | +8.87  -8.16 | +7.83  -0.88 | +7.97  -4.08 | +8.25  -8.16 neg 5 | cost x3.14 (median x2.89) | pp per extra x: 3.85
+always VSV:assembled (no rule)         | +10.10  -6.12 | +8.40  -0.88 | +8.90  -4.08 | +9.18  -6.12 neg 3 | cost x4.89 (median x4.44) | pp per extra x: 2.36
+reported v0.2 + J6* (as run)           | ALL36 +6.59 worst  +0.00 | cost x9.13 (median x7.57) | pp per extra x: 0.81
+
+per-cell liquid usage of the lazy policies on DEV and cost multiples
+  gepa:hotpotqa    SVD liquid share 0.08 | cost: asm x2.1 SVD x2.2 SV x3.3
+  gepa:hover       SVD liquid share 0.00 | cost: asm x3.6 SVD x3.6 SV x7.2
+  gepa:ifbench     SVD liquid share 0.21 | cost: asm x3.3 SVD x3.8 SV x6.3
+  gepa:pupa        SVD liquid share 0.00 | cost: asm x1.3 SVD x1.3 SV x3.5
+  gepa:aime        SVD liquid share 0.39 | cost: asm x2.3 SVD x2.9 SV x4.0
+  gepa:gpqa        SVD liquid share 0.07 | cost: asm x2.9 SVD x3.1 SV x4.4
+  gepa:livebench   SVD liquid share 0.22 | cost: asm x3.9 SVD x4.5 SV x6.1
+  gepa:lcb         SVD liquid share 0.99 | cost: asm x7.3 SVD x13.5 SV x13.9
+  gepa:bfcl        SVD liquid share 0.00 | cost: asm x1.4 SVD x1.4 SV x3.2
+  gepa:tau2        SVD liquid share 0.00 | cost: asm x1.6 SVD x1.6 SV x3.3
+  gepa:natplan     SVD liquid share 0.22 | cost: asm x2.5 SVD x2.9 SV x4.5
+  gepa:bird        SVD liquid share 0.14 | cost: asm x3.8 SVD x4.2 SV x6.1
+  gepa:toolhop     SVD liquid share 0.04 | cost: asm x1.6 SVD x1.6 SV x3.3
+  mipro:aime       SVD liquid share 0.27 | cost: asm x3.1 SVD x3.7 SV x5.0
+  mipro:gpqa       SVD liquid share 0.12 | cost: asm x3.9 SVD x4.3 SV x5.8
+  mipro:livebench  SVD liquid share 0.21 | cost: asm x4.0 SVD x4.9 SV x7.3
+  mipro:hotpotqa   SVD liquid share 0.05 | cost: asm x1.9 SVD x1.9 SV x3.0
+  mipro:lcb        SVD liquid share 0.84 | cost: asm x1.7 SVD x3.0 SV x4.0
+  mipro:natplan    SVD liquid share 0.17 | cost: asm x2.2 SVD x2.5 SV x4.1
+  mipro:bird       SVD liquid share 0.10 | cost: asm x1.9 SVD x2.0 SV x3.2
+  mipro:toolhop    SVD liquid share 0.06 | cost: asm x1.4 SVD x1.5 SV x2.6
+  mipro:ifbench    SVD liquid share 0.36 | cost: asm x2.6 SVD x3.2 SV x5.4
+  mipro:hover      SVD liquid share 0.00 | cost: asm x4.1 SVD x4.1 SV x8.7
+  mipro:pupa       SVD liquid share 0.00 | cost: asm x1.3 SVD x1.3 SV x3.4
+  simba:aime       SVD liquid share 0.21 | cost: asm x2.8 SVD x3.3 SV x4.9
+  simba:gpqa       SVD liquid share 0.10 | cost: asm x4.4 SVD x4.7 SV x6.0
+  simba:livebench  SVD liquid share 0.26 | cost: asm x4.5 SVD x5.4 SV x6.9
+  simba:hotpotqa   SVD liquid share 0.07 | cost: asm x2.2 SVD x2.3 SV x3.4
+  simba:lcb        SVD liquid share 0.84 | cost: asm x1.6 SVD x2.9 SV x4.0
+  simba:natplan    SVD liquid share 0.15 | cost: asm x2.7 SVD x3.0 SV x4.5
+  simba:bird       SVD liquid share 0.14 | cost: asm x2.5 SVD x2.7 SV x4.1
+  simba:toolhop    SVD liquid share 0.06 | cost: asm x1.6 SVD x1.6 SV x2.8
+  simba:ifbench    SVD liquid share 0.20 | cost: asm x2.5 SVD x2.8 SV x5.0
+  simba:hover      SVD liquid share 0.00 | cost: asm x2.5 SVD x2.5 SV x5.1
+  simba:pupa       SVD liquid share 0.00 | cost: asm x1.8 SVD x1.8 SV x4.4
+  simba:bfcl       SVD liquid share 0.00 | cost: asm x1.5 SVD x1.5 SV x3.4
+
+recorded J6* judge as an overlay: applied only where the judge's reference form equals the policy's choice
+  base NI SV:assembled  : base +9.16 | + gated recorded judge +9.38 (worst cell change -2.04) | judge always on +9.39
+      gepa:hotpotqa:t3:+0.7 gepa:aime:t4:+3.3 gepa:gpqa:t3:+1.7 gepa:livebench:t3:+0.6 gepa:bfcl:t4:-2.0 simba:hotpotqa:t3:+1.0 simba:natplan:t3:+0.5 simba:bfcl:t3:+2.0
+  base NI VSV:assembled : base +9.47 | + gated recorded judge +9.67 (worst cell change -2.04) | judge always on +9.65
+      gepa:hotpotqa:t3:+0.7 gepa:aime:t4:+3.3 gepa:gpqa:t3:+1.7 gepa:livebench:t3:+0.6 gepa:bfcl:t4:-2.0 simba:hotpotqa:t3:+1.0 simba:bfcl:t3:+2.0
+  base NI SVD           : base +8.17 | + gated recorded judge +8.36 (worst cell change -2.04) | judge always on +8.38
+      gepa:hotpotqa:t3:+0.7 gepa:aime:t4:+4.0 gepa:livebench:t3:+1.4 gepa:bfcl:t4:-2.0 simba:hotpotqa:t3:+1.0 simba:bfcl:t3:+2.0
+
+auto-lite hybrid: full rule where the vote changes >= 2% of the answers on PARETO+FIT, reviewer-only elsewhere
+auto-lite hybrid (NI, VSV / Vasm)      | +10.47  +0.00 | +8.40  +0.00 | +9.10  +0.00 | +9.38  +0.00 neg 0 | cost x3.54 (median x3.35) | pp per extra x: 3.70
+   reviewer-only cells: ['gepa:hotpotqa', 'gepa:hover', 'gepa:ifbench', 'gepa:pupa', 'gepa:lcb', 'gepa:tau2', 'mipro:lcb', 'mipro:hover', 'simba:aime', 'simba:lcb', 'simba:ifbench', 'simba:hover', 'simba:pupa']

@@ -1,0 +1,117 @@
+(a) task-level oracle (best single policy per cell on DEV; an upper bound for any task-level rule)
+task-oracle v0.2 family            | +9.68  +0.00 0 | +7.40  +0.67 0 | +6.74  +0.00 0 | +8.01  +0.00 0
+task-oracle free family            | +10.77  +0.00 0 | +8.87  +0.67 0 | +9.14  +0.00 0 | +9.65  +0.00 0
+task-oracle free family, no liquid default | +10.46  +0.00 0 | +8.69  +0.67 0 | +8.91  +0.00 0 | +9.40  +0.00 0
+item oracle                        | +15.63  +0.67 0 | +14.88  +5.84 0 | +14.03  +2.59 0 | +14.87  +0.67 0
+
+(b) cross-fit on DEV: select on a random subset of size n_sel, score on the rest (200 splits), family = free family
+select on half of DEV     [all      ] | +9.60  -2.28 | +7.62  -0.27 | +7.86  -2.22 | +8.41  -2.28
+select on half of DEV     [no-liquid] | +9.69  -2.12 | +7.93  -0.11 | +8.23  -0.60 | +8.67  -2.12
+select on quarter of DEV  [all      ] | +9.14  -2.70 | +7.23  -0.58 | +7.62  -2.12 | +8.05  -2.70
+select on quarter of DEV  [no-liquid] | +9.18  -3.01 | +7.34  -0.45 | +7.96  -0.69 | +8.21  -3.01
+
+    per cell: select on PARETO+FIT (z=0) vs cross-fit on half of DEV vs task-oracle (pp)
+    gepa:hotpotqa    PF   +4.3   DEV-half   +3.4   task-oracle   +4.3   item-oracle   +7.3
+    gepa:hover       PF   +6.7   DEV-half   +6.6   task-oracle   +6.7   item-oracle  +12.0
+    gepa:ifbench     PF   +2.2   DEV-half   +2.0   task-oracle   +2.2   item-oracle   +3.6
+    gepa:pupa        PF   +1.7   DEV-half   +1.4   task-oracle   +1.7   item-oracle   +3.0
+    gepa:aime        PF  +30.0   DEV-half  +30.2   task-oracle  +32.0   item-oracle  +38.0
+    gepa:gpqa        PF   +0.8   DEV-half   +3.4   task-oracle   +5.1   item-oracle  +11.0
+    gepa:livebench   PF  +14.8   DEV-half  +14.3   task-oracle  +15.9   item-oracle  +19.0
+    gepa:lcb         PF  +17.0   DEV-half  +15.3   task-oracle  +17.0   item-oracle  +25.0
+    gepa:bfcl        PF   +0.0   DEV-half   -2.3   task-oracle   +0.0   item-oracle   +8.2
+    gepa:tau2        PF   +0.0   DEV-half   -0.4   task-oracle   +0.7   item-oracle   +0.7
+    gepa:natplan     PF  +21.0   DEV-half  +19.7   task-oracle  +21.0   item-oracle  +25.5
+    gepa:bird        PF  +18.5   DEV-half  +19.9   task-oracle  +20.5   item-oracle  +30.0
+    gepa:toolhop     PF  +13.0   DEV-half  +11.1   task-oracle  +13.0   item-oracle  +20.0
+    mipro:aime       PF  +16.0   DEV-half  +18.0   task-oracle  +20.0   item-oracle  +28.7
+    mipro:gpqa       PF   +8.5   DEV-half   +8.2   task-oracle   +9.3   item-oracle  +15.3
+    mipro:livebench  PF  +19.3   DEV-half  +18.0   task-oracle  +19.8   item-oracle  +23.0
+    mipro:hotpotqa   PF   +3.0   DEV-half   +3.0   task-oracle   +4.0   item-oracle   +8.3
+    mipro:lcb        PF  +17.0   DEV-half  +16.1   task-oracle  +17.0   item-oracle  +21.0
+    mipro:natplan    PF  +11.0   DEV-half  +13.4   task-oracle  +14.5   item-oracle  +18.5
+    mipro:bird       PF   +4.0   DEV-half   +2.3   task-oracle   +4.5   item-oracle  +18.5
+    mipro:toolhop    PF   +0.5   DEV-half   +1.6   task-oracle   +3.0   item-oracle   +9.0
+    mipro:ifbench    PF   +0.0   DEV-half   -0.3   task-oracle   +0.7   item-oracle   +5.8
+    mipro:hover      PF   +3.7   DEV-half   +3.4   task-oracle   +3.7   item-oracle   +8.3
+    mipro:pupa       PF   +0.0   DEV-half   +0.1   task-oracle   +1.1   item-oracle   +7.2
+    simba:aime       PF  +22.0   DEV-half  +21.6   task-oracle  +24.0   item-oracle  +30.0
+    simba:gpqa       PF   +0.8   DEV-half   +2.4   task-oracle   +5.1   item-oracle  +11.0
+    simba:livebench  PF  +13.3   DEV-half  +12.2   task-oracle  +13.5   item-oracle  +19.3
+    simba:hotpotqa   PF   +5.7   DEV-half   +5.1   task-oracle   +6.0   item-oracle  +10.7
+    simba:lcb        PF  +15.0   DEV-half  +17.0   task-oracle  +18.0   item-oracle  +22.0
+    simba:natplan    PF  +17.0   DEV-half  +16.2   task-oracle  +17.5   item-oracle  +22.0
+    simba:bird       PF   +6.5   DEV-half   +4.7   task-oracle   +6.5   item-oracle  +18.0
+    simba:toolhop    PF   +4.0   DEV-half   +3.3   task-oracle   +4.5   item-oracle   +8.0
+    simba:ifbench    PF   +2.6   DEV-half   +2.4   task-oracle   +2.9   item-oracle   +5.3
+    simba:hover      PF  +10.0   DEV-half   +9.9   task-oracle  +10.0   item-oracle  +15.3
+    simba:pupa       PF   +1.8   DEV-half   +1.7   task-oracle   +1.8   item-oracle   +2.6
+    simba:bfcl       PF   +0.0   DEV-half   -2.2   task-oracle   +0.0   item-oracle   +4.1
+
+(c) non-inferiority rules: use PRIOR policy unless it is worse than rigid on PARETO+FIT by more than z*se
+NI prior=assembled+ z=0.0          | +7.74  +0.00 0 | +7.76  +0.00 0 | +8.27  +0.00 0 | +7.92  +0.00 0
+NI prior=assembled+ z=0.5          | +9.32  +0.00 0 | +7.76  +0.00 0 | +8.27  +0.00 0 | +8.49  +0.00 0
+NI prior=assembled+ z=1.0          | +9.32  +0.00 0 | +7.76  +0.00 0 | +8.27  +0.00 0 | +8.49  +0.00 0
+NI prior=assembled+ z=1.28         | +9.32  +0.00 0 | +7.76  +0.00 0 | +8.27  +0.00 0 | +8.49  +0.00 0
+NI prior=assembled+ z=1.645        | +9.32  +0.00 0 | +7.76  +0.00 0 | +7.93  -4.08 1 | +8.38  -4.08 1
+NI prior=assembled+ z=99           | +8.69  -8.16 1 | +7.78  -0.88 1 | +7.93  -4.08 1 | +8.16  -8.16 3
+NI prior=SV:assembled z=0.0        | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.91  +0.00 0 | +9.16  +0.00 0
+NI prior=SV:assembled z=0.5        | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.91  +0.00 0 | +9.16  +0.00 0
+NI prior=SV:assembled z=1.0        | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.91  +0.00 0 | +9.16  +0.00 0
+NI prior=SV:assembled z=1.28       | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.91  +0.00 0 | +9.16  +0.00 0
+NI prior=SV:assembled z=1.645      | +10.30  +0.00 0 | +8.08  +0.00 0 | +8.57  -4.08 1 | +9.05  -4.08 1
+NI prior=SV:assembled z=99         | +9.83  -6.12 1 | +8.08  -0.88 1 | +8.57  -4.08 1 | +8.88  -6.12 3
+argmax, rigid->SV:asm if NI z=0.5  | +10.00  +0.00 0 | +7.54  +0.00 0 | +8.22  +0.00 0 | +8.65  +0.00 0
+      changed cells: {'gepa:tau2': ('SV:assembled', 0.0)}
+argmax, rigid->SV:asm if NI z=1.0  | +10.00  +0.00 0 | +7.54  +0.00 0 | +8.22  +0.00 0 | +8.65  +0.00 0
+      changed cells: {'gepa:tau2': ('SV:assembled', 0.0)}
+argmax, rigid->SV:asm if NI z=1.28 | +10.00  +0.00 0 | +7.54  +0.00 0 | +8.22  +0.00 0 | +8.65  +0.00 0
+      changed cells: {'gepa:tau2': ('SV:assembled', 0.0)}
+
+(d) the recorded J6* judge on DEV, all proposals regardless of threshold / gate (ref = the v0.2 default)
+    gepa:hotpotqa    proposals won   2 lost   0 neutral   5 | items where a better form existed:  14 (0.05) recall 0.14
+    gepa:hover       proposals won   7 lost  19 neutral  95 | items where a better form existed:  16 (0.05) recall 0.44
+    gepa:ifbench     proposals won   5 lost   2 neutral  22 | items where a better form existed:  17 (0.06) recall 0.29
+    gepa:pupa        proposals won   2 lost   3 neutral  40 | items where a better form existed:  16 (0.07) recall 0.12
+    gepa:aime        proposals won   7 lost   0 neutral   4 | items where a better form existed:  14 (0.09) recall 0.50
+    gepa:gpqa        proposals won   6 lost   2 neutral   0 | items where a better form existed:  13 (0.11) recall 0.46
+    gepa:livebench   proposals won   3 lost   0 neutral   0 | items where a better form existed:  19 (0.15) recall 0.16
+    gepa:lcb         proposals won   4 lost   0 neutral   5 | items where a better form existed:  10 (0.10) recall 0.40
+    gepa:bfcl        proposals won   0 lost   1 neutral   4 | items where a better form existed:   4 (0.08) recall 0.00
+    gepa:tau2        proposals won   0 lost   0 neutral   1 | items where a better form existed:   1 (0.01) recall 0.00
+    gepa:natplan     proposals won  22 lost   0 neutral   4 | items where a better form existed:  51 (0.26) recall 0.43
+    gepa:bird        proposals won   9 lost   0 neutral  12 | items where a better form existed:  60 (0.30) recall 0.15
+    gepa:toolhop     proposals won   8 lost   3 neutral   7 | items where a better form existed:  19 (0.10) recall 0.42
+    mipro:aime       proposals won   6 lost   1 neutral   5 | items where a better form existed:  20 (0.13) recall 0.30
+    mipro:gpqa       proposals won   5 lost   2 neutral   3 | items where a better form existed:  11 (0.09) recall 0.45
+    mipro:livebench  proposals won   5 lost   0 neutral   2 | items where a better form existed:  15 (0.12) recall 0.33
+    mipro:hotpotqa   proposals won  12 lost   2 neutral   7 | items where a better form existed:  25 (0.08) recall 0.48
+    mipro:lcb        proposals won   6 lost   0 neutral  15 | items where a better form existed:  15 (0.15) recall 0.40
+    mipro:natplan    proposals won   4 lost   0 neutral   3 | items where a better form existed:  15 (0.07) recall 0.27
+    mipro:bird       proposals won   8 lost   0 neutral  10 | items where a better form existed:  37 (0.18) recall 0.22
+    mipro:toolhop    proposals won   4 lost  13 neutral   5 | items where a better form existed:  18 (0.09) recall 0.22
+    mipro:ifbench    proposals won   3 lost   4 neutral  17 | items where a better form existed:  27 (0.09) recall 0.11
+    mipro:hover      proposals won   0 lost   3 neutral   2 | items where a better form existed:  14 (0.05) recall 0.00
+    mipro:pupa       proposals won   4 lost   5 neutral  23 | items where a better form existed:  33 (0.15) recall 0.12
+    simba:aime       proposals won  15 lost   0 neutral  12 | items where a better form existed:  32 (0.21) recall 0.47
+    simba:gpqa       proposals won   2 lost   1 neutral   2 | items where a better form existed:   9 (0.08) recall 0.22
+    simba:livebench  proposals won   7 lost   1 neutral   3 | items where a better form existed:  21 (0.17) recall 0.33
+    simba:hotpotqa   proposals won   3 lost   0 neutral   2 | items where a better form existed:  15 (0.05) recall 0.20
+    simba:lcb        proposals won  11 lost   0 neutral   6 | items where a better form existed:  15 (0.15) recall 0.73
+    simba:natplan    proposals won   8 lost   0 neutral   3 | items where a better form existed:  44 (0.22) recall 0.18
+    simba:bird       proposals won   4 lost   0 neutral   8 | items where a better form existed:  36 (0.18) recall 0.11
+    simba:toolhop    proposals won  12 lost   9 neutral   6 | items where a better form existed:  16 (0.08) recall 0.75
+    simba:ifbench    proposals won   2 lost   2 neutral  13 | items where a better form existed:  25 (0.08) recall 0.08
+    simba:hover      proposals won  11 lost  11 neutral 130 | items where a better form existed:  16 (0.05) recall 0.69
+    simba:pupa       proposals won   2 lost   1 neutral   4 | items where a better form existed:  15 (0.07) recall 0.13
+    simba:bfcl       proposals won   1 lost   0 neutral   4 | items where a better form existed:   2 (0.04) recall 0.50
+    TOTAL won 210 lost 85 neutral 484; precision among decisive 0.712; recall of improvable items 0.288
+
+(e) residual gap to the item oracle after the free policy SV:assembled, by pattern (pp of DEV, macro over 36 cells)
+    R|L|A  share 0.433 residual gap  3.40 pp
+    RA|L   share 0.074 residual gap  0.86 pp
+    DEAD   share 0.063 residual gap  0.70 pp
+    RL|A   share 0.030 residual gap  0.61 pp
+    LA|R   share 0.068 residual gap  0.42 pp
+    ALL    share 0.331 residual gap  0.01 pp
+    residual by dataset (mean over optimizers): {'bird': 13.0, 'bfcl': 11.2, 'aime': 8.2, 'toolhop': 6.3, 'gpqa': 6.2, 'lcb': 5.3, 'hover': 5.1, 'livebench': 4.6, 'hotpotqa': 4.6, 'natplan': 4.5, 'ifbench': 3.5, 'pupa': 2.8, 'tau2': 0.7}

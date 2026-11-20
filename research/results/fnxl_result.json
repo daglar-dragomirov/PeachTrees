@@ -1,0 +1,94 @@
+{
+ "run_dir": "/root/.local/share/openresearch/local-runs/88f52535-64bc-4723-b2fd-acde764b24a4/repo/runs/fieldsuite-v04-fnxq/worker",
+ "n": {
+  "PARETO": 300,
+  "FIT": 300,
+  "DEV": 318
+ },
+ "forms_mean": {
+  "PARETO": {
+   "rigid": 0.55361,
+   "liquid": 0.53317,
+   "assembled": 0.54806
+  },
+  "FIT": {
+   "rigid": 0.48667,
+   "liquid": 0.48833,
+   "assembled": 0.48056
+  },
+  "DEV": {
+   "rigid": 0.59984,
+   "liquid": 0.59277,
+   "assembled": 0.60535
+  }
+ },
+ "dead": {
+  "PARETO": {
+   "rigid": 0,
+   "liquid": 0,
+   "assembled": 0
+  },
+  "FIT": {
+   "rigid": 0,
+   "liquid": 0,
+   "assembled": 0
+  },
+  "DEV": {
+   "rigid": 0,
+   "liquid": 0,
+   "assembled": 0
+  }
+ },
+ "gepa_dev": {
+  "item_mean": 0.59984,
+  "macro_f1": 0.3759,
+  "micro_f1": 0.39319,
+  "hits_at_1": 0.59542,
+  "labels": 100
+ },
+ "peachtrees_full": {
+  "use_pi": true,
+  "pf_mean": -0.00583,
+  "pf_se": 0.01439,
+  "item_mean": 0.60535,
+  "gain_item_pp": 0.55,
+  "ci95_pp": [
+   -3.69,
+   4.61
+  ],
+  "picks": {
+   "rigid": 5,
+   "liquid": 0,
+   "assembled": 313
+  },
+  "macro_f1": 0.43743,
+  "micro_f1": 0.45869,
+  "hits_at_1": 0.6145,
+  "labels": 100
+ },
+ "peachtrees_lite": {
+  "use_pi": true,
+  "pf_mean": -0.00583,
+  "pf_se": 0.01439,
+  "item_mean": 0.60535,
+  "gain_item_pp": 0.55,
+  "ci95_pp": [
+   -3.69,
+   4.8
+  ],
+  "picks": {
+   "rigid": 0,
+   "liquid": 0,
+   "assembled": 318
+  },
+  "macro_f1": 0.42852,
+  "micro_f1": 0.45694,
+  "hits_at_1": 0.6126,
+  "labels": 100
+ },
+ "forms_dev_macro_f1": {
+  "rigid": 0.3759,
+  "liquid": 0.48783,
+  "assembled": 0.42852
+ }
+}

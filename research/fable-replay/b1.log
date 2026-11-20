@@ -1,0 +1,191 @@
+DEV accuracy by policy (pattern shares with task-aware keys)
+cell                 rigid    liquid assembled    rigid+   liquid+ assembled     vote3  SV:rigid SV:liquid SV:assemb    oracle   ALL  2v1  DIFF DEAD
+gepa:hotpotqa        0.757     0.777     0.783     0.757     0.777     0.783     0.790     0.790     0.800     0.797     0.830  0.79 0.15 0.06 0.00
+gepa:hover           0.707     0.577     0.773     0.707     0.577     0.773     0.707     0.707     0.577     0.773     0.827  0.00 0.00 1.00 0.00
+gepa:ifbench         0.900     0.869     0.922     0.900     0.869     0.922     0.900     0.900     0.869     0.922     0.936  0.03 0.02 0.95 0.00
+gepa:pupa            0.970     0.972     0.987     0.970     0.972     0.987     0.970     0.970     0.970     0.987     1.000  0.00 0.01 0.98 0.00
+gepa:aime            0.573     0.840     0.860     0.573     0.840     0.860     0.840     0.840     0.893     0.873     0.953  0.49 0.34 0.14 0.03
+gepa:gpqa            0.814     0.814     0.822     0.814     0.814     0.822     0.847     0.847     0.864     0.864     0.924  0.74 0.23 0.03 0.00
+gepa:livebench       0.613     0.765     0.727     0.613     0.767     0.727     0.739     0.747     0.772     0.761     0.803  0.48 0.31 0.20 0.01
+gepa:lcb             0.540     0.690     0.710     0.540     0.700     0.710     0.540     0.540     0.700     0.710     0.790  0.03 0.11 0.85 0.01
+gepa:bfcl            0.755     0.673     0.673     0.755     0.673     0.673     0.735     0.755     0.653     0.694     0.837  0.10 0.18 0.71 0.00
+gepa:tau2            0.993     1.000     0.993     0.993     1.000     0.993     0.993     0.993     1.000     0.993     1.000  0.00 0.00 1.00 0.00
+gepa:natplan         0.720     0.890     0.875     0.740     0.910     0.905     0.840     0.840     0.910     0.930     0.975  0.47 0.24 0.19 0.09
+gepa:bird            0.400     0.490     0.595     0.450     0.535     0.605     0.405     0.550     0.555     0.585     0.700  0.45 0.33 0.07 0.15
+gepa:toolhop         0.465     0.550     0.540     0.525     0.555     0.575     0.570     0.580     0.590     0.595     0.665  0.39 0.20 0.30 0.11
+gepa1:livebench      0.658     0.767     0.753     0.678     0.788     0.791     0.780     0.781     0.788     0.790     0.834  0.48 0.27 0.13 0.12
+gepa1:ifbench        0.861     0.816     0.866     0.861     0.821     0.875     0.861     0.861     0.821     0.875     0.926  0.01 0.02 0.96 0.01
+gepa1:hotpotqa       0.780     0.763     0.787     0.780     0.763     0.787     0.797     0.797     0.793     0.790     0.823  0.82 0.15 0.03 0.00
+mipro:aime           0.653     0.773     0.807     0.653     0.807     0.820     0.780     0.813     0.853     0.853     0.940  0.50 0.25 0.14 0.11
+mipro:gpqa           0.737     0.695     0.831     0.737     0.754     0.831     0.797     0.797     0.822     0.822     0.890  0.65 0.25 0.02 0.08
+mipro:livebench      0.576     0.739     0.755     0.576     0.766     0.767     0.710     0.710     0.774     0.769     0.806  0.43 0.29 0.18 0.10
+mipro:hotpotqa       0.773     0.793     0.790     0.773     0.793     0.790     0.803     0.803     0.813     0.803     0.857  0.79 0.16 0.05 0.00
+mipro:lcb            0.560     0.620     0.670     0.570     0.730     0.730     0.570     0.570     0.730     0.730     0.770  0.04 0.08 0.48 0.40
+mipro:natplan        0.790     0.900     0.920     0.790     0.900     0.925     0.860     0.865     0.915     0.935     0.975  0.51 0.24 0.26 0.01
+mipro:bird           0.475     0.445     0.510     0.485     0.485     0.515     0.470     0.495     0.520     0.500     0.660  0.48 0.32 0.06 0.14
+mipro:toolhop        0.735     0.505     0.740     0.735     0.540     0.740     0.765     0.765     0.725     0.740     0.825  0.49 0.32 0.15 0.04
+mipro:ifbench        0.907     0.874     0.895     0.911     0.874     0.899     0.914     0.914     0.871     0.899     0.966  0.01 0.04 0.95 0.01
+mipro:hover          0.713     0.280     0.750     0.713     0.280     0.750     0.713     0.713     0.280     0.750     0.797  0.00 0.00 1.00 0.00
+mipro:pupa           0.881     0.829     0.892     0.881     0.829     0.892     0.879     0.879     0.833     0.890     0.953  0.00 0.03 0.97 0.00
+simba:aime           0.620     0.707     0.733     0.620     0.807     0.827     0.787     0.787     0.860     0.840     0.920  0.41 0.26 0.07 0.26
+simba:gpqa           0.763     0.763     0.771     0.763     0.780     0.771     0.797     0.797     0.797     0.814     0.873  0.71 0.23 0.02 0.04
+simba:livebench      0.612     0.704     0.716     0.612     0.741     0.744     0.691     0.691     0.725     0.747     0.805  0.50 0.19 0.20 0.11
+simba:hotpotqa       0.743     0.780     0.800     0.743     0.780     0.800     0.783     0.783     0.803     0.800     0.850  0.79 0.17 0.05 0.00
+simba:lcb            0.590     0.620     0.660     0.600     0.740     0.770     0.590     0.600     0.740     0.770     0.810  0.00 0.10 0.49 0.41
+simba:natplan        0.775     0.930     0.940     0.775     0.950     0.945     0.825     0.835     0.940     0.945     0.995  0.54 0.17 0.26 0.03
+simba:bird           0.420     0.420     0.455     0.430     0.435     0.475     0.420     0.475     0.485     0.485     0.600  0.47 0.35 0.07 0.10
+simba:toolhop        0.730     0.490     0.770     0.730     0.510     0.770     0.770     0.770     0.750     0.775     0.810  0.49 0.33 0.15 0.03
+simba:ifbench        0.887     0.868     0.908     0.887     0.874     0.913     0.887     0.887     0.870     0.916     0.940  0.02 0.04 0.94 0.01
+simba:hover          0.693     0.633     0.793     0.693     0.633     0.793     0.693     0.693     0.633     0.793     0.847  0.00 0.00 1.00 0.00
+simba:pupa           0.970     0.871     0.987     0.970     0.871     0.987     0.967     0.967     0.880     0.987     0.995  0.00 0.04 0.96 0.00
+simba:bfcl           0.796     0.714     0.755     0.796     0.714     0.755     0.776     0.796     0.735     0.755     0.837  0.10 0.24 0.65 0.00
+
+always-X policies: gepa mean/worst/#neg | mipro | simba | ALL36
+always rigid                       | +0.00  +0.00 0 | +0.00  +0.00 0 | +0.00  +0.00 0 | +0.00  +0.00 0
+always liquid                      | +5.39 -13.00 3 | -3.17 -43.33 6 | -0.82 -24.00 5 | +0.70 -43.33 14
+always assembled                   | +8.11  -8.16 1 | +6.88  -1.22 1 | +5.75  -4.08 1 | +6.95  -8.16 3
+always rigid+                      | +1.00  +0.00 0 | +0.21  +0.00 0 | +0.17  +0.00 0 | +0.48  +0.00 0
+always liquid+                     | +6.01 -13.00 3 | -0.40 -43.33 4 | +1.96 -22.00 5 | +2.71 -43.33 12
+always assembled+                  | +8.69  -8.16 1 | +7.78  -0.88 1 | +7.93  -4.08 1 | +8.16  -8.16 3
+always vote3                       | +5.15  -2.04 1 | +4.17  -0.50 2 | +3.23  -2.04 2 | +4.21  -2.04 5
+always SV:rigid                    | +6.56  +0.00 0 | +4.75  -0.23 1 | +4.02  -0.23 1 | +5.16  -0.23 2
+always SV:liquid                   | +7.28 -13.00 4 | +3.05 -43.33 4 | +5.16  -8.99 4 | +5.28 -43.33 12
+always SV:assembled                | +9.83  -6.12 1 | +8.08  -0.88 1 | +8.57  -4.08 1 | +8.88  -6.12 3
+always oracle                      | +15.63  +0.67 0 | +14.88  +5.84 0 | +14.03  +2.59 0 | +14.87  +0.67 0
+
+rule(data, z, candidate set): gepa mean/worst/#neg | mipro | simba | ALL36
+v02|P|z1.96                        | +5.76  +0.00 0 | +5.43  +0.00 0 | +3.76  +0.00 0 | +4.99  +0.00 0
+v02|P|z1.28                        | +7.07  +0.00 0 | +5.59  +0.00 0 | +5.14  +0.00 0 | +5.97  +0.00 0
+v02|P|z0.84                        | +7.13  +0.00 0 | +5.59  +0.00 0 | +5.48  +0.00 0 | +6.11  +0.00 0
+v02|P|z0.52                        | +7.26  +0.00 0 | +5.59  +0.00 0 | +5.80  +0.00 0 | +6.26  +0.00 0
+v02|P|z0.0                         | +7.26  +0.00 0 | +5.90  +0.00 0 | +5.80  +0.00 0 | +6.36  +0.00 0
+v02|F|z1.96                        | +6.09  +0.00 0 | +3.37  +0.00 0 | +4.40  +0.00 0 | +4.69  +0.00 0
+v02|F|z1.28                        | +7.07  +0.00 0 | +5.53  +0.00 0 | +5.27  +0.00 0 | +6.00  +0.00 0
+v02|F|z0.84                        | +7.20  +0.00 0 | +4.63  -4.24 1 | +5.27  +0.00 0 | +5.77  -4.24 1
+v02|F|z0.52                        | +7.05  +0.00 0 | +4.95  -4.24 1 | +5.27  +0.00 0 | +5.82  -4.24 1
+v02|F|z0.0                         | +7.74  +0.00 0 | +4.95  -4.24 1 | +5.42  +0.00 0 | +6.12  -4.24 1
+v02|PF|z1.96                       | +7.02  +0.00 0 | +5.06  +0.00 0 | +6.14  +0.00 0 | +6.12  +0.00 0
+v02|PF|z1.28                       | +7.21  +0.00 0 | +4.94  +0.00 0 | +5.92  +0.00 0 | +6.09  +0.00 0
+v02|PF|z0.84                       | +7.21  +0.00 0 | +4.94  +0.00 0 | +6.21  +0.00 0 | +6.18  +0.00 0
+v02|PF|z0.52                       | +7.38  +0.00 0 | +5.53  +0.00 0 | +6.36  +0.00 0 | +6.48  +0.00 0
+v02|PF|z0.0                        | +7.38  +0.00 0 | +5.30  +0.00 0 | +6.53  +0.00 0 | +6.46  +0.00 0
+forms+|P|z1.96                     | +5.87  +0.00 0 | +6.13  +0.00 0 | +5.22  +0.00 0 | +5.73  +0.00 0
+forms+|P|z1.28                     | +7.34  +0.00 0 | +6.28  +0.00 0 | +7.23  +0.00 0 | +6.98  +0.00 0
+forms+|P|z0.84                     | +7.40  +0.00 0 | +7.12  +0.00 0 | +7.23  +0.00 0 | +7.26  +0.00 0
+forms+|P|z0.52                     | +7.53  +0.00 0 | +7.49  +0.00 0 | +7.59  +0.00 0 | +7.54  +0.00 0
+forms+|P|z0.0                      | +7.53  +0.00 0 | +7.49  +0.00 0 | +7.59  +0.00 0 | +7.54  +0.00 0
+forms+|F|z1.96                     | +6.32  +0.00 0 | +3.27  +0.00 0 | +6.16  +0.00 0 | +5.34  +0.00 0
+forms+|F|z1.28                     | +6.49  +0.00 0 | +5.99  +0.00 0 | +7.04  +0.00 0 | +6.52  +0.00 0
+forms+|F|z0.84                     | +6.62  +0.00 0 | +6.32  +0.00 0 | +7.04  +0.00 0 | +6.67  +0.00 0
+forms+|F|z0.52                     | +8.36  +0.00 0 | +6.68  +0.00 0 | +7.04  +0.00 0 | +7.40  +0.00 0
+forms+|F|z0.0                      | +8.36  +0.00 0 | +6.68  +0.00 0 | +7.40  +0.00 0 | +7.52  +0.00 0
+forms+|PF|z1.96                    | +7.21  +0.00 0 | +6.13  +0.00 0 | +6.70  +0.00 0 | +6.71  +0.00 0
+forms+|PF|z1.28                    | +7.40  +0.00 0 | +7.12  +0.00 0 | +6.70  +0.00 0 | +7.08  +0.00 0
+forms+|PF|z0.84                    | +7.40  +0.00 0 | +7.49  +0.00 0 | +7.16  +0.00 0 | +7.35  +0.00 0
+forms+|PF|z0.52                    | +7.57  +0.00 0 | +7.49  +0.00 0 | +7.31  +0.00 0 | +7.46  +0.00 0
+forms+|PF|z0.0                     | +8.61  +0.00 0 | +7.53  +0.00 0 | +7.85  +0.00 0 | +8.03  +0.00 0
+sv|P|z1.96                         | +7.83  +0.00 0 | +7.11  +0.00 0 | +7.90  +0.00 0 | +7.63  +0.00 0
+sv|P|z1.28                         | +8.98  +0.00 0 | +7.11  +0.00 0 | +7.76  +0.00 0 | +8.00  +0.00 0
+sv|P|z0.84                         | +9.05  +0.00 0 | +7.11  +0.00 0 | +8.09  +0.00 0 | +8.14  +0.00 0
+sv|P|z0.52                         | +9.18  +0.00 0 | +7.47  +0.00 0 | +8.45  +0.00 0 | +8.41  +0.00 0
+sv|P|z0.0                          | +9.18  +0.00 0 | +7.47  +0.00 0 | +8.45  +0.00 0 | +8.41  +0.00 0
+sv|F|z1.96                         | +8.19  +0.00 0 | +6.70  +0.00 0 | +6.63  +0.00 0 | +7.22  +0.00 0
+sv|F|z1.28                         | +8.36  +0.00 0 | +6.36  +0.00 0 | +7.04  +0.00 0 | +7.31  +0.00 0
+sv|F|z0.84                         | +8.49  +0.00 0 | +6.69  +0.00 0 | +7.04  +0.00 0 | +7.46  +0.00 0
+sv|F|z0.52                         | +9.53  +0.00 0 | +7.06  +0.00 0 | +7.04  +0.00 0 | +7.94  +0.00 0
+sv|F|z0.0                          | +9.53  +0.00 0 | +7.06  +0.00 0 | +7.40  +0.00 0 | +8.06  +0.00 0
+sv|PF|z1.96                        | +8.21  +0.00 0 | +7.13  +0.00 0 | +7.48  +0.00 0 | +7.64  +0.00 0
+sv|PF|z1.28                        | +8.41  +0.00 0 | +7.17  +0.00 0 | +7.48  +0.00 0 | +7.72  +0.00 0
+sv|PF|z0.84                        | +9.83  +0.00 0 | +7.54  +0.00 0 | +8.02  +0.00 0 | +8.53  +0.00 0
+sv|PF|z0.52                        | +10.00  +0.00 0 | +7.54  +0.00 0 | +8.17  +0.00 0 | +8.64  +0.00 0
+sv|PF|z0.0                         | +10.00  +0.00 0 | +7.54  +0.00 0 | +8.38  +0.00 0 | +8.71  +0.00 0
+sv-noliq|P|z1.96                   | +6.32  +0.00 0 | +7.43  +0.00 0 | +7.98  +0.00 0 | +7.21  +0.00 0
+sv-noliq|P|z1.28                   | +9.08  +0.00 0 | +7.43  +0.00 0 | +7.98  +0.00 0 | +8.21  +0.00 0
+sv-noliq|P|z0.84                   | +9.15  +0.00 0 | +7.43  +0.00 0 | +8.32  +0.00 0 | +8.35  +0.00 0
+sv-noliq|P|z0.52                   | +9.28  +0.00 0 | +7.79  +0.00 0 | +8.68  +0.00 0 | +8.62  +0.00 0
+sv-noliq|P|z0.0                    | +9.28  +0.00 0 | +7.79  +0.00 0 | +8.68  +0.00 0 | +8.62  +0.00 0
+sv-noliq|F|z1.96                   | +8.14  +0.00 0 | +5.57  +0.00 0 | +7.05  +0.00 0 | +6.99  +0.00 0
+sv-noliq|F|z1.28                   | +8.57  +0.00 0 | +7.16  +0.00 0 | +7.45  +0.00 0 | +7.77  +0.00 0
+sv-noliq|F|z0.84                   | +8.70  +0.00 0 | +7.49  +0.00 0 | +7.45  +0.00 0 | +7.91  +0.00 0
+sv-noliq|F|z0.52                   | +10.12  +0.00 0 | +7.86  +0.00 0 | +7.45  +0.00 0 | +8.54  +0.00 0
+sv-noliq|F|z0.0                    | +10.12  +0.00 0 | +7.86  +0.00 0 | +7.81  +0.00 0 | +8.66  +0.00 0
+sv-noliq|PF|z1.96                  | +8.19  +0.00 0 | +7.45  +0.00 0 | +7.56  +0.00 0 | +7.75  +0.00 0
+sv-noliq|PF|z1.28                  | +8.38  +0.00 0 | +7.49  +0.00 0 | +7.56  +0.00 0 | +7.84  +0.00 0
+sv-noliq|PF|z0.84                  | +9.81  +0.00 0 | +7.86  +0.00 0 | +8.11  +0.00 0 | +8.64  +0.00 0
+sv-noliq|PF|z0.52                  | +9.98  +0.00 0 | +7.86  +0.00 0 | +8.25  +0.00 0 | +8.75  +0.00 0
+sv-noliq|PF|z0.0                   | +9.98  +0.00 0 | +7.86  +0.00 0 | +8.47  +0.00 0 | +8.83  +0.00 0
+svonly|P|z1.96                     | +7.98  +0.00 0 | +7.26  +0.00 0 | +7.77  +0.00 0 | +7.69  +0.00 0
+svonly|P|z1.28                     | +9.14  +0.00 0 | +7.26  +0.00 0 | +7.73  +0.00 0 | +8.09  +0.00 0
+svonly|P|z0.84                     | +9.14  +0.00 0 | +7.26  +0.00 0 | +8.06  +0.00 0 | +8.21  +0.00 0
+svonly|P|z0.52                     | +9.27  +0.00 0 | +7.26  +0.00 0 | +8.45  +0.00 0 | +8.38  +0.00 0
+svonly|P|z0.0                      | +9.27  +0.00 0 | +7.45  +0.00 0 | +8.45  +0.00 0 | +8.44  +0.00 0
+svonly|F|z1.96                     | +8.37  +0.00 0 | +6.70  +0.00 0 | +7.10  +0.00 0 | +7.44  +0.00 0
+svonly|F|z1.28                     | +8.80  +0.00 0 | +6.98  +0.00 0 | +7.75  +0.00 0 | +7.89  +0.00 0
+svonly|F|z0.84                     | +8.93  +0.00 0 | +7.31  +0.00 0 | +7.75  +0.00 0 | +8.04  +0.00 0
+svonly|F|z0.52                     | +10.12  +0.00 0 | +7.31  +0.00 0 | +7.75  +0.00 0 | +8.47  +0.00 0
+svonly|F|z0.0                      | +10.12  +0.00 0 | +7.49  +0.00 0 | +8.14  +0.00 0 | +8.66  +0.00 0
+svonly|PF|z1.96                    | +8.21  +0.00 0 | +7.26  +0.00 0 | +7.71  +0.00 0 | +7.76  +0.00 0
+svonly|PF|z1.28                    | +8.34  +0.00 0 | +7.31  +0.00 0 | +7.71  +0.00 0 | +7.82  +0.00 0
+svonly|PF|z0.84                    | +10.03  +0.00 0 | +7.31  +0.00 0 | +8.25  +0.00 0 | +8.61  +0.00 0
+svonly|PF|z0.52                    | +10.20  +0.00 0 | +7.49  +0.00 0 | +8.40  +0.00 0 | +8.77  +0.00 0
+svonly|PF|z0.0                     | +10.20  +0.00 0 | +7.49  +0.00 0 | +8.64  +0.00 0 | +8.85  +0.00 0
+svonly-noliq|P|z1.96               | +6.57  +0.00 0 | +7.45  +0.00 0 | +8.00  +0.00 0 | +7.32  +0.00 0
+svonly-noliq|P|z1.28               | +9.34  +0.00 0 | +7.45  +0.00 0 | +8.00  +0.00 0 | +8.32  +0.00 0
+svonly-noliq|P|z0.84               | +9.34  +0.00 0 | +7.45  +0.00 0 | +8.34  +0.00 0 | +8.43  +0.00 0
+svonly-noliq|P|z0.52               | +9.47  +0.00 0 | +7.45  +0.00 0 | +8.73  +0.00 0 | +8.60  +0.00 0
+svonly-noliq|P|z0.0                | +9.47  +0.00 0 | +7.63  +0.00 0 | +8.73  +0.00 0 | +8.66  +0.00 0
+svonly-noliq|F|z1.96               | +8.14  +0.00 0 | +5.57  +0.00 0 | +7.18  +0.00 0 | +7.03  +0.00 0
+svonly-noliq|F|z1.28               | +8.57  +0.00 0 | +7.16  +0.00 0 | +7.84  +0.00 0 | +7.89  +0.00 0
+svonly-noliq|F|z0.84               | +8.70  +0.00 0 | +7.49  +0.00 0 | +7.84  +0.00 0 | +8.04  +0.00 0
+svonly-noliq|F|z0.52               | +10.12  +0.00 0 | +7.49  +0.00 0 | +7.84  +0.00 0 | +8.56  +0.00 0
+svonly-noliq|F|z0.0                | +10.12  +0.00 0 | +7.67  +0.00 0 | +8.23  +0.00 0 | +8.74  +0.00 0
+svonly-noliq|PF|z1.96              | +8.19  +0.00 0 | +7.45  +0.00 0 | +7.80  +0.00 0 | +7.83  +0.00 0
+svonly-noliq|PF|z1.28              | +8.32  +0.00 0 | +7.49  +0.00 0 | +7.80  +0.00 0 | +7.89  +0.00 0
+svonly-noliq|PF|z0.84              | +10.00  +0.00 0 | +7.49  +0.00 0 | +8.34  +0.00 0 | +8.68  +0.00 0
+svonly-noliq|PF|z0.52              | +10.17  +0.00 0 | +7.67  +0.00 0 | +8.48  +0.00 0 | +8.85  +0.00 0
+svonly-noliq|PF|z0.0               | +10.17  +0.00 0 | +7.67  +0.00 0 | +8.73  +0.00 0 | +8.93  +0.00 0
+
+LODO variant per held-out dataset: {'aime': 'svonly-noliq|PF|z0.0', 'bfcl': 'svonly-noliq|PF|z0.0', 'bird': 'svonly-noliq|PF|z0.0', 'gpqa': 'sv-noliq|PF|z0.0', 'hotpotqa': 'svonly-noliq|PF|z0.0', 'hover': 'svonly-noliq|PF|z0.0', 'ifbench': 'svonly-noliq|PF|z0.52', 'lcb': 'svonly|PF|z0.0', 'livebench': 'svonly-noliq|PF|z0.0', 'natplan': 'svonly|PF|z0.0', 'pupa': 'svonly-noliq|PF|z0.0', 'tau2': 'svonly-noliq|PF|z0.0', 'toolhop': 'svonly-noliq|PF|z0.0'}
+LODO-chosen rule                   | +9.82  +0.00 0 | +7.49  +0.00 0 | +8.02  +0.00 0 | +8.51  +0.00 0
+
+per cell: chosen policy and DEV delta (pp) for a few variants
+cell                        v02|P|z1.96             sv|PF|z0.0            sv|PF|z0.52            sv|PF|z0.84       sv-noliq|PF|z0.0         svonly|PF|z0.0              sv|P|z0.0
+gepa:hotpotqa        assembled   +2.7       SV:liquid   +4.3       SV:liquid   +4.3       SV:liquid   +4.3    SV:assembled   +4.0       SV:liquid   +4.3       SV:liquid   +4.3  
+gepa:hover           assembled   +6.7      assembled+   +6.7      assembled+   +6.7      assembled+   +6.7      assembled+   +6.7    SV:assembled   +6.7      assembled+   +6.7  
+gepa:ifbench             rigid   +0.0      assembled+   +2.2      assembled+   +2.2           rigid   +0.0      assembled+   +2.2    SV:assembled   +2.2           rigid   +0.0  
+gepa:pupa                rigid   +0.0      assembled+   +1.7      assembled+   +1.7      assembled+   +1.7      assembled+   +1.7    SV:assembled   +1.7      assembled+   +1.7  
+gepa:aime            assembled  +28.7       SV:liquid  +32.0       SV:liquid  +32.0       SV:liquid  +32.0    SV:assembled  +30.0       SV:liquid  +32.0    SV:assembled  +30.0  
+gepa:gpqa                rigid   +0.0      assembled+   +0.8      assembled+   +0.8      assembled+   +0.8      assembled+   +0.8        SV:rigid   +3.4      assembled+   +0.8  
+gepa:livebench       assembled  +11.4    SV:assembled  +14.8    SV:assembled  +14.8    SV:assembled  +14.8    SV:assembled  +14.8    SV:assembled  +14.8    SV:assembled  +14.8  
+gepa:lcb                liquid  +15.0      assembled+  +17.0      assembled+  +17.0      assembled+  +17.0      assembled+  +17.0    SV:assembled  +17.0         liquid+  +16.0  
+gepa:bfcl                rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0  
+gepa:tau2                rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0  
+gepa:natplan             rigid   +0.0       SV:liquid  +19.0       SV:liquid  +19.0       SV:liquid  +19.0    SV:assembled  +21.0       SV:liquid  +19.0       SV:liquid  +19.0  
+gepa:bird                rigid   +0.0    SV:assembled  +18.5    SV:assembled  +18.5    SV:assembled  +18.5    SV:assembled  +18.5    SV:assembled  +18.5        SV:rigid  +15.0  
+gepa:toolhop             vote3  +10.5    SV:assembled  +13.0    SV:assembled  +13.0    SV:assembled  +13.0    SV:assembled  +13.0    SV:assembled  +13.0      assembled+  +11.0  
+gepa1:livebench         liquid  +10.9         liquid+  +13.0         liquid+  +13.0         liquid+  +13.0    SV:assembled  +13.2       SV:liquid  +13.0         liquid+  +13.0  
+gepa1:ifbench            rigid   +0.0      assembled+   +1.5      assembled+   +1.5           rigid   +0.0      assembled+   +1.5    SV:assembled   +1.5      assembled+   +1.5  
+gepa1:hotpotqa       assembled   +0.7      assembled+   +0.7      assembled+   +0.7      assembled+   +0.7      assembled+   +0.7       SV:liquid   +1.3      assembled+   +0.7  
+mipro:aime           assembled  +15.3        SV:rigid  +16.0        SV:rigid  +16.0        SV:rigid  +16.0        SV:rigid  +16.0        SV:rigid  +16.0        SV:rigid  +16.0  
+mipro:gpqa               vote3   +5.9    SV:assembled   +8.5    SV:assembled   +8.5    SV:assembled   +8.5    SV:assembled   +8.5    SV:assembled   +8.5    SV:assembled   +8.5  
+mipro:livebench      assembled  +17.8    SV:assembled  +19.3    SV:assembled  +19.3    SV:assembled  +19.3    SV:assembled  +19.3    SV:assembled  +19.3      assembled+  +19.0  
+mipro:hotpotqa           rigid   +0.0    SV:assembled   +3.0    SV:assembled   +3.0    SV:assembled   +3.0    SV:assembled   +3.0    SV:assembled   +3.0    SV:assembled   +3.0  
+mipro:lcb               liquid   +6.0         liquid+  +17.0         liquid+  +17.0         liquid+  +17.0      assembled+  +17.0       SV:liquid  +17.0         liquid+  +17.0  
+mipro:natplan           liquid  +11.0         liquid+  +11.0         liquid+  +11.0         liquid+  +11.0    SV:assembled  +14.5       SV:liquid  +12.5         liquid+  +11.0  
+mipro:bird               rigid   +0.0      assembled+   +4.0      assembled+   +4.0      assembled+   +4.0      assembled+   +4.0        SV:rigid   +2.0      assembled+   +4.0  
+mipro:toolhop            rigid   +0.0    SV:assembled   +0.5    SV:assembled   +0.5    SV:assembled   +0.5    SV:assembled   +0.5    SV:assembled   +0.5           rigid   +0.0  
+mipro:ifbench            rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0  
+mipro:hover          assembled   +3.7      assembled+   +3.7      assembled+   +3.7      assembled+   +3.7      assembled+   +3.7    SV:assembled   +3.7      assembled+   +3.7  
+mipro:pupa               rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0  
+simba:aime              liquid   +8.7       SV:liquid  +24.0       SV:liquid  +24.0       SV:liquid  +24.0    SV:assembled  +22.0       SV:liquid  +24.0       SV:liquid  +24.0  
+simba:gpqa               vote3   +3.4      assembled+   +0.8      assembled+   +0.8      assembled+   +0.8      assembled+   +0.8        SV:rigid   +3.4         liquid+   +1.7  
+simba:livebench      assembled  +10.4      assembled+  +13.3      assembled+  +13.3      assembled+  +13.3      assembled+  +13.3    SV:assembled  +13.5      assembled+  +13.3  
+simba:hotpotqa       assembled   +5.7      assembled+   +5.7      assembled+   +5.7      assembled+   +5.7      assembled+   +5.7    SV:assembled   +5.7      assembled+   +5.7  
+simba:lcb            assembled   +7.0         liquid+  +15.0         liquid+  +15.0         liquid+  +15.0      assembled+  +18.0       SV:liquid  +15.0         liquid+  +15.0  
+simba:natplan            rigid   +0.0    SV:assembled  +17.0    SV:assembled  +17.0    SV:assembled  +17.0    SV:assembled  +17.0    SV:assembled  +17.0      assembled+  +17.0  
+simba:bird               rigid   +0.0    SV:assembled   +6.5    SV:assembled   +6.5    SV:assembled   +6.5    SV:assembled   +6.5    SV:assembled   +6.5    SV:assembled   +6.5  
+simba:toolhop            rigid   +0.0        SV:rigid   +4.0        SV:rigid   +4.0        SV:rigid   +4.0        SV:rigid   +4.0        SV:rigid   +4.0        SV:rigid   +4.0  
+simba:ifbench            rigid   +0.0      assembled+   +2.6           rigid   +0.0           rigid   +0.0      assembled+   +2.6    SV:assembled   +2.9      assembled+   +2.6  
+simba:hover          assembled  +10.0      assembled+  +10.0      assembled+  +10.0      assembled+  +10.0      assembled+  +10.0    SV:assembled  +10.0      assembled+  +10.0  
+simba:pupa               rigid   +0.0      assembled+   +1.8      assembled+   +1.8           rigid   +0.0      assembled+   +1.8    SV:assembled   +1.8      assembled+   +1.8  
+simba:bfcl               rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0           rigid   +0.0  

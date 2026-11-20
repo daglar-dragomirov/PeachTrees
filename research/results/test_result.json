@@ -1,0 +1,282 @@
+{
+ "summary": {
+  "cells_ok": 15,
+  "cells_total": 15,
+  "gepa": {
+   "cells": 5,
+   "mean_gain_pp": 6.65
+  },
+  "mipro": {
+   "cells": 5,
+   "mean_gain_pp": 8.53
+  },
+  "simba": {
+   "cells": 5,
+   "mean_gain_pp": 6.13
+  },
+  "all": {
+   "cells": 15,
+   "mean_gain_pp": 7.1,
+   "worst_pp": -0.5,
+   "ci_above_0": 7,
+   "ci_below_0": 0
+  }
+ },
+ "cells": [
+  {
+   "cell": "gepa:gpqa",
+   "status": "ok",
+   "n": 80,
+   "program": 0.7625,
+   "peachtrees_lite": 0.8,
+   "gain_pp": 3.75,
+   "ci95_pp": [
+    -3.75,
+    12.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 2
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/d26e4531-c342-4cf4-aca7-fe66ab638381/repo/runs/fieldsuite-v04-tbj6g/worker"
+  },
+  {
+   "cell": "mipro:gpqa",
+   "status": "ok",
+   "n": 80,
+   "program": 0.7375,
+   "peachtrees_lite": 0.7375,
+   "gain_pp": 0.0,
+   "ci95_pp": [
+    -8.75,
+    8.75
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/322632af-5ca4-4726-b6a6-070e59927b39/repo/runs/fieldsuite-v04-tbptmg/worker"
+  },
+  {
+   "cell": "simba:gpqa",
+   "status": "ok",
+   "n": 80,
+   "program": 0.7125,
+   "peachtrees_lite": 0.75,
+   "gain_pp": 3.75,
+   "ci95_pp": [
+    -5.0,
+    12.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/3df4fc58-6277-45f4-914f-a4fcade3009f/repo/runs/fieldsuite-v04-tbptsg/worker"
+  },
+  {
+   "cell": "gepa:natplan",
+   "status": "ok",
+   "n": 200,
+   "program": 0.81,
+   "peachtrees_lite": 0.945,
+   "gain_pp": 13.5,
+   "ci95_pp": [
+    8.0,
+    19.0
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/83e080d2-355e-4018-9acc-5930230904e5/repo/runs/fieldsuite-v04-tbptnp/worker"
+  },
+  {
+   "cell": "mipro:natplan",
+   "status": "ok",
+   "n": 200,
+   "program": 0.76,
+   "peachtrees_lite": 0.93,
+   "gain_pp": 17.0,
+   "ci95_pp": [
+    11.5,
+    22.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/c32f3680-ca8d-43ed-a681-58bca7319dfc/repo/runs/fieldsuite-v04-tptmnp/worker"
+  },
+  {
+   "cell": "simba:natplan",
+   "status": "ok",
+   "n": 200,
+   "program": 0.835,
+   "peachtrees_lite": 0.94,
+   "gain_pp": 10.5,
+   "ci95_pp": [
+    4.5,
+    16.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/647cd5e3-fd4a-4a5b-aafb-ef97a75fe9a3/repo/runs/fieldsuite-v04-tptsnp/worker"
+  },
+  {
+   "cell": "gepa:bird",
+   "status": "ok",
+   "n": 200,
+   "program": 0.43,
+   "peachtrees_lite": 0.455,
+   "gain_pp": 2.5,
+   "ci95_pp": [
+    -3.5,
+    8.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/487e7323-c83f-41fb-affe-23b1562f1fd0/repo/runs/fieldsuite-v04-tptbr/worker"
+  },
+  {
+   "cell": "mipro:bird",
+   "status": "ok",
+   "n": 200,
+   "program": 0.39,
+   "peachtrees_lite": 0.48,
+   "gain_pp": 9.0,
+   "ci95_pp": [
+    3.0,
+    15.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/ae7505fb-5432-470c-8937-40442035b492/repo/runs/fieldsuite-v04-tptmbr/worker"
+  },
+  {
+   "cell": "simba:bird",
+   "status": "ok",
+   "n": 200,
+   "program": 0.39,
+   "peachtrees_lite": 0.425,
+   "gain_pp": 3.5,
+   "ci95_pp": [
+    -2.5,
+    9.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/7b92991e-cf26-43fe-8e8e-153ca820f9b2/repo/runs/fieldsuite-v04-tptsbr/worker"
+  },
+  {
+   "cell": "gepa:toolhop",
+   "status": "ok",
+   "n": 200,
+   "program": 0.525,
+   "peachtrees_lite": 0.55,
+   "gain_pp": 2.5,
+   "ci95_pp": [
+    -2.0,
+    7.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/8cabcfd2-4a19-4fa0-8896-7ca562a35798/repo/runs/fieldsuite-v04-tptth/worker"
+  },
+  {
+   "cell": "mipro:toolhop",
+   "status": "ok",
+   "n": 200,
+   "program": 0.73,
+   "peachtrees_lite": 0.75,
+   "gain_pp": 2.0,
+   "ci95_pp": [
+    -3.5,
+    7.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/68e1b7ce-35ed-4d31-965b-ef40895b0fad/repo/runs/fieldsuite-v04-tptmth/worker"
+  },
+  {
+   "cell": "simba:toolhop",
+   "status": "ok",
+   "n": 200,
+   "program": 0.76,
+   "peachtrees_lite": 0.755,
+   "gain_pp": -0.5,
+   "ci95_pp": [
+    -6.0,
+    4.5
+   ],
+   "dead": {
+    "rigid": 0,
+    "assembled": 0
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/8f9bde38-2cbe-498f-839c-f37a5a5ea218/repo/runs/fieldsuite-v04-tptsth/worker"
+  },
+  {
+   "cell": "gepa:lcb",
+   "status": "ok",
+   "n": 82,
+   "program": 0.5976,
+   "peachtrees_lite": 0.7073,
+   "gain_pp": 10.98,
+   "ci95_pp": [
+    2.44,
+    20.73
+   ],
+   "dead": {
+    "rigid": 6,
+    "assembled": 9
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/0c1bacec-5a2c-4446-9caa-a78c2a262a62/repo/runs/fieldsuite-v04-tdj6c/worker"
+  },
+  {
+   "cell": "mipro:lcb",
+   "status": "ok",
+   "n": 82,
+   "program": 0.5854,
+   "peachtrees_lite": 0.7317,
+   "gain_pp": 14.63,
+   "ci95_pp": [
+    7.32,
+    23.17
+   ],
+   "dead": {
+    "rigid": 5,
+    "assembled": 13
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/58495623-1dc5-4722-85a3-d357840fb1cd/repo/runs/fieldsuite-v04-tdptmc/worker"
+  },
+  {
+   "cell": "simba:lcb",
+   "status": "ok",
+   "n": 82,
+   "program": 0.5976,
+   "peachtrees_lite": 0.7317,
+   "gain_pp": 13.41,
+   "ci95_pp": [
+    6.1,
+    20.73
+   ],
+   "dead": {
+    "rigid": 9,
+    "assembled": 12
+   },
+   "run_dir": "/root/.local/share/openresearch/local-runs/acffc1ea-d670-435c-b407-3f5170342f2e/repo/runs/fieldsuite-v04-tdptsc/worker"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+base policy: NI rule, prior VSV:assembled; DEV; contested = no majority after verify -> vote
+cell | base gain | contested share | improvable within contested (pp of DEV) | judge coverage | won lost (covered, contested) | est. net gain at full coverage (pp)
+gepa:hotpotqa      +4.0 | 0.06 |   1.0 | 1.00 |   0   0 |  +0.0   [verifiable]
+gepa:hover         +6.7 | 1.00 |   5.3 | 1.00 |   7  19 |  -4.0   [rubric]
+gepa:ifbench       +2.2 | 0.95 |   1.3 | 0.00 |   0   0 |  +0.0   [rubric]
+gepa:pupa          +1.7 | 0.98 |   1.1 | 0.00 |   0   0 |  +0.0   [rubric]
+gepa:aime         +30.0 | 0.17 |   8.0 | 0.88 |   6   0 |  +4.5   [verifiable]
+gepa:gpqa          +5.1 | 0.03 |   1.7 | 0.00 |   0   0 |  +0.0   [verifiable]
+gepa:livebench    +14.8 | 0.21 |   3.8 | 1.00 |   2   0 |  +0.6   [verifiable]
+gepa:lcb          +17.0 | 0.81 |   8.0 | 0.00 |   0   0 |  +0.0   [verifiable]
+gepa:bfcl          +0.0 | 0.90 |   8.2 | 1.00 |   0   1 |  -2.0   [rubric]
+gepa:tau2          +0.0 | 1.00 |   0.7 | 0.00 |   0   0 |  +0.0   [rubric]
+gepa:natplan      +24.5 | 0.20 |   0.0 | 0.10 |   0   0 |  +0.0   [verifiable]
+gepa:bird         +18.5 | 0.12 |   2.5 | 0.04 |   1   0 | +12.5   [verifiable]
+gepa:toolhop      +13.0 | 0.33 |   6.0 | 0.03 |   0   0 |  +0.0   [verifiable]
+mipro:aime        +20.0 | 0.20 |   8.0 | 0.83 |   1   0 |  +0.8   [verifiable]
+mipro:gpqa         +8.5 | 0.06 |   1.7 | 0.14 |   1   0 |  +5.9   [verifiable]
+mipro:livebench   +19.3 | 0.25 |   2.9 | 0.90 |   0   0 |  +0.0   [verifiable]
+mipro:hotpotqa     +3.0 | 0.05 |   2.3 | 0.00 |   0   0 |  +0.0   [verifiable]
+mipro:lcb         +17.0 | 0.69 |   4.0 | 0.00 |   0   0 |  +0.0   [verifiable]
+mipro:natplan     +18.0 | 0.23 |   0.5 | 0.00 |   0   0 |  +0.0   [verifiable]
+mipro:bird         +2.5 | 0.12 |   5.0 | 0.17 |   0   0 |  +0.0   [verifiable]
+mipro:toolhop      +0.5 | 0.17 |   6.5 | 0.00 |   0   0 |  +0.0   [verifiable]
+mipro:ifbench      +0.0 | 0.99 |   5.2 | 1.00 |   2   4 |  -0.5   [rubric]
+mipro:hover        +3.7 | 1.00 |   4.7 | 1.00 |   0   3 |  -1.0   [rubric]
+mipro:pupa         +0.0 | 1.00 |   7.2 | 1.00 |   4   5 |  +0.7   [rubric]
+simba:aime        +22.0 | 0.18 |   7.3 | 0.00 |   0   0 |  +0.0   [verifiable]
+simba:gpqa         +5.1 | 0.03 |   0.8 | 0.00 |   0   0 |  +0.0   [verifiable]
+simba:livebench   +13.5 | 0.29 |   3.4 | 0.81 |   0   1 |  -0.1   [verifiable]
+simba:hotpotqa     +5.7 | 0.05 |   1.7 | 1.00 |   1   0 |  +0.3   [verifiable]
+simba:lcb         +18.0 | 0.70 |   4.0 | 0.84 |   0   0 |  +0.0   [verifiable]
+simba:natplan     +21.0 | 0.25 |   0.0 | 0.08 |   0   0 |  +0.0   [verifiable]
+simba:bird         +6.5 | 0.09 |   3.5 | 0.11 |   0   0 |  +0.0   [verifiable]
+simba:toolhop      +4.5 | 0.15 |   3.0 | 0.00 |   0   0 |  +0.0   [verifiable]
+simba:ifbench      +2.9 | 0.94 |   2.1 | 0.00 |   0   0 |  +0.0   [rubric]
+simba:hover       +10.0 | 1.00 |   5.3 | 1.00 |  11  11 |  +0.0   [rubric]
+simba:pupa         +1.8 | 0.96 |   0.8 | 0.00 |   0   0 |  +0.0   [rubric]
+simba:bfcl         +0.0 | 0.90 |   4.1 | 1.00 |   1   0 |  +2.0   [rubric]
+
+verifiable cells 24: improvable (contested) mean 3.57 pp/cell; recorded judge won 12 lost 1 (precision 0.92); est. net at full coverage: mean +1.02 pp/cell; if harmful cells are gated off: +1.03 pp/cell
+rubric     cells 12: improvable (contested) mean 3.83 pp/cell; recorded judge won 25 lost 43 (precision 0.37); est. net at full coverage: mean -0.40 pp/cell; if harmful cells are gated off: +0.23 pp/cell
+macro over 36 cells if the judge runs only on verifiable datasets (gated): +0.69 pp; ungated +0.68 pp
+macro over 36 cells, upper bound (all improvable contested items recovered, verifiable datasets): +2.38 pp; all datasets: +3.66 pp

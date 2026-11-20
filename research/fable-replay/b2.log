@@ -1,0 +1,101 @@
+== NATURAL PLAN: P(correct | checker verdict), per form, all roles pooled
+gepa:natplan trip: | r: valid: n=121 acc=0.983 invalid: n=28 acc=0.000 unk: n=0 | l: valid: n=137 acc=0.978 invalid: n=12 acc=0.000 unk: n=0 | a: valid: n=132 acc=0.970 invalid: n=15 acc=0.000 unk: n=0
+gepa:natplan meeting: | r: valid: n=102 acc=1.000 invalid: n=41 acc=0.073 unk: n=0 | l: valid: n=134 acc=1.000 invalid: n=12 acc=0.083 unk: n=0 | a: valid: n=134 acc=1.000 invalid: n=8 acc=0.125 unk: n=0
+mipro:natplan trip: | r: valid: n=116 acc=0.991 invalid: n=34 acc=0.000 unk: n=0 | l: valid: n=138 acc=0.971 invalid: n=12 acc=0.000 unk: n=0 | a: valid: n=136 acc=0.978 invalid: n=14 acc=0.000 unk: n=0
+mipro:natplan meeting: | r: valid: n=122 acc=1.000 invalid: n=28 acc=0.036 unk: n=0 | l: valid: n=141 acc=0.993 invalid: n=9 acc=0.000 unk: n=0 | a: valid: n=140 acc=0.993 invalid: n=9 acc=0.000 unk: n=0
+simba:natplan trip: | r: valid: n=130 acc=0.977 invalid: n=20 acc=0.000 unk: n=0 | l: valid: n=145 acc=0.993 invalid: n=5 acc=0.000 unk: n=0 | a: valid: n=143 acc=0.993 invalid: n=6 acc=0.000 unk: n=0
+simba:natplan meeting: | r: valid: n=106 acc=1.000 invalid: n=44 acc=0.068 unk: n=0 | l: valid: n=132 acc=1.000 invalid: n=14 acc=0.071 unk: n=0 | a: valid: n=140 acc=1.000 invalid: n=8 acc=0.000 unk: n=0
+
+== LCB: P(correct | last public-test result seen in the agent's own trajectory)
+gepa:lcb: | liquid: pass: n=198 acc=0.828 fail: n=21 acc=0.048 none: n=38 acc=0.474 | assembled: pass: n=214 acc=0.836 fail: n=30 acc=0.000 none: n=15 acc=0.733
+mipro:lcb: | liquid: pass: n=150 acc=0.893 fail: n=1 acc=0.000 none: n=43 acc=0.837 | assembled: pass: n=175 acc=0.903 fail: n=1 acc=1.000 none: n=14 acc=1.000
+simba:lcb: | liquid: pass: n=164 acc=0.909 fail: n=1 acc=0.000 none: n=24 acc=0.708 | assembled: pass: n=172 acc=0.959 fail: n=6 acc=0.667 none: n=9 acc=0.889
+
+== assembled changed its draft? accuracy of assembled / rigid by 'changed' (DEV)
+gepa:hotpotqa    | changed=0: share 0.92 asm 0.794 rigid 0.787 | changed=1: share 0.08 asm 0.652 rigid 0.391
+gepa:hover      
+gepa:ifbench     | changed=0: share 0.79 asm 0.936 rigid 0.913 | changed=1: share 0.21 asm 0.870 rigid 0.849
+gepa:pupa       
+gepa:aime        | changed=0: share 0.59 asm 0.888 rigid 0.708 | changed=1: share 0.39 asm 0.862 rigid 0.397
+gepa:gpqa        | changed=0: share 0.93 asm 0.818 rigid 0.845 | changed=1: share 0.07 asm 0.875 rigid 0.375
+gepa:livebench   | changed=0: share 0.78 asm 0.707 rigid 0.671 | changed=1: share 0.22 asm 0.794 rigid 0.408
+gepa:lcb         | changed=0: share 0.01 asm 0.000 rigid 0.000 | changed=1: share 0.99 asm 0.717 rigid 0.545
+gepa:bfcl       
+gepa:natplan     | changed=0: share 0.74 asm 0.919 rigid 0.770 | changed=1: share 0.21 asm 0.929 rigid 0.595
+gepa:bird        | changed=0: share 0.89 asm 0.565 rigid 0.424 | changed=1: share 0.12 asm 0.826 rigid 0.217
+gepa:toolhop     | changed=0: share 0.93 asm 0.557 rigid 0.443 | changed=1: share 0.04 asm 0.714 rigid 0.571
+gepa1:livebench  | changed=0: share 0.71 asm 0.817 rigid 0.696 | changed=1: share 0.21 asm 0.821 rigid 0.632
+gepa1:ifbench    | changed=0: share 0.65 asm 0.893 rigid 0.883 | changed=1: share 0.34 asm 0.841 rigid 0.817
+gepa1:hotpotqa   | changed=0: share 0.98 asm 0.789 rigid 0.789 | changed=1: share 0.02 asm 0.667 rigid 0.333
+mipro:aime       | changed=0: share 0.69 asm 0.883 rigid 0.728 | changed=1: share 0.27 asm 0.750 rigid 0.525
+mipro:gpqa       | changed=0: share 0.87 asm 0.845 rigid 0.796 | changed=1: share 0.12 asm 0.786 rigid 0.357
+mipro:livebench  | changed=0: share 0.74 asm 0.805 rigid 0.654 | changed=1: share 0.21 asm 0.780 rigid 0.396
+mipro:hotpotqa   | changed=0: share 0.95 asm 0.796 rigid 0.804 | changed=1: share 0.05 asm 0.667 rigid 0.200
+mipro:lcb        | changed=1: share 0.73 asm 0.918 rigid 0.685
+mipro:natplan    | changed=0: share 0.82 asm 0.915 rigid 0.806 | changed=1: share 0.17 asm 0.971 rigid 0.706
+mipro:bird       | changed=0: share 0.89 asm 0.483 rigid 0.472 | changed=1: share 0.11 asm 0.727 rigid 0.500
+mipro:toolhop    | changed=0: share 0.94 asm 0.741 rigid 0.751 | changed=1: share 0.06 asm 0.727 rigid 0.455
+mipro:ifbench    | changed=0: share 0.64 asm 0.921 rigid 0.921 | changed=1: share 0.36 asm 0.857 rigid 0.891
+mipro:hover     
+mipro:pupa      
+simba:aime       | changed=0: share 0.62 asm 0.892 rigid 0.688 | changed=1: share 0.21 asm 0.871 rigid 0.484
+simba:gpqa       | changed=0: share 0.89 asm 0.781 rigid 0.800 | changed=1: share 0.10 asm 0.750 rigid 0.500
+simba:livebench  | changed=0: share 0.67 asm 0.756 rigid 0.660 | changed=1: share 0.26 asm 0.809 rigid 0.548
+simba:hotpotqa   | changed=0: share 0.93 asm 0.814 rigid 0.786 | changed=1: share 0.07 asm 0.600 rigid 0.150
+simba:lcb        | changed=1: share 0.71 asm 0.930 rigid 0.676
+simba:natplan    | changed=0: share 0.83 asm 0.958 rigid 0.820 | changed=1: share 0.15 asm 0.903 rigid 0.548
+simba:bird       | changed=0: share 0.86 asm 0.439 rigid 0.428 | changed=1: share 0.14 asm 0.556 rigid 0.370
+simba:toolhop    | changed=0: share 0.94 asm 0.791 rigid 0.770 | changed=1: share 0.06 asm 0.500 rigid 0.167
+simba:ifbench    | changed=0: share 0.79 asm 0.926 rigid 0.900 | changed=1: share 0.20 asm 0.867 rigid 0.840
+simba:hover     
+simba:pupa      
+simba:bfcl      
+macro changed=0: share 0.562 asm 0.780 rigid 0.720
+macro changed=1: share 0.179 asm 0.823 rigid 0.570
+
+== form errors (no output) on DEV: share per form, and the error texts
+gepa:natplan     dead share r=0.03 l=0.03 a=0.05
+gepa:bird        dead share r=0.10 l=0.07 a=0.04
+gepa:toolhop     dead share r=0.07 l=0.01 a=0.04
+gepa1:livebench  dead share r=0.03 l=0.03 a=0.08
+mipro:aime       dead share r=0.00 l=0.06 a=0.05
+mipro:gpqa       dead share r=0.00 l=0.07 a=0.01
+mipro:livebench  dead share r=0.00 l=0.06 a=0.06
+mipro:lcb        dead share r=0.12 l=0.28 a=0.27
+mipro:bird       dead share r=0.06 l=0.07 a=0.04
+mipro:toolhop    dead share r=0.00 l=0.04 a=0.00
+simba:aime       dead share r=0.00 l=0.15 a=0.17
+simba:gpqa       dead share r=0.00 l=0.04 a=0.01
+simba:livebench  dead share r=0.00 l=0.06 a=0.07
+simba:lcb        dead share r=0.14 l=0.28 a=0.29
+simba:bird       dead share r=0.04 l=0.04 a=0.04
+ptmc rigid {'AdapterParseError: The LM returned an empty or null response.\n\nAdapter JSONAdapter failed to parse the LM resp': 12}
+ptmc liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 15, 'AdapterParseError: Failed to parse field next_tool_args: 1 validation error for dict[str,any]\n  Input should b': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The problem asks ': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The previous atte': 2}
+ptmc assembled {'AdapterParseError: The LM returned an empty or null response.\n\nAdapter JSONAdapter failed to parse the LM resp': 15, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The provided draf': 5, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 4, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish", "next_to': 1}
+ptsc rigid {'AdapterParseError: The LM returned an empty or null response.\n\nAdapter JSONAdapter failed to parse the LM resp': 13, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"reasoning": "Model th': 1}
+ptsc liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 17, 'AdapterParseError: Failed to parse field next_tool_args: 1 validation error for dict[str,any]\n  Input should b': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "Fennec"} \n\nExpect': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The previous step': 1}
+ptsc assembled {'AdapterParseError: The LM returned an empty or null response.\n\nAdapter JSONAdapter failed to parse the LM resp': 14, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 8, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The provided draf': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {";": "The provided dra': 1}
+ptsa liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 10, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish"} \n\nExpect': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The problem asks ': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish", "next_to': 2}
+ptsa assembled {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 13, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", ""': 4, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The draft reasoni': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish"} \n\nExpect': 2}
+ptth rigid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "I need to find th': 2, 'AdapterParseError: Failed to parse field next_tool_args: 1 validation error for dict[str,any]\n  Input should b': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The director of \\': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "I need to find mo': 1}
+ptth liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The father of the': 1}
+ptth assembled {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "I need to find th': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "I have identified': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The first step is': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The longest reign': 1}
+ptnp rigid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {} \n\nExpected to find o': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The goal is to ma': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {": ": "reasoning", "an': 1}
+ptnp liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 2, 'AdapterParseError: Failed to parse field next_tool_args: 1 validation error for dict[str,any]\n  Input should b': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The previous Pyth': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "SOLUTION:You star': 1}
+ptnp assembled {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {": ": "reasoning", "an': 4, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "reasoning", "answ': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish"} \n\nExpect': 1}
+ptma liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The problem asks ': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The complex recur': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish", "next_to': 1}
+ptma assembled {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 3, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", ""': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The computational': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {\n"reasoning":"Let me s': 1}
+pt1l rigid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {":reasoning": "The tas': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "reasoning", "answ': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {">reasoning": "The goa': 1}
+pt1l liquid {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "reasoning", "answ': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "The problem requi': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 1, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "finish"} \n\nExpect': 1}
+pt1l assembled {'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "next_thought", "n': 4, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "reasoning", "answ': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {":reasoning": "The tas': 2, 'AdapterParseError: Adapter JSONAdapter failed to parse the LM response. \n\nLM Response: {"": "Detailed reasonin': 1}
+0
+1200
+1500
+1800
+2100
+2400
+2700
+3000
+3300
+DONE 3600 ok 3408
+

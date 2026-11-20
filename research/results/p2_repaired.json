@@ -1,0 +1,1107 @@
+{
+ "repaired": true,
+ "sources": {
+  "ptnp": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/d3409056-b846-4560-a78a-c68248d4725b/repo/runs/fieldsuite-v04-p3rptnp/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/d3409056-b846-4560-a78a-c68248d4725b/repo/runs/fieldsuite-v04-p3rptnp/worker",
+   "DEV-rigid": "/root/.local/share/openresearch/local-runs/d3409056-b846-4560-a78a-c68248d4725b/repo/runs/fieldsuite-v04-p3rptnp/worker"
+  },
+  "ptth": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/695a54eb-9b65-43af-bbf5-94455180a9eb/repo/runs/fieldsuite-v04-p3rptth/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/695a54eb-9b65-43af-bbf5-94455180a9eb/repo/runs/fieldsuite-v04-p3rptth/worker",
+   "DEV-rigid": "/root/.local/share/openresearch/local-runs/695a54eb-9b65-43af-bbf5-94455180a9eb/repo/runs/fieldsuite-v04-p3rptth/worker"
+  },
+  "pt1l": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/9cd5acfa-f26d-4842-a8ff-160ffbe48b9d/repo/runs/fieldsuite-v04-p3rpt1l/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/9cd5acfa-f26d-4842-a8ff-160ffbe48b9d/repo/runs/fieldsuite-v04-p3rpt1l/worker"
+  },
+  "ptma": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "PARETO-liquid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "PARETO-assembled": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "FIT-liquid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "FIT-assembled": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "DEV-rigid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "DEV-liquid": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker",
+   "DEV-assembled": "/root/.local/share/openresearch/local-runs/36fcd8f1-9a2a-4982-8ee8-d4fe91799a89/repo/runs/fieldsuite-v04-p3ptma/worker"
+  },
+  "ptmc": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/dd609097-9cb4-4347-a2c4-36afefc2e0e5/repo/runs/fieldsuite-v04-p3ptmc/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/a10fb5ad-8cfe-4591-8184-aedc4c2b80e3/repo/runs/fieldsuite-v04-p3rptmc/worker"
+  },
+  "ptmi": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/dfdb547a-7f7e-4039-b0a1-3fc9975f16be/repo/runs/fieldsuite-v04-p3rptmi/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/dfdb547a-7f7e-4039-b0a1-3fc9975f16be/repo/runs/fieldsuite-v04-p3rptmi/worker"
+  },
+  "ptsa": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/a11bb0fa-aaba-45ce-a14b-155a59d2ebb1/repo/runs/fieldsuite-v04-p3ptsa/worker",
+   "PARETO-liquid": "/root/.local/share/openresearch/local-runs/ea020df6-9d35-4c5a-9312-1a2d3d8df3fa/repo/runs/fieldsuite-v04-p3aptsa/worker",
+   "PARETO-assembled": "/root/.local/share/openresearch/local-runs/ea020df6-9d35-4c5a-9312-1a2d3d8df3fa/repo/runs/fieldsuite-v04-p3aptsa/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/a11bb0fa-aaba-45ce-a14b-155a59d2ebb1/repo/runs/fieldsuite-v04-p3ptsa/worker",
+   "FIT-liquid": "/root/.local/share/openresearch/local-runs/ea020df6-9d35-4c5a-9312-1a2d3d8df3fa/repo/runs/fieldsuite-v04-p3aptsa/worker",
+   "FIT-assembled": "/root/.local/share/openresearch/local-runs/ea020df6-9d35-4c5a-9312-1a2d3d8df3fa/repo/runs/fieldsuite-v04-p3aptsa/worker",
+   "DEV-rigid": "/root/.local/share/openresearch/local-runs/a11bb0fa-aaba-45ce-a14b-155a59d2ebb1/repo/runs/fieldsuite-v04-p3ptsa/worker",
+   "DEV-liquid": "/root/.local/share/openresearch/local-runs/ea020df6-9d35-4c5a-9312-1a2d3d8df3fa/repo/runs/fieldsuite-v04-p3aptsa/worker"
+  },
+  "ptsc": {
+   "PARETO-rigid": "/root/.local/share/openresearch/local-runs/30e6e064-118e-464a-b72c-7c5763f58b52/repo/runs/fieldsuite-v04-p3ptsc/worker",
+   "FIT-rigid": "/root/.local/share/openresearch/local-runs/4152c80b-9da5-431e-8385-5045a6367034/repo/runs/fieldsuite-v04-p3rptsc/worker"
+  }
+ },
+ "cells": [
+  {
+   "opt": "gepa",
+   "ds": "hotpotqa",
+   "name": "j6h",
+   "repaired": 0,
+   "rigid_dev": 0.7566666666666667,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.04444,
+    "pf_se": 0.01158,
+    "dev_gain": 0.04,
+    "ci95": [
+     0.01667,
+     0.06667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.04222,
+    "pf_se": 0.01301,
+    "dev_gain": 0.02667,
+    "ci95": [
+     -0.00333,
+     0.06
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "hover",
+   "name": "j6v",
+   "repaired": 0,
+   "rigid_dev": 0.7066666666666667,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.08667,
+    "pf_se": 0.01829,
+    "dev_gain": 0.06667,
+    "ci95": [
+     0.02667,
+     0.10667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.08667,
+    "pf_se": 0.01829,
+    "dev_gain": 0.06667,
+    "ci95": [
+     0.02667,
+     0.10667
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "ifbench",
+   "name": "j6i",
+   "repaired": 0,
+   "rigid_dev": 0.8997777777777778,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.00514,
+    "pf_se": 0.00694,
+    "dev_gain": 0.02233,
+    "ci95": [
+     0.003,
+     0.04467
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.00514,
+    "pf_se": 0.00694,
+    "dev_gain": 0.02233,
+    "ci95": [
+     0.003,
+     0.04467
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "pupa",
+   "name": "j6p",
+   "repaired": 0,
+   "rigid_dev": 0.9702865761689291,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.00884,
+    "pf_se": 0.00687,
+    "dev_gain": 0.01689,
+    "ci95": [
+     -0.00038,
+     0.03469
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.00884,
+    "pf_se": 0.00687,
+    "dev_gain": 0.01689,
+    "ci95": [
+     -0.00038,
+     0.03469
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "aime",
+   "name": "j6a",
+   "repaired": 0,
+   "rigid_dev": 0.5733333333333334,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.26667,
+    "pf_se": 0.04687,
+    "dev_gain": 0.3,
+    "ci95": [
+     0.20667,
+     0.40667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.21111,
+    "pf_se": 0.05585,
+    "dev_gain": 0.28667,
+    "ci95": [
+     0.19333,
+     0.39333
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "gpqa",
+   "name": "j6g",
+   "repaired": 0,
+   "rigid_dev": 0.8135593220338984,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.03333,
+    "pf_se": 0.04313,
+    "dev_gain": 0.05085,
+    "ci95": [
+     0.0,
+     0.10169
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.07778,
+    "pf_se": 0.048,
+    "dev_gain": 0.00847,
+    "ci95": [
+     -0.0678,
+     0.08475
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "livebench",
+   "name": "j6l",
+   "repaired": 0,
+   "rigid_dev": 0.6128872199805362,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.09024,
+    "pf_se": 0.02038,
+    "dev_gain": 0.14767,
+    "ci95": [
+     0.07974,
+     0.22035
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.08168,
+    "pf_se": 0.02302,
+    "dev_gain": 0.11365,
+    "ci95": [
+     0.03959,
+     0.19442
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "lcb",
+   "name": "j6c",
+   "repaired": 0,
+   "rigid_dev": 0.54,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.2125,
+    "pf_se": 0.03478,
+    "dev_gain": 0.17,
+    "ci95": [
+     0.09,
+     0.26
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.2125,
+    "pf_se": 0.03478,
+    "dev_gain": 0.17,
+    "ci95": [
+     0.09,
+     0.26
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "bfcl",
+   "name": "j7b",
+   "repaired": 0,
+   "rigid_dev": 0.7551020408163265,
+   "full": {
+    "use_pi": false,
+    "pf_mean": -0.06061,
+    "pf_se": 0.03152,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "lite": {
+    "use_pi": false,
+    "pf_mean": -0.06061,
+    "pf_se": 0.03152,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "tau2",
+   "name": "u8j",
+   "repaired": 0,
+   "rigid_dev": 0.9933333333333333,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.0,
+    "pf_se": 0.0,
+    "dev_gain": 0.0,
+    "ci95": [
+     -0.02,
+     0.02
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.0,
+    "pf_se": 0.0,
+    "dev_gain": 0.0,
+    "ci95": [
+     -0.02,
+     0.02
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "natplan",
+   "name": "ptnp",
+   "repaired": 3,
+   "rigid_dev": 0.73,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.16,
+    "pf_se": 0.03949,
+    "dev_gain": 0.24,
+    "ci95": [
+     0.18,
+     0.3
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.16,
+    "pf_se": 0.03949,
+    "dev_gain": 0.24,
+    "ci95": [
+     0.18,
+     0.3
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "bird",
+   "name": "ptbr",
+   "repaired": 0,
+   "rigid_dev": 0.4,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.04,
+    "pf_se": 0.04245,
+    "dev_gain": 0.185,
+    "ci95": [
+     0.12,
+     0.245
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": -0.01,
+    "pf_se": 0.05221,
+    "dev_gain": 0.205,
+    "ci95": [
+     0.13,
+     0.275
+    ]
+   }
+  },
+  {
+   "opt": "gepa",
+   "ds": "toolhop",
+   "name": "ptth",
+   "repaired": 3,
+   "rigid_dev": 0.515,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.09,
+    "pf_se": 0.03208,
+    "dev_gain": 0.08,
+    "ci95": [
+     0.035,
+     0.125
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.06,
+    "pf_se": 0.03712,
+    "dev_gain": 0.06,
+    "ci95": [
+     0.01,
+     0.11
+    ]
+   }
+  },
+  {
+   "opt": "gepa1",
+   "ds": "livebench",
+   "name": "pt1l",
+   "repaired": 2,
+   "rigid_dev": 0.6576945034829927,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.13155,
+    "pf_se": 0.02251,
+    "dev_gain": 0.13246,
+    "ci95": [
+     0.07483,
+     0.19958
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.12769,
+    "pf_se": 0.02298,
+    "dev_gain": 0.13378,
+    "ci95": [
+     0.07592,
+     0.20146
+    ]
+   }
+  },
+  {
+   "opt": "gepa1",
+   "ds": "ifbench",
+   "name": "pt1i",
+   "repaired": 0,
+   "rigid_dev": 0.8606666666666666,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.00472,
+    "pf_se": 0.00875,
+    "dev_gain": 0.01456,
+    "ci95": [
+     -0.01406,
+     0.04389
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.00472,
+    "pf_se": 0.00875,
+    "dev_gain": 0.01456,
+    "ci95": [
+     -0.01406,
+     0.04389
+    ]
+   }
+  },
+  {
+   "opt": "gepa1",
+   "ds": "hotpotqa",
+   "name": "pt1h",
+   "repaired": 0,
+   "rigid_dev": 0.78,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.01778,
+    "pf_se": 0.00886,
+    "dev_gain": 0.01,
+    "ci95": [
+     -0.01,
+     0.03333
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.02444,
+    "pf_se": 0.01061,
+    "dev_gain": 0.00667,
+    "ci95": [
+     -0.01667,
+     0.03
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "aime",
+   "name": "ptma",
+   "repaired": 9,
+   "rigid_dev": 0.6533333333333333,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.22222,
+    "pf_se": 0.05423,
+    "dev_gain": 0.23333,
+    "ci95": [
+     0.14667,
+     0.32667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.2,
+    "pf_se": 0.05741,
+    "dev_gain": 0.19333,
+    "ci95": [
+     0.11333,
+     0.28667
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "gpqa",
+   "name": "ptmg",
+   "repaired": 0,
+   "rigid_dev": 0.7372881355932204,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.11111,
+    "pf_se": 0.03331,
+    "dev_gain": 0.08475,
+    "ci95": [
+     0.02542,
+     0.15254
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.07778,
+    "pf_se": 0.04248,
+    "dev_gain": 0.09322,
+    "ci95": [
+     0.01695,
+     0.16949
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "livebench",
+   "name": "ptml",
+   "repaired": 0,
+   "rigid_dev": 0.576317093109978,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.12464,
+    "pf_se": 0.02037,
+    "dev_gain": 0.19272,
+    "ci95": [
+     0.12921,
+     0.26343
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.10072,
+    "pf_se": 0.02398,
+    "dev_gain": 0.19045,
+    "ci95": [
+     0.12208,
+     0.26421
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "hotpotqa",
+   "name": "ptmh",
+   "repaired": 0,
+   "rigid_dev": 0.7733333333333333,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.02,
+    "pf_se": 0.00965,
+    "dev_gain": 0.03,
+    "ci95": [
+     0.0,
+     0.06
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.01556,
+    "pf_se": 0.0111,
+    "dev_gain": 0.01667,
+    "ci95": [
+     -0.02,
+     0.05333
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "lcb",
+   "name": "ptmc",
+   "repaired": 2,
+   "rigid_dev": 0.56,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.13125,
+    "pf_se": 0.03332,
+    "dev_gain": 0.17,
+    "ci95": [
+     0.09,
+     0.26
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.13125,
+    "pf_se": 0.03332,
+    "dev_gain": 0.17,
+    "ci95": [
+     0.09,
+     0.26
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "natplan",
+   "name": "ptmnp",
+   "repaired": 0,
+   "rigid_dev": 0.79,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.18,
+    "pf_se": 0.03861,
+    "dev_gain": 0.18,
+    "ci95": [
+     0.13,
+     0.235
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.17,
+    "pf_se": 0.04034,
+    "dev_gain": 0.18,
+    "ci95": [
+     0.13,
+     0.235
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "bird",
+   "name": "ptmbr",
+   "repaired": 0,
+   "rigid_dev": 0.475,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.01,
+    "pf_se": 0.03622,
+    "dev_gain": 0.025,
+    "ci95": [
+     -0.03,
+     0.08
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.04,
+    "pf_se": 0.04697,
+    "dev_gain": 0.04,
+    "ci95": [
+     -0.02,
+     0.105
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "toolhop",
+   "name": "ptmth",
+   "repaired": 0,
+   "rigid_dev": 0.735,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.06,
+    "pf_se": 0.03429,
+    "dev_gain": 0.005,
+    "ci95": [
+     -0.045,
+     0.05
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.02,
+    "pf_se": 0.04015,
+    "dev_gain": 0.005,
+    "ci95": [
+     -0.045,
+     0.055
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "ifbench",
+   "name": "ptmi",
+   "repaired": 2,
+   "rigid_dev": 0.9073888888888888,
+   "full": {
+    "use_pi": false,
+    "pf_mean": -0.02347,
+    "pf_se": 0.00999,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "lite": {
+    "use_pi": false,
+    "pf_mean": -0.02347,
+    "pf_se": 0.00999,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "hover",
+   "name": "ptmv",
+   "repaired": 0,
+   "rigid_dev": 0.7133333333333334,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.05556,
+    "pf_se": 0.01629,
+    "dev_gain": 0.03667,
+    "ci95": [
+     0.0,
+     0.07667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.05556,
+    "pf_se": 0.01629,
+    "dev_gain": 0.03667,
+    "ci95": [
+     0.0,
+     0.07667
+    ]
+   }
+  },
+  {
+   "opt": "mipro",
+   "ds": "pupa",
+   "name": "ptmp",
+   "repaired": 0,
+   "rigid_dev": 0.8810493428140487,
+   "full": {
+    "use_pi": false,
+    "pf_mean": -0.02713,
+    "pf_se": 0.01395,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "lite": {
+    "use_pi": false,
+    "pf_mean": -0.02713,
+    "pf_se": 0.01395,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "aime",
+   "name": "ptsa",
+   "repaired": 8,
+   "rigid_dev": 0.62,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.33333,
+    "pf_se": 0.05474,
+    "dev_gain": 0.22,
+    "ci95": [
+     0.14,
+     0.30667
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.32222,
+    "pf_se": 0.05659,
+    "dev_gain": 0.20667,
+    "ci95": [
+     0.11333,
+     0.3
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "gpqa",
+   "name": "ptsg",
+   "repaired": 0,
+   "rigid_dev": 0.7627118644067796,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.05556,
+    "pf_se": 0.03659,
+    "dev_gain": 0.05085,
+    "ci95": [
+     0.0,
+     0.10169
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.1,
+    "pf_se": 0.04483,
+    "dev_gain": 0.00847,
+    "ci95": [
+     -0.05932,
+     0.08475
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "livebench",
+   "name": "ptsl2",
+   "repaired": 0,
+   "rigid_dev": 0.6118418750545775,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.09443,
+    "pf_se": 0.01845,
+    "dev_gain": 0.13497,
+    "ci95": [
+     0.07855,
+     0.19792
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.10682,
+    "pf_se": 0.02039,
+    "dev_gain": 0.13259,
+    "ci95": [
+     0.07602,
+     0.19702
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "hotpotqa",
+   "name": "ptsh",
+   "repaired": 0,
+   "rigid_dev": 0.7433333333333333,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.04222,
+    "pf_se": 0.01,
+    "dev_gain": 0.05667,
+    "ci95": [
+     0.03333,
+     0.08333
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.04444,
+    "pf_se": 0.01158,
+    "dev_gain": 0.05667,
+    "ci95": [
+     0.03,
+     0.08333
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "lcb",
+   "name": "ptsc",
+   "repaired": 2,
+   "rigid_dev": 0.59,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.16875,
+    "pf_se": 0.031,
+    "dev_gain": 0.18,
+    "ci95": [
+     0.11,
+     0.26
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.16875,
+    "pf_se": 0.031,
+    "dev_gain": 0.18,
+    "ci95": [
+     0.11,
+     0.26
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "natplan",
+   "name": "ptsnp",
+   "repaired": 0,
+   "rigid_dev": 0.775,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.19,
+    "pf_se": 0.03943,
+    "dev_gain": 0.21,
+    "ci95": [
+     0.155,
+     0.27
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.19,
+    "pf_se": 0.03943,
+    "dev_gain": 0.215,
+    "ci95": [
+     0.16,
+     0.275
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "bird",
+   "name": "ptsbr",
+   "repaired": 0,
+   "rigid_dev": 0.42,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.05,
+    "pf_se": 0.04113,
+    "dev_gain": 0.065,
+    "ci95": [
+     0.015,
+     0.115
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.04,
+    "pf_se": 0.04477,
+    "dev_gain": 0.055,
+    "ci95": [
+     0.0,
+     0.11
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "toolhop",
+   "name": "ptsth",
+   "repaired": 0,
+   "rigid_dev": 0.73,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.03,
+    "pf_se": 0.0332,
+    "dev_gain": 0.045,
+    "ci95": [
+     0.005,
+     0.09
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.01,
+    "pf_se": 0.03622,
+    "dev_gain": 0.04,
+    "ci95": [
+     -0.005,
+     0.085
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "ifbench",
+   "name": "ptsi",
+   "repaired": 0,
+   "rigid_dev": 0.8871111111111111,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.00278,
+    "pf_se": 0.00647,
+    "dev_gain": 0.02889,
+    "ci95": [
+     0.00278,
+     0.05444
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.00278,
+    "pf_se": 0.00647,
+    "dev_gain": 0.02556,
+    "ci95": [
+     -0.00111,
+     0.05167
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "hover",
+   "name": "ptsv",
+   "repaired": 0,
+   "rigid_dev": 0.6933333333333334,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.08222,
+    "pf_se": 0.01834,
+    "dev_gain": 0.1,
+    "ci95": [
+     0.06,
+     0.14333
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.08222,
+    "pf_se": 0.01834,
+    "dev_gain": 0.1,
+    "ci95": [
+     0.06,
+     0.14333
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "pupa",
+   "name": "ptsp",
+   "repaired": 0,
+   "rigid_dev": 0.9695818598932786,
+   "full": {
+    "use_pi": true,
+    "pf_mean": 0.00533,
+    "pf_se": 0.00817,
+    "dev_gain": 0.0176,
+    "ci95": [
+     0.00365,
+     0.03328
+    ]
+   },
+   "lite": {
+    "use_pi": true,
+    "pf_mean": 0.00533,
+    "pf_se": 0.00817,
+    "dev_gain": 0.0176,
+    "ci95": [
+     0.00365,
+     0.03328
+    ]
+   }
+  },
+  {
+   "opt": "simba",
+   "ds": "bfcl",
+   "name": "ptsb",
+   "repaired": 0,
+   "rigid_dev": 0.7959183673469388,
+   "full": {
+    "use_pi": false,
+    "pf_mean": -0.0303,
+    "pf_se": 0.02249,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "lite": {
+    "use_pi": false,
+    "pf_mean": -0.0303,
+    "pf_se": 0.02249,
+    "dev_gain": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  }
+ ]
+}

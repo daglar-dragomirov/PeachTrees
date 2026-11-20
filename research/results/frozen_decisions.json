@@ -1,0 +1,77 @@
+{
+ "gepa:gpqa": {
+  "name": "j6g",
+  "lite_use": true,
+  "full_use": true
+ },
+ "mipro:gpqa": {
+  "name": "ptmg",
+  "lite_use": true,
+  "full_use": true
+ },
+ "simba:gpqa": {
+  "name": "ptsg",
+  "lite_use": true,
+  "full_use": true
+ },
+ "gepa:natplan": {
+  "name": "ptnp",
+  "lite_use": true,
+  "full_use": true
+ },
+ "mipro:natplan": {
+  "name": "ptmnp",
+  "lite_use": true,
+  "full_use": true
+ },
+ "simba:natplan": {
+  "name": "ptsnp",
+  "lite_use": true,
+  "full_use": true
+ },
+ "gepa:bird": {
+  "name": "ptbr",
+  "lite_use": true,
+  "full_use": true
+ },
+ "mipro:bird": {
+  "name": "ptmbr",
+  "lite_use": true,
+  "full_use": true
+ },
+ "simba:bird": {
+  "name": "ptsbr",
+  "lite_use": true,
+  "full_use": true
+ },
+ "gepa:toolhop": {
+  "name": "ptth",
+  "lite_use": true,
+  "full_use": true
+ },
+ "mipro:toolhop": {
+  "name": "ptmth",
+  "lite_use": true,
+  "full_use": true
+ },
+ "simba:toolhop": {
+  "name": "ptsth",
+  "lite_use": true,
+  "full_use": true
+ },
+ "gepa:lcb": {
+  "name": "j6c",
+  "lite_use": true,
+  "full_use": true
+ },
+ "mipro:lcb": {
+  "name": "ptmc",
+  "lite_use": true,
+  "full_use": true
+ },
+ "simba:lcb": {
+  "name": "ptsc",
+  "lite_use": true,
+  "full_use": true
+ }
+}

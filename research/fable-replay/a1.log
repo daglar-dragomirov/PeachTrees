@@ -1,0 +1,45 @@
+cell | n | rigid liquid assembled vote3 oracle | default(lite) full(judge) reported | gate | modes
+gepa:hotpotqa    300 | 0.757 0.777 0.783 0.790 0.830 | assembled 0.783 0.790 0.790 | gate=1 thr=3 sw=7 w/l=2/0 supp=0 w/l=0/0 | {'identical': 237, 'judged': 63}
+gepa:hover       300 | 0.707 0.577 0.773 0.707 0.827 | assembled 0.773 0.773 0.773 | gate=0 thr=99 sw=0 w/l=0/0 supp=121 w/l=7/19 | {'judged': 174, 'below_confidence': 121, 'judge_error': 5}
+gepa:ifbench     300 | 0.900 0.869 0.922 0.900 0.936 | rigid     0.900 0.908 0.908 | gate=1 thr=3 sw=28 w/l=5/2 supp=1 w/l=0/0 | {'judged': 275, 'identical': 10, 'judge_error': 14, 'below_confidence': 1}
+gepa:pupa        221 | 0.970 0.972 0.987 0.970 1.000 | rigid     0.970 0.964 0.970 | gate=0 thr=4 sw=44 w/l=1/3 supp=1 w/l=1/0 | {'judged': 217, 'judge_error': 2, 'below_confidence': 1, 'identical': 1}
+gepa:aime        150 | 0.573 0.840 0.860 0.840 0.953 | assembled 0.860 0.887 0.887 | gate=1 thr=5 sw=7 w/l=4/0 supp=4 w/l=3/0 | {'identical': 73, 'judged': 67, 'judge_error': 3, 'below_confidence': 4, 'default_failed': 3}
+gepa:gpqa        118 | 0.814 0.814 0.822 0.847 0.924 | rigid     0.814 0.847 0.847 | gate=1 thr=3 sw=8 w/l=6/2 supp=0 w/l=0/0 | {'identical': 87, 'judged': 27, 'judge_error': 4}
+gepa:livebench   126 | 0.613 0.765 0.727 0.739 0.803 | assembled 0.727 0.740 0.740 | gate=1 thr=3 sw=3 w/l=3/0 supp=0 w/l=0/0 | {'judged': 56, 'identical': 60, 'judge_error': 10}
+gepa:lcb         100 | 0.540 0.690 0.710 0.540 0.790 | liquid    0.690 0.730 0.730 | gate=1 thr=3 sw=9 w/l=4/0 supp=0 w/l=0/0 | {'judged': 92, 'identical': 3, 'judge_error': 4, 'default_failed': 1}
+gepa:bfcl         49 | 0.755 0.673 0.673 0.735 0.837 | rigid     0.755 0.735 0.755 | gate=0 thr=4 sw=4 w/l=0/1 supp=1 w/l=0/0 | {'judged': 44, 'identical': 3, 'below_confidence': 1, 'judge_error': 1}
+gepa:tau2        150 | 0.993 1.000 0.993 0.993 1.000 | rigid     0.993 0.993 0.993 | gate=0 thr=99 sw=0 w/l=0/0 supp=1 w/l=0/0 | {'judged': 149, 'below_confidence': 1}
+gepa:natplan     200 | 0.720 0.890 0.875 0.840 0.975 | rigid     0.720 0.830 0.830 | gate=1 thr=0 sw=26 w/l=22/0 supp=0 w/l=0/0 | {'judged': 89, 'identical': 97, 'judge_error': 8, 'default_failed': 5, 'no_trajectory': 1}
+gepa:bird        200 | 0.400 0.490 0.595 0.405 0.700 | rigid     0.400 0.400 0.400 | gate=0 thr=99 sw=0 w/l=0/0 supp=21 w/l=9/0 | {'judged': 161, 'judge_error': 14, 'below_confidence': 21, 'identical': 4}
+gepa:toolhop     200 | 0.465 0.550 0.540 0.570 0.665 | vote3     0.570 0.570 0.570 | gate=0 thr=99 sw=0 w/l=0/0 supp=18 w/l=8/3 | {'below_confidence': 18, 'judged': 75, 'identical': 96, 'judge_error': 11}
+gepa1:livebench  126 | 0.658 0.767 0.753 0.780 0.834 | liquid    0.767 0.786 0.786 | gate=1 thr=0 sw=8 w/l=4/1 supp=0 w/l=0/0 | {'judged': 51, 'default_failed': 3, 'identical': 64, 'no_trajectory': 1, 'judge_error': 7}
+gepa1:ifbench    300 | 0.861 0.816 0.866 0.861 0.926 | rigid     0.861 0.867 0.861 | gate=0 thr=5 sw=11 w/l=2/0 supp=44 w/l=2/6 | {'judge_error': 32, 'below_confidence': 44, 'identical': 5, 'judged': 219}
+gepa1:hotpotqa   300 | 0.780 0.763 0.787 0.797 0.823 | assembled 0.787 0.787 0.787 | gate=0 thr=99 sw=0 w/l=0/0 supp=9 w/l=4/4 | {'identical': 247, 'judge_error': 12, 'below_confidence': 9, 'judged': 32}
+mipro:aime       150 | 0.653 0.773 0.807 0.780 0.940 | assembled 0.807 0.820 0.807 | gate=0 thr=99 sw=7 w/l=2/0 supp=5 w/l=4/1 | {'judged': 64, 'judge_error': 18, 'identical': 56, 'default_failed': 7, 'below_confidence': 5}
+mipro:gpqa       118 | 0.737 0.695 0.831 0.797 0.890 | vote3     0.797 0.797 0.797 | gate=0 thr=99 sw=0 w/l=0/0 supp=10 w/l=5/2 | {'identical': 81, 'judged': 21, 'below_confidence': 10, 'judge_error': 6}
+mipro:livebench  126 | 0.576 0.739 0.755 0.710 0.806 | assembled 0.755 0.767 0.767 | gate=1 thr=0 sw=7 w/l=5/0 supp=0 w/l=0/0 | {'judged': 54, 'judge_error': 11, 'identical': 54, 'default_failed': 7}
+mipro:hotpotqa   300 | 0.773 0.793 0.790 0.803 0.857 | rigid     0.773 0.773 0.773 | gate=0 thr=99 sw=0 w/l=0/0 supp=21 w/l=12/2 | {'identical': 236, 'below_confidence': 21, 'judged': 41, 'judge_error': 2}
+mipro:lcb        100 | 0.560 0.620 0.670 0.570 0.770 | liquid    0.620 0.680 0.680 | gate=1 thr=0 sw=21 w/l=6/0 supp=0 w/l=0/0 | {'judged': 62, 'identical': 7, 'default_failed': 20, 'no_trajectory': 8, 'judge_error': 3}
+mipro:natplan    200 | 0.790 0.900 0.920 0.860 0.975 | liquid    0.900 0.900 0.900 | gate=0 thr=99 sw=0 w/l=0/0 supp=7 w/l=4/0 | {'judged': 88, 'below_confidence': 7, 'identical': 101, 'judge_error': 4}
+mipro:bird       200 | 0.475 0.445 0.510 0.470 0.660 | rigid     0.475 0.475 0.475 | gate=0 thr=99 sw=0 w/l=0/0 supp=18 w/l=8/0 | {'judged': 167, 'below_confidence': 18, 'identical': 8, 'judge_error': 7}
+mipro:toolhop    200 | 0.735 0.505 0.740 0.765 0.825 | rigid     0.735 0.735 0.735 | gate=0 thr=99 sw=0 w/l=0/0 supp=22 w/l=4/13 | {'judged': 58, 'identical': 102, 'judge_error': 18, 'below_confidence': 22}
+mipro:ifbench    300 | 0.907 0.874 0.895 0.914 0.966 | rigid     0.907 0.911 0.907 | gate=0 thr=99 sw=1 w/l=1/0 supp=23 w/l=2/4 | {'judged': 266, 'below_confidence': 23, 'judge_error': 7, 'identical': 3, 'default_failed': 1}
+mipro:hover      300 | 0.713 0.280 0.750 0.713 0.797 | assembled 0.750 0.750 0.750 | gate=0 thr=99 sw=0 w/l=0/0 supp=5 w/l=0/3 | {'judged': 282, 'judge_error': 13, 'below_confidence': 5}
+mipro:pupa       221 | 0.881 0.829 0.892 0.879 0.953 | rigid     0.881 0.881 0.881 | gate=0 thr=99 sw=0 w/l=0/0 supp=32 w/l=4/5 | {'judged': 184, 'below_confidence': 32, 'judge_error': 5}
+simba:aime       150 | 0.620 0.707 0.733 0.787 0.920 | liquid    0.707 0.773 0.773 | gate=1 thr=99 sw=22 w/l=10/0 supp=5 w/l=5/0 | {'identical': 67, 'judged': 30, 'judge_error': 26, 'default_failed': 22, 'below_confidence': 5}
+simba:gpqa       118 | 0.763 0.763 0.771 0.797 0.873 | vote3     0.797 0.797 0.797 | gate=0 thr=99 sw=0 w/l=0/0 supp=5 w/l=2/1 | {'identical': 87, 'below_confidence': 5, 'judge_error': 10, 'judged': 16}
+simba:livebench  126 | 0.612 0.704 0.716 0.691 0.805 | assembled 0.716 0.752 0.752 | gate=1 thr=0 sw=11 w/l=7/1 supp=0 w/l=0/0 | {'judge_error': 2, 'judged': 52, 'identical': 63, 'default_failed': 9}
+simba:hotpotqa   300 | 0.743 0.780 0.800 0.783 0.850 | assembled 0.800 0.810 0.810 | gate=1 thr=3 sw=5 w/l=3/0 supp=0 w/l=0/0 | {'identical': 236, 'judged': 61, 'judge_error': 3}
+simba:lcb        100 | 0.590 0.620 0.660 0.590 0.810 | assembled 0.660 0.770 0.770 | gate=1 thr=0 sw=17 w/l=11/0 supp=0 w/l=0/0 | {'judged': 67, 'no_trajectory': 12, 'default_failed': 17, 'judge_error': 4}
+simba:natplan    200 | 0.775 0.930 0.940 0.825 0.995 | rigid     0.775 0.815 0.815 | gate=1 thr=3 sw=11 w/l=8/0 supp=0 w/l=0/0 | {'identical': 61, 'judged': 125, 'judge_error': 14}
+simba:bird       200 | 0.420 0.420 0.455 0.420 0.600 | rigid     0.420 0.440 0.420 | gate=0 thr=3 sw=12 w/l=4/0 supp=0 w/l=0/0 | {'judged': 187, 'identical': 6, 'judge_error': 7}
+simba:toolhop    200 | 0.730 0.490 0.770 0.770 0.810 | rigid     0.730 0.730 0.730 | gate=0 thr=99 sw=0 w/l=0/0 supp=27 w/l=12/9 | {'judged': 58, 'judge_error': 11, 'identical': 104, 'below_confidence': 27}
+simba:ifbench    300 | 0.887 0.868 0.908 0.887 0.940 | rigid     0.887 0.887 0.887 | gate=0 thr=99 sw=0 w/l=0/0 supp=17 w/l=2/2 | {'judge_error': 23, 'judged': 254, 'below_confidence': 17, 'identical': 6}
+simba:hover      300 | 0.693 0.633 0.793 0.693 0.847 | assembled 0.793 0.793 0.793 | gate=0 thr=99 sw=0 w/l=0/0 supp=152 w/l=11/11 | {'below_confidence': 152, 'judged': 147, 'judge_error': 1}
+simba:pupa       221 | 0.970 0.871 0.987 0.967 0.995 | rigid     0.970 0.970 0.970 | gate=0 thr=99 sw=0 w/l=0/0 supp=7 w/l=2/1 | {'judged': 202, 'judge_error': 12, 'below_confidence': 7}
+simba:bfcl        49 | 0.796 0.714 0.755 0.776 0.837 | rigid     0.796 0.816 0.796 | gate=0 thr=3 sw=5 w/l=1/0 supp=0 w/l=0/0 | {'judged': 40, 'judge_error': 2, 'identical': 7}
+
+gepa n_cells 13 liquid: mean +5.39 worst -13.00 assembled: mean +8.11 worst -8.16 vote3: mean +5.15 worst -2.04 oracle: mean +15.63 worst +0.67 lite: mean +5.76 worst +0.00 full: mean +7.39 worst -2.04 reported: mean +7.59 worst +0.00
+gepa1 n_cells 3 liquid: mean +1.57 worst -4.52 assembled: mean +3.59 worst +0.57 vote3: mean +4.63 worst +0.00 oracle: mean +9.50 worst +4.33 lite: mean +3.85 worst +0.00 full: mean +4.73 worst +0.67 reported: mean +4.50 worst +0.00
+mipro n_cells 11 liquid: mean -3.17 worst -43.33 assembled: mean +6.88 worst -1.22 vote3: mean +4.17 worst -0.50 oracle: mean +14.88 worst +5.84 lite: mean +5.43 worst +0.00 full: mean +6.24 worst +0.00 reported: mean +6.09 worst +0.00
+simba n_cells 12 liquid: mean -0.82 worst -24.00 assembled: mean +5.75 worst -4.08 vote3: mean +3.23 worst -2.04 oracle: mean +14.03 worst +2.59 lite: mean +3.76 worst +0.00 full: mean +6.29 worst +0.00 reported: mean +5.95 worst +0.00

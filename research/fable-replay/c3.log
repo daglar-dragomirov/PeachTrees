@@ -1,0 +1,48 @@
+== gepa:bird
+  rigid     error: n=23 acc=0.087 | empty: n=8 acc=0.000 | allnull: n=7 acc=0.000 | rows: n=262 acc=0.492
+  liquid    error: n=20 acc=0.100 | empty: n=7 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=270 acc=0.544
+  assembled error: n=11 acc=0.182 | empty: n=6 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=280 acc=0.596
+  PARETO n=50 patterns {'ALL': 25, 'DEAD': 6, 'LA|R': 5, 'RA|L': 3, 'RL|A': 7, 'R|L|A': 4} | rigid=0.500 liquid+=0.480 assembled+=0.480 SV:rigid=0.560 SV:assembled=0.540 VSV:assembled=0.540 oracle=0.640
+  FIT    n=50 patterns {'ALL': 25, 'DEAD': 6, 'LA|R': 8, 'RA|L': 6, 'RL|A': 2, 'R|L|A': 3} | rigid=0.520 liquid+=0.580 assembled+=0.520 SV:rigid=0.520 SV:assembled=0.560 VSV:assembled=0.560 oracle=0.720
+  DEV    n=200 patterns {'ALL': 89, 'DEAD': 31, 'LA|R': 27, 'RA|L': 20, 'RL|A': 18, 'R|L|A': 15} | rigid=0.400 liquid+=0.535 assembled+=0.605 SV:rigid=0.550 SV:assembled=0.585 VSV:assembled=0.585 oracle=0.700
+  PARETO with the non-empty filter: Vassembled+=0.480 VSV:assembled=0.540 VSV:rigid=0.560
+  FIT    with the non-empty filter: Vassembled+=0.560 VSV:assembled=0.580 VSV:rigid=0.540
+  DEV    with the non-empty filter: Vassembled+=0.605 VSV:assembled=0.585 VSV:rigid=0.555
+    DEV ALL    share 0.45: r 0.60 l 0.60 a 0.60 oracle 0.60
+    DEV RL|A   share 0.09: r 0.33 l 0.33 a 0.56 oracle 0.89
+    DEV RA|L   share 0.10: r 0.50 l 0.30 a 0.50 oracle 0.80
+    DEV LA|R   share 0.14: r 0.07 l 0.81 a 0.81 oracle 0.89
+    DEV R|L|A  share 0.07: r 0.13 l 0.07 a 0.40 oracle 0.60
+    DEV DEAD   share 0.15: r 0.23 l 0.32 a 0.58 oracle 0.71
+== mipro:bird
+  rigid     error: n=17 acc=0.059 | empty: n=6 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=274 acc=0.515
+  liquid    error: n=17 acc=0.059 | empty: n=10 acc=0.000 | allnull: n=5 acc=0.000 | rows: n=268 acc=0.478
+  assembled error: n=14 acc=0.214 | empty: n=9 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=274 acc=0.544
+  PARETO n=50 patterns {'ALL': 25, 'DEAD': 5, 'LA|R': 3, 'RA|L': 6, 'RL|A': 8, 'R|L|A': 3} | rigid=0.460 liquid+=0.420 assembled+=0.500 SV:rigid=0.480 SV:assembled=0.460 VSV:assembled=0.460 oracle=0.640
+  FIT    n=50 patterns {'ALL': 19, 'DEAD': 5, 'LA|R': 6, 'RA|L': 11, 'RL|A': 4, 'R|L|A': 5} | rigid=0.480 liquid+=0.420 assembled+=0.520 SV:rigid=0.500 SV:assembled=0.500 VSV:assembled=0.500 oracle=0.680
+  DEV    n=200 patterns {'ALL': 97, 'DEAD': 28, 'LA|R': 26, 'RA|L': 24, 'RL|A': 14, 'R|L|A': 11} | rigid=0.475 liquid+=0.485 assembled+=0.515 SV:rigid=0.495 SV:assembled=0.500 VSV:assembled=0.500 oracle=0.660
+  PARETO with the non-empty filter: Vassembled+=0.500 VSV:assembled=0.460 VSV:rigid=0.480
+  FIT    with the non-empty filter: Vassembled+=0.520 VSV:assembled=0.500 VSV:rigid=0.500
+  DEV    with the non-empty filter: Vassembled+=0.525 VSV:assembled=0.515 VSV:rigid=0.505
+    DEV ALL    share 0.48: r 0.59 l 0.59 a 0.59 oracle 0.59
+    DEV RL|A   share 0.07: r 0.21 l 0.21 a 0.43 oracle 0.64
+    DEV RA|L   share 0.12: r 0.54 l 0.25 a 0.54 oracle 0.79
+    DEV LA|R   share 0.13: r 0.38 l 0.46 a 0.46 oracle 0.85
+    DEV R|L|A  share 0.06: r 0.18 l 0.27 a 0.18 oracle 0.64
+    DEV DEAD   share 0.14: r 0.36 l 0.29 a 0.43 oracle 0.64
+== simba:bird
+  rigid     error: n=14 acc=0.071 | empty: n=11 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=272 acc=0.485
+  liquid    error: n=15 acc=0.000 | empty: n=9 acc=0.000 | allnull: n=3 acc=0.000 | rows: n=273 acc=0.454
+  assembled error: n=13 acc=0.154 | empty: n=9 acc=0.000 | allnull: n=6 acc=0.000 | rows: n=272 acc=0.522
+  PARETO n=50 patterns {'ALL': 25, 'DEAD': 4, 'LA|R': 6, 'RA|L': 10, 'RL|A': 1, 'R|L|A': 4} | rigid=0.460 liquid+=0.420 assembled+=0.560 SV:rigid=0.520 SV:assembled=0.580 VSV:assembled=0.580 oracle=0.600
+  FIT    n=50 patterns {'ALL': 21, 'DEAD': 8, 'LA|R': 6, 'RA|L': 8, 'RL|A': 2, 'R|L|A': 5} | rigid=0.520 liquid+=0.440 assembled+=0.500 SV:rigid=0.480 SV:assembled=0.500 VSV:assembled=0.500 oracle=0.680
+  DEV    n=200 patterns {'ALL': 94, 'DEAD': 21, 'LA|R': 21, 'RA|L': 37, 'RL|A': 13, 'R|L|A': 14} | rigid=0.420 liquid+=0.435 assembled+=0.475 SV:rigid=0.475 SV:assembled=0.485 VSV:assembled=0.485 oracle=0.600
+  PARETO with the non-empty filter: Vassembled+=0.560 VSV:assembled=0.580 VSV:rigid=0.520
+  FIT    with the non-empty filter: Vassembled+=0.500 VSV:assembled=0.500 VSV:rigid=0.500
+  DEV    with the non-empty filter: Vassembled+=0.490 VSV:assembled=0.495 VSV:rigid=0.480
+    DEV ALL    share 0.47: r 0.50 l 0.50 a 0.50 oracle 0.50
+    DEV RL|A   share 0.07: r 0.38 l 0.38 a 0.23 oracle 0.62
+    DEV RA|L   share 0.18: r 0.51 l 0.24 a 0.51 oracle 0.76
+    DEV LA|R   share 0.10: r 0.19 l 0.62 a 0.62 oracle 0.81
+    DEV R|L|A  share 0.07: r 0.14 l 0.36 a 0.29 oracle 0.79
+    DEV DEAD   share 0.10: r 0.33 l 0.24 a 0.24 oracle 0.43

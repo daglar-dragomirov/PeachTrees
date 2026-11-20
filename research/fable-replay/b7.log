@@ -1,0 +1,6 @@
+kma: k=7 usd/item per sample 0.00219 | SC@1 0.540  SC@2 0.540  SC@3 0.640  SC@4 0.673  SC@5 0.747  SC@6 0.773  SC@7 0.793  
+kmg: k=10 usd/item per sample 0.00036 | SC@1 0.763  SC@2 0.763  SC@3 0.771  SC@4 0.788  SC@5 0.797  SC@6 0.797  SC@7 0.788  SC@8 0.805  SC@9 0.797  SC@10 0.797  
+kml: k=9 usd/item per sample 0.00085 | SC@1 0.602  SC@2 0.623  SC@3 0.662  SC@4 0.686  SC@5 0.693  SC@6 0.693  SC@7 0.710  SC@8 0.710  SC@9 0.702  
+b2a states {'rigid': 0.54, 'rigid2': 0.553333, 'rigid3': 0.586667} selected 0.56 oracle 0.813333 usd/item {'judge': 0.0027481, 'rigid': 0.0, 'rigid2': 0.0, 'rigid3': 0.0}
+b2g states {'rigid': 0.762712, 'rigid2': 0.669492, 'rigid3': 0.771186} selected 0.813559 oracle 0.881356 usd/item {'judge': 0.0015271, 'rigid': 0.0, 'rigid2': 0.0, 'rigid3': 0.0}
+b2l states {'rigid': 0.601818, 'rigid2': 0.636325, 'rigid3': 0.597411} selected 0.67923 oracle 0.732543 usd/item {'judge': 0.0016572, 'rigid': 0.0, 'rigid2': 0.0, 'rigid3': 0.0}
