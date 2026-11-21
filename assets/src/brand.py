@@ -89,9 +89,11 @@ def mark():
     ring = outer.difference(outer.buffer(-7, join_style="mitre"))
     ring = ring.difference(box(-1, 44, 8, 56)).difference(box(92, 44, 101, 56))   # HUD gaps
     u = Polygon([(22, 34), (36, 48), (36, 66), (64, 66), (64, 34), (78, 48), (78, 82), (40, 82), (22, 64)])
-    red = Polygon([(43, 16), (57, 30), (57, 60), (43, 46)])
-    mono = unary_union([ring, u])
-    return lean(mono), lean(red)
+    gussets = unary_union([Polygon([(36, 57), (36, 66), (45, 66)]), Polygon([(55, 66), (64, 66), (64, 57)])])
+    notch = Polygon([(78, 62), (72, 68), (78, 74)])  # a cut into the U's right side, pointing at the blade
+    u = unary_union([u, gussets]).difference(notch)
+    red = Polygon([(43, 14), (57, 28), (57, 58), (43, 44)])
+    return unary_union([ring, u]), red
 
 
 def lean(g, deg=14):
