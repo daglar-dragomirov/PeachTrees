@@ -1,8 +1,8 @@
 # API reference
 
-## TRIBES
+## Tribes
 
-::: tribes.TRIBES
+::: tribes.Tribes
     options:
       members:
         - fit

@@ -119,7 +119,24 @@ program, at exactly its cost.
 GLM 5.3 Flash as the task model; each optimizer run with its official settings; every number is TRIBES minus that
 optimizer's own program on the same items.
 
-**Sealed test** — opened once, after the rule and every per-task decision were frozen (TRIBES 1.0-lite):
+**Fresh test (TEST-B, TRIBES 1.1)** — 1,010 new items, used nowhere in development or in the sealed test; the 1.1
+policy and the analysis were pre-registered before any model saw them:
+
+| benchmark (test items) | over GEPA | over MIPROv2 | over SIMBA | benchmark mean, 95 % CI |
+|---|---|---|---|---|
+| HoVer (150) | +12.7 | +8.0 | +16.7 | **+12.4** [+8.9, +16.4] |
+| HotpotQA (200) | +7.0 | +3.0 | +2.5 | **+4.2** [+1.8, +6.8] |
+| BIRD (300) | 0.0 | +5.0 | +4.7 | **+3.2** [+0.9, +5.7] |
+| ToolHop (200) | +3.5 | +3.5 | −0.5 | +2.2 [−0.5, +5.0] |
+| GPQA (160) | +0.6 | +4.4 | 0.0 | +1.7 [−1.5, +4.8] |
+| **mean** | +4.8 | +4.8 | +4.7 | **+4.7** [+3.4, +6.1] |
+
+Bold: significant (one-sided α = 0.025, Holm over the five benchmarks; the mean: p = 0.0001). Pre-registered
+expectation: about +6 pp. On the same items TRIBES 1.0-lite gains +2.5 pp, so 1.1 adds **+2.2 pp** [+1.5, +3.0] over 1.0.
+On HoVer the set merge beats merging three samples of the program by **+7.1 pp** [+4.4, +10.2]: the gain is not just
+more sampling.
+
+**Sealed test (TEST-A)** — opened once, after the rule and every per-task decision were frozen (TRIBES 1.0-lite):
 
 | benchmark (test items) | over GEPA | over MIPROv2 | over SIMBA |
 |---|---|---|---|
@@ -163,7 +180,7 @@ Averages:
 | **all 36 cells** | **+9.5 pp** | **+8.9 pp** |
 
 No cell below the program; 24 of 36 significantly above. The rule was designed after the development data was seen,
-which is why the sealed-test numbers are the ones to quote.
+which is why the two test tables are the ones to quote.
 
 **Research record**: how the rule was found, frozen and tested, with every number per cell, is in [`research/`](research/).
 
